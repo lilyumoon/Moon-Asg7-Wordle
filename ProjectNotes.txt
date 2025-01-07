@@ -1,0 +1,173 @@
+======= Lily Moon
+======= Assignment 7 - Wordle
+======= Advanced .NET
+======= Due 4/6/25
+
+
+
+======= Objectives:
+	1: Understand the difference between a Static and Non Static Class
+
+	2: Understand the idea of reducing complexity by simplifying code in classes where appropriate.
+
+	3: Understand how to make use of the Dictionary Object (Dictionary <Key, Value>)
+
+	4: Learn how to build a Wordle Game.
+
+	5: Connect to an API to get the word of the day, or a word for a specific date.
+
+
+
+======= Grading:
+	* Basic game functionality
+	* Build UI with 6 rounds and track used letters
+	* Proper functionality of used letters
+		* green, yellow, or brown
+	* Button to start a new game
+
+	* Letter buttons must work (on click, should fill in)
+	* When using keyboard, on letter press, should fill in and move focus to next box
+	* If 6 wrong guesses, game should show answer
+	* Methods should be properly used
+	* If code is repeated 3+ times, extract
+
+
+
+======= Videos:
+	* Week 1:
+		* (76 minutes) https://northwoodtech.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=4acb0c61-c418-4333-8460-b13f00d8539f
+			- wordle gameplay
+			- using the wordle class
+			- basic setup
+
+		* (26 minutes) https://northwoodtech.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=878bea72-ec78-4026-bcd8-ae5e00e747f8
+			- how to deal with used letter buttons (dictionaries)
+			- how to get started
+
+		* [older ('23)] (55 minutes) https://northwoodtech.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=9b244bb6-36ba-423e-80be-afd300d6e87d
+			- (covers first 2 videos)
+
+		* [older ('22)] (56 minutes) https://northwoodtech.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=14ef92a9-d515-42e7-bf7b-ae600121bfec
+			- equivalent to video 1 and wordle class demo
+
+	* Week 2:
+		* (108 minutes) https://northwoodtech.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=4ae7a944-4d9f-4f97-a851-b14600d7313e
+			- connecting one event handler to all letter textboxes
+			- automatically moving cursor across textboxes without tabbing
+			- making UI interactable with keyboard or mouse
+			- using the ApiReader.cs class
+			- JSON vs simple API calls
+			- Dictionaries
+			- Simplification of working with letter textboxes
+
+		* [older ('23)] (57 minutes) https://northwoodtech.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=3a874fa8-0f14-4433-8a15-afda00d731b3 
+			- using ApiReader.cs
+			- improving UI
+			- code tips
+			- basically everything covered for part 2
+
+			
+
+======= Wordle.cs (from Blackboard):
+	* static
+	* contains methods to: 
+		* get a 5 letter word
+		* check a guess word
+		* check each letter in a guess word
+
+
+
+======= Dictionary info (from Blackboard):
+	* covers how to:
+		* declare
+		* load
+	* Misc utility code examples:
+		* reset all textboxes in each groupbox 
+			* (maintain gb list. iterate through gb.Controls. type comparison with TextBox. reset.)
+		* reset used letters and selecting first textbox
+
+
+
+======= UI Code Tips
+	* Blackboard
+	* Misc tips for finnessing UI
+
+
+
+======= API info (Blackboard):
+	* http://18.191.113.18/phpapi/
+	* interfaces with ApiReader.cs class (also from Blackboard)
+		* examples on Blackboard
+	* as per email with Andy -- 
+		* API is currently down
+
+
+
+======= API info (Personal):
+	* rapidapi.com
+	* key: 10c1f99ba6msh404cc93f96cd25bp1974b1jsnc7de848f1361
+	* host: wordle-game-api1.p.rapidapi.com
+
+	Functions:
+
+		* Getting daily word (/word)
+			GET
+				no input
+
+				response example -
+					{
+						"word": "apple",
+						"isOk": true,
+						"error": ""
+					}
+
+		* Checking user's guess (/guess)
+			POST
+				payload example - 
+					{
+						"word": "apron"
+					}
+
+				response example -
+					{
+						"result": "++x--",
+						"isOk": true,
+						"error": ""
+					}
+
+			NOTE: 
+				(+ symbol indicates char is in word and is in correct position)
+				(x symbol indicates char is in word but is not in correct position)
+				(- symbol indicates char is not in word)
+
+
+		* Error handling (special)
+
+			Input:
+				a POST request to /guess with invalid data
+
+			Output:
+				a response indicating an error
+				example - 
+					{
+						"result": "",
+						"isOk": false,
+						"error": "invalid input, expected string!"
+					}
+
+
+
+======= FEEDBACK:
+Please leave me the following feedback:
+
+
+
+What did you think of the assignment?
+
+
+
+What is something new you learned?
+
+
+
+What could I do better for next years class?
