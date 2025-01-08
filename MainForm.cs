@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -25,19 +26,27 @@ namespace Moon_Asg7_Wordle
         public MainForm()
         {
             InitializeComponent();
+        }
+        private void MainForm_Load(object sender, EventArgs e)
+        {
             setup();
         }
 
         private void setup()
         {
-            roundGroupBoxes = new List<GroupBox>() { 
-                groupRound1, groupRound2, groupRound3, 
+            roundGroupBoxes = new List<GroupBox>() {
+                groupRound1, groupRound2, groupRound3,
                 groupRound4, groupRound5, groupRound6 };
+
+            loadDictionaries();
+
+            // TEST:
+            roundCount = 1;
         }
 
         private void loadDictionaries()
         {
-            // result messages
+            // (round count, result message) dictionary
             resultMessageDictionary.Add(1, "No way, you cheated!");
             resultMessageDictionary.Add(2, "Very Impressive!");
             resultMessageDictionary.Add(3, "Excellent!");
@@ -46,23 +55,24 @@ namespace Moon_Asg7_Wordle
             resultMessageDictionary.Add(6, "Barely squeaked by there, friend");
             resultMessageDictionary.Add(7, "Better luck next time. :-)");
 
-            // used letters
+            // (used letter, Button) dictionary
             foreach (char letter in "ABCDEFGHIJKLMNOPQRSTUVWXYZ")
             {
-                usedLetterDictionary.Add(letter.ToString(), Controls.Find($"button_{letter}", true).FirstOrDefault() as Button);
+                Button button = Controls.Find($"button_{letter}", true).FirstOrDefault() as Button;
+                usedLetterDictionary.Add(letter.ToString(), button);
             }
             
-            // round letters
+            // (GroupBox, round letters) dictionary
             foreach (GroupBox gb in roundGroupBoxes)
             {
                 List<TextBox> roundLetters = new List<TextBox>();
                 foreach (Control c in gb.Controls)
                 {
-                    // TODO: check that this builds the lists of textboxes in ascending order
-
                     if (c.GetType() == typeof(TextBox))
                         roundLetters.Add((TextBox)c);
                 }
+                // sort roundLetters by ascending Name property
+                roundLetters.Sort((x, y) => string.Compare(x.Name, y.Name));
                 roundLetterDictionary.Add(gb, roundLetters);
             }
         }
@@ -119,16 +129,20 @@ namespace Moon_Asg7_Wordle
 
         private void submitGuess()
         {
-            // use round to select current round's GroupBox
-            GroupBox roundGB = (GroupBox)Controls.Find($"groupRound{roundCount}", true).FirstOrDefault();
+            // do a check to ensure that all letters are filled.
+            //      or better yet, only enable 'set' button once all letters are filled.
 
-            // get current round GroupBox's textBoxes
-            foreach (Control c in roundGB.Controls)
+            // use round to select current round groupbox
+            //GroupBox currentRoundGB = (GroupBox)Controls.Find($"groupRound{roundCount}", true).FirstOrDefault();
+            GroupBox currentRoundGB = roundGroupBoxes[roundCount - 1];
+
+            // build a string from the characters in current round groupbox's textboxes
+            string submission = string.Empty;
+            foreach (TextBox tb in roundLetterDictionary[currentRoundGB])
             {
-
+                submission += tb.Text;
             }
-            // ensure they are ordered by ascending
-
+            Debug.Write($"checking value of string built from textboxes within {currentRoundGB}. Result: {submission}");
         }
 
         private void textBox_TextChanged(object sender, EventArgs e)
@@ -152,5 +166,6 @@ namespace Moon_Asg7_Wordle
         {
 
         }
+
     }
 }

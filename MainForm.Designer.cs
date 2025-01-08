@@ -150,6 +150,7 @@
             this.setButton5.TabIndex = 36;
             this.setButton5.Text = "Set";
             this.setButton5.UseVisualStyleBackColor = true;
+            this.setButton5.Click += new System.EventHandler(this.setButton_Click);
             // 
             // guessTextBox27
             // 
@@ -224,6 +225,7 @@
             this.setButton4.TabIndex = 30;
             this.setButton4.Text = "Set";
             this.setButton4.UseVisualStyleBackColor = true;
+            this.setButton4.Click += new System.EventHandler(this.setButton_Click);
             // 
             // guessTextBox21
             // 
@@ -298,6 +300,7 @@
             this.setButton3.TabIndex = 24;
             this.setButton3.Text = "Set";
             this.setButton3.UseVisualStyleBackColor = true;
+            this.setButton3.Click += new System.EventHandler(this.setButton_Click);
             // 
             // guessTextBox18
             // 
@@ -372,6 +375,7 @@
             this.setButton2.TabIndex = 18;
             this.setButton2.Text = "Set";
             this.setButton2.UseVisualStyleBackColor = true;
+            this.setButton2.Click += new System.EventHandler(this.setButton_Click);
             // 
             // guessTextBox10
             // 
@@ -446,6 +450,7 @@
             this.setButton1.TabIndex = 12;
             this.setButton1.Text = "Set";
             this.setButton1.UseVisualStyleBackColor = true;
+            this.setButton1.Click += new System.EventHandler(this.setButton_Click);
             // 
             // guessTextBox9
             // 
@@ -520,6 +525,7 @@
             this.setButton0.TabIndex = 6;
             this.setButton0.Text = "Set";
             this.setButton0.UseVisualStyleBackColor = true;
+            this.setButton0.Click += new System.EventHandler(this.setButton_Click);
             // 
             // guessTextBox4
             // 
@@ -882,6 +888,7 @@
             this.Controls.Add(this.groupRounds);
             this.Name = "MainForm";
             this.Text = "Moon Wordle Demo";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.groupRounds.ResumeLayout(false);
             this.groupRound6.ResumeLayout(false);
             this.groupRound6.PerformLayout();
