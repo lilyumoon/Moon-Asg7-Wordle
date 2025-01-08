@@ -157,6 +157,46 @@
 
 
 
+
+
+======= WORDLE LOGISTICS
+
+	* how it works:
+		- app gets a word
+		- user receives 6 guesses
+			- during a guess, user can 'place' letters, remove letters, or clear the entire word
+		- app validates user's guess
+			- guess can be 1 of 3 states: correct, incorrect, or not a word
+		- app gives feedback on user's guess
+			- if not a word, the guess is not consumed and user can try again
+			- if incorrect, app gives feedback on letters
+				- letters can be 1 of 3 states: in-word-and-correct-placement, in-word-and-incorrect-placement, or not-in-word
+				- app provides visual feedback on virtual keyboard and guess field
+					- in-word-and-correct-placement => green
+					- in-word-and-incorrect-placement => yellow
+					- not-in-word => gray
+		- if word is found within 6 guesses, app shows a success message
+		- if word is not found within 6 guesses, app shows a different message and displays the correct answer
+
+
+
+======= WHAT'S NEEDED
+
+	- ability to make api calls to get a word-of-the-day or a past word-of-the-day
+
+	- ability to make api calls to validate a guess
+		- ability to process payload received from api validation response
+		- ability to update ui based on response
+
+	- game state tracking
+		* no game in progress
+		* game in progress
+			- # guesses remaining
+
+
+
+
+
 ======= FEEDBACK:
 Please leave me the following feedback:
 
