@@ -28,50 +28,50 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.guessGroupBox = new System.Windows.Forms.GroupBox();
-            this.guessGroupBox5 = new System.Windows.Forms.GroupBox();
+            this.groupRounds = new System.Windows.Forms.GroupBox();
+            this.groupRound6 = new System.Windows.Forms.GroupBox();
             this.setButton5 = new System.Windows.Forms.Button();
             this.guessTextBox27 = new System.Windows.Forms.TextBox();
             this.guessTextBox26 = new System.Windows.Forms.TextBox();
             this.guessTextBox29 = new System.Windows.Forms.TextBox();
             this.guessTextBox28 = new System.Windows.Forms.TextBox();
             this.guessTextBox25 = new System.Windows.Forms.TextBox();
-            this.guessGroupBox4 = new System.Windows.Forms.GroupBox();
+            this.groupRound5 = new System.Windows.Forms.GroupBox();
             this.setButton4 = new System.Windows.Forms.Button();
             this.guessTextBox21 = new System.Windows.Forms.TextBox();
             this.guessTextBox23 = new System.Windows.Forms.TextBox();
             this.guessTextBox22 = new System.Windows.Forms.TextBox();
             this.guessTextBox20 = new System.Windows.Forms.TextBox();
             this.guessTextBox24 = new System.Windows.Forms.TextBox();
-            this.guessGroupBox3 = new System.Windows.Forms.GroupBox();
+            this.groupRound4 = new System.Windows.Forms.GroupBox();
             this.setButton3 = new System.Windows.Forms.Button();
             this.guessTextBox18 = new System.Windows.Forms.TextBox();
             this.guessTextBox15 = new System.Windows.Forms.TextBox();
             this.guessTextBox16 = new System.Windows.Forms.TextBox();
             this.guessTextBox19 = new System.Windows.Forms.TextBox();
             this.guessTextBox17 = new System.Windows.Forms.TextBox();
-            this.guessGroupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupRound3 = new System.Windows.Forms.GroupBox();
             this.setButton2 = new System.Windows.Forms.Button();
             this.guessTextBox10 = new System.Windows.Forms.TextBox();
             this.guessTextBox14 = new System.Windows.Forms.TextBox();
             this.guessTextBox12 = new System.Windows.Forms.TextBox();
             this.guessTextBox11 = new System.Windows.Forms.TextBox();
             this.guessTextBox13 = new System.Windows.Forms.TextBox();
-            this.guessGroupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupRound2 = new System.Windows.Forms.GroupBox();
             this.setButton1 = new System.Windows.Forms.Button();
             this.guessTextBox9 = new System.Windows.Forms.TextBox();
             this.guessTextBox6 = new System.Windows.Forms.TextBox();
             this.guessTextBox8 = new System.Windows.Forms.TextBox();
             this.guessTextBox5 = new System.Windows.Forms.TextBox();
             this.guessTextBox7 = new System.Windows.Forms.TextBox();
-            this.guessGroupBox0 = new System.Windows.Forms.GroupBox();
+            this.groupRound1 = new System.Windows.Forms.GroupBox();
             this.setButton0 = new System.Windows.Forms.Button();
             this.guessTextBox4 = new System.Windows.Forms.TextBox();
             this.guessTextBox3 = new System.Windows.Forms.TextBox();
             this.guessTextBox2 = new System.Windows.Forms.TextBox();
             this.guessTextBox0 = new System.Windows.Forms.TextBox();
             this.guessTextBox1 = new System.Windows.Forms.TextBox();
-            this.usedLettersGroupBox = new System.Windows.Forms.GroupBox();
+            this.groupLetters = new System.Windows.Forms.GroupBox();
             this.buttonBackspace = new System.Windows.Forms.Button();
             this.buttonClearWord = new System.Windows.Forms.Button();
             this.button_M = new System.Windows.Forms.Button();
@@ -101,46 +101,46 @@
             this.button_W = new System.Windows.Forms.Button();
             this.button_Q = new System.Windows.Forms.Button();
             this.newGameButton = new System.Windows.Forms.Button();
-            this.guessGroupBox.SuspendLayout();
-            this.guessGroupBox5.SuspendLayout();
-            this.guessGroupBox4.SuspendLayout();
-            this.guessGroupBox3.SuspendLayout();
-            this.guessGroupBox2.SuspendLayout();
-            this.guessGroupBox1.SuspendLayout();
-            this.guessGroupBox0.SuspendLayout();
-            this.usedLettersGroupBox.SuspendLayout();
+            this.groupRounds.SuspendLayout();
+            this.groupRound6.SuspendLayout();
+            this.groupRound5.SuspendLayout();
+            this.groupRound4.SuspendLayout();
+            this.groupRound3.SuspendLayout();
+            this.groupRound2.SuspendLayout();
+            this.groupRound1.SuspendLayout();
+            this.groupLetters.SuspendLayout();
             this.SuspendLayout();
             // 
-            // guessGroupBox
+            // groupRounds
             // 
-            this.guessGroupBox.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.guessGroupBox.Controls.Add(this.guessGroupBox5);
-            this.guessGroupBox.Controls.Add(this.guessGroupBox4);
-            this.guessGroupBox.Controls.Add(this.guessGroupBox3);
-            this.guessGroupBox.Controls.Add(this.guessGroupBox2);
-            this.guessGroupBox.Controls.Add(this.guessGroupBox1);
-            this.guessGroupBox.Controls.Add(this.guessGroupBox0);
-            this.guessGroupBox.Location = new System.Drawing.Point(16, 16);
-            this.guessGroupBox.Name = "guessGroupBox";
-            this.guessGroupBox.Size = new System.Drawing.Size(448, 542);
-            this.guessGroupBox.TabIndex = 0;
-            this.guessGroupBox.TabStop = false;
-            this.guessGroupBox.Text = "Make Your Guess";
+            this.groupRounds.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.groupRounds.Controls.Add(this.groupRound6);
+            this.groupRounds.Controls.Add(this.groupRound5);
+            this.groupRounds.Controls.Add(this.groupRound4);
+            this.groupRounds.Controls.Add(this.groupRound3);
+            this.groupRounds.Controls.Add(this.groupRound2);
+            this.groupRounds.Controls.Add(this.groupRound1);
+            this.groupRounds.Location = new System.Drawing.Point(16, 16);
+            this.groupRounds.Name = "groupRounds";
+            this.groupRounds.Size = new System.Drawing.Size(448, 542);
+            this.groupRounds.TabIndex = 0;
+            this.groupRounds.TabStop = false;
+            this.groupRounds.Text = "Make Your Guess";
             // 
-            // guessGroupBox5
+            // groupRound6
             // 
-            this.guessGroupBox5.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.guessGroupBox5.Controls.Add(this.setButton5);
-            this.guessGroupBox5.Controls.Add(this.guessTextBox27);
-            this.guessGroupBox5.Controls.Add(this.guessTextBox26);
-            this.guessGroupBox5.Controls.Add(this.guessTextBox29);
-            this.guessGroupBox5.Controls.Add(this.guessTextBox28);
-            this.guessGroupBox5.Controls.Add(this.guessTextBox25);
-            this.guessGroupBox5.Location = new System.Drawing.Point(16, 446);
-            this.guessGroupBox5.Name = "guessGroupBox5";
-            this.guessGroupBox5.Size = new System.Drawing.Size(416, 80);
-            this.guessGroupBox5.TabIndex = 5;
-            this.guessGroupBox5.TabStop = false;
+            this.groupRound6.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.groupRound6.Controls.Add(this.setButton5);
+            this.groupRound6.Controls.Add(this.guessTextBox27);
+            this.groupRound6.Controls.Add(this.guessTextBox26);
+            this.groupRound6.Controls.Add(this.guessTextBox29);
+            this.groupRound6.Controls.Add(this.guessTextBox28);
+            this.groupRound6.Controls.Add(this.guessTextBox25);
+            this.groupRound6.Location = new System.Drawing.Point(16, 446);
+            this.groupRound6.Name = "groupRound6";
+            this.groupRound6.Size = new System.Drawing.Size(416, 80);
+            this.groupRound6.TabIndex = 5;
+            this.groupRound6.TabStop = false;
             // 
             // setButton5
             // 
@@ -201,20 +201,20 @@
             this.guessTextBox25.TabIndex = 32;
             this.guessTextBox25.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             // 
-            // guessGroupBox4
+            // groupRound5
             // 
-            this.guessGroupBox4.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.guessGroupBox4.Controls.Add(this.setButton4);
-            this.guessGroupBox4.Controls.Add(this.guessTextBox21);
-            this.guessGroupBox4.Controls.Add(this.guessTextBox23);
-            this.guessGroupBox4.Controls.Add(this.guessTextBox22);
-            this.guessGroupBox4.Controls.Add(this.guessTextBox20);
-            this.guessGroupBox4.Controls.Add(this.guessTextBox24);
-            this.guessGroupBox4.Location = new System.Drawing.Point(16, 360);
-            this.guessGroupBox4.Name = "guessGroupBox4";
-            this.guessGroupBox4.Size = new System.Drawing.Size(416, 80);
-            this.guessGroupBox4.TabIndex = 5;
-            this.guessGroupBox4.TabStop = false;
+            this.groupRound5.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.groupRound5.Controls.Add(this.setButton4);
+            this.groupRound5.Controls.Add(this.guessTextBox21);
+            this.groupRound5.Controls.Add(this.guessTextBox23);
+            this.groupRound5.Controls.Add(this.guessTextBox22);
+            this.groupRound5.Controls.Add(this.guessTextBox20);
+            this.groupRound5.Controls.Add(this.guessTextBox24);
+            this.groupRound5.Location = new System.Drawing.Point(16, 360);
+            this.groupRound5.Name = "groupRound5";
+            this.groupRound5.Size = new System.Drawing.Size(416, 80);
+            this.groupRound5.TabIndex = 5;
+            this.groupRound5.TabStop = false;
             // 
             // setButton4
             // 
@@ -275,20 +275,20 @@
             this.guessTextBox24.TabIndex = 29;
             this.guessTextBox24.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             // 
-            // guessGroupBox3
+            // groupRound4
             // 
-            this.guessGroupBox3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.guessGroupBox3.Controls.Add(this.setButton3);
-            this.guessGroupBox3.Controls.Add(this.guessTextBox18);
-            this.guessGroupBox3.Controls.Add(this.guessTextBox15);
-            this.guessGroupBox3.Controls.Add(this.guessTextBox16);
-            this.guessGroupBox3.Controls.Add(this.guessTextBox19);
-            this.guessGroupBox3.Controls.Add(this.guessTextBox17);
-            this.guessGroupBox3.Location = new System.Drawing.Point(16, 274);
-            this.guessGroupBox3.Name = "guessGroupBox3";
-            this.guessGroupBox3.Size = new System.Drawing.Size(416, 80);
-            this.guessGroupBox3.TabIndex = 4;
-            this.guessGroupBox3.TabStop = false;
+            this.groupRound4.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.groupRound4.Controls.Add(this.setButton3);
+            this.groupRound4.Controls.Add(this.guessTextBox18);
+            this.groupRound4.Controls.Add(this.guessTextBox15);
+            this.groupRound4.Controls.Add(this.guessTextBox16);
+            this.groupRound4.Controls.Add(this.guessTextBox19);
+            this.groupRound4.Controls.Add(this.guessTextBox17);
+            this.groupRound4.Location = new System.Drawing.Point(16, 274);
+            this.groupRound4.Name = "groupRound4";
+            this.groupRound4.Size = new System.Drawing.Size(416, 80);
+            this.groupRound4.TabIndex = 4;
+            this.groupRound4.TabStop = false;
             // 
             // setButton3
             // 
@@ -349,20 +349,20 @@
             this.guessTextBox17.TabIndex = 21;
             this.guessTextBox17.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             // 
-            // guessGroupBox2
+            // groupRound3
             // 
-            this.guessGroupBox2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.guessGroupBox2.Controls.Add(this.setButton2);
-            this.guessGroupBox2.Controls.Add(this.guessTextBox10);
-            this.guessGroupBox2.Controls.Add(this.guessTextBox14);
-            this.guessGroupBox2.Controls.Add(this.guessTextBox12);
-            this.guessGroupBox2.Controls.Add(this.guessTextBox11);
-            this.guessGroupBox2.Controls.Add(this.guessTextBox13);
-            this.guessGroupBox2.Location = new System.Drawing.Point(16, 188);
-            this.guessGroupBox2.Name = "guessGroupBox2";
-            this.guessGroupBox2.Size = new System.Drawing.Size(416, 80);
-            this.guessGroupBox2.TabIndex = 3;
-            this.guessGroupBox2.TabStop = false;
+            this.groupRound3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.groupRound3.Controls.Add(this.setButton2);
+            this.groupRound3.Controls.Add(this.guessTextBox10);
+            this.groupRound3.Controls.Add(this.guessTextBox14);
+            this.groupRound3.Controls.Add(this.guessTextBox12);
+            this.groupRound3.Controls.Add(this.guessTextBox11);
+            this.groupRound3.Controls.Add(this.guessTextBox13);
+            this.groupRound3.Location = new System.Drawing.Point(16, 188);
+            this.groupRound3.Name = "groupRound3";
+            this.groupRound3.Size = new System.Drawing.Size(416, 80);
+            this.groupRound3.TabIndex = 3;
+            this.groupRound3.TabStop = false;
             // 
             // setButton2
             // 
@@ -423,20 +423,20 @@
             this.guessTextBox13.TabIndex = 16;
             this.guessTextBox13.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             // 
-            // guessGroupBox1
+            // groupRound2
             // 
-            this.guessGroupBox1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.guessGroupBox1.Controls.Add(this.setButton1);
-            this.guessGroupBox1.Controls.Add(this.guessTextBox9);
-            this.guessGroupBox1.Controls.Add(this.guessTextBox6);
-            this.guessGroupBox1.Controls.Add(this.guessTextBox8);
-            this.guessGroupBox1.Controls.Add(this.guessTextBox5);
-            this.guessGroupBox1.Controls.Add(this.guessTextBox7);
-            this.guessGroupBox1.Location = new System.Drawing.Point(16, 102);
-            this.guessGroupBox1.Name = "guessGroupBox1";
-            this.guessGroupBox1.Size = new System.Drawing.Size(416, 80);
-            this.guessGroupBox1.TabIndex = 2;
-            this.guessGroupBox1.TabStop = false;
+            this.groupRound2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.groupRound2.Controls.Add(this.setButton1);
+            this.groupRound2.Controls.Add(this.guessTextBox9);
+            this.groupRound2.Controls.Add(this.guessTextBox6);
+            this.groupRound2.Controls.Add(this.guessTextBox8);
+            this.groupRound2.Controls.Add(this.guessTextBox5);
+            this.groupRound2.Controls.Add(this.guessTextBox7);
+            this.groupRound2.Location = new System.Drawing.Point(16, 102);
+            this.groupRound2.Name = "groupRound2";
+            this.groupRound2.Size = new System.Drawing.Size(416, 80);
+            this.groupRound2.TabIndex = 2;
+            this.groupRound2.TabStop = false;
             // 
             // setButton1
             // 
@@ -497,20 +497,20 @@
             this.guessTextBox7.TabIndex = 9;
             this.guessTextBox7.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             // 
-            // guessGroupBox0
+            // groupRound1
             // 
-            this.guessGroupBox0.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.guessGroupBox0.Controls.Add(this.setButton0);
-            this.guessGroupBox0.Controls.Add(this.guessTextBox4);
-            this.guessGroupBox0.Controls.Add(this.guessTextBox3);
-            this.guessGroupBox0.Controls.Add(this.guessTextBox2);
-            this.guessGroupBox0.Controls.Add(this.guessTextBox0);
-            this.guessGroupBox0.Controls.Add(this.guessTextBox1);
-            this.guessGroupBox0.Location = new System.Drawing.Point(16, 16);
-            this.guessGroupBox0.Name = "guessGroupBox0";
-            this.guessGroupBox0.Size = new System.Drawing.Size(416, 80);
-            this.guessGroupBox0.TabIndex = 1;
-            this.guessGroupBox0.TabStop = false;
+            this.groupRound1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.groupRound1.Controls.Add(this.setButton0);
+            this.groupRound1.Controls.Add(this.guessTextBox4);
+            this.groupRound1.Controls.Add(this.guessTextBox3);
+            this.groupRound1.Controls.Add(this.guessTextBox2);
+            this.groupRound1.Controls.Add(this.guessTextBox0);
+            this.groupRound1.Controls.Add(this.guessTextBox1);
+            this.groupRound1.Location = new System.Drawing.Point(16, 16);
+            this.groupRound1.Name = "groupRound1";
+            this.groupRound1.Size = new System.Drawing.Size(416, 80);
+            this.groupRound1.TabIndex = 1;
+            this.groupRound1.TabStop = false;
             // 
             // setButton0
             // 
@@ -571,43 +571,43 @@
             this.guessTextBox1.TabIndex = 1;
             this.guessTextBox1.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             // 
-            // usedLettersGroupBox
+            // groupLetters
             // 
-            this.usedLettersGroupBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.usedLettersGroupBox.Controls.Add(this.buttonBackspace);
-            this.usedLettersGroupBox.Controls.Add(this.buttonClearWord);
-            this.usedLettersGroupBox.Controls.Add(this.button_M);
-            this.usedLettersGroupBox.Controls.Add(this.button_N);
-            this.usedLettersGroupBox.Controls.Add(this.button_B);
-            this.usedLettersGroupBox.Controls.Add(this.button_V);
-            this.usedLettersGroupBox.Controls.Add(this.button_C);
-            this.usedLettersGroupBox.Controls.Add(this.button_X);
-            this.usedLettersGroupBox.Controls.Add(this.button_Z);
-            this.usedLettersGroupBox.Controls.Add(this.button_L);
-            this.usedLettersGroupBox.Controls.Add(this.button_K);
-            this.usedLettersGroupBox.Controls.Add(this.button_J);
-            this.usedLettersGroupBox.Controls.Add(this.button_H);
-            this.usedLettersGroupBox.Controls.Add(this.button_G);
-            this.usedLettersGroupBox.Controls.Add(this.button_F);
-            this.usedLettersGroupBox.Controls.Add(this.button_D);
-            this.usedLettersGroupBox.Controls.Add(this.button_S);
-            this.usedLettersGroupBox.Controls.Add(this.button_A);
-            this.usedLettersGroupBox.Controls.Add(this.button_P);
-            this.usedLettersGroupBox.Controls.Add(this.button_O);
-            this.usedLettersGroupBox.Controls.Add(this.button_I);
-            this.usedLettersGroupBox.Controls.Add(this.button_U);
-            this.usedLettersGroupBox.Controls.Add(this.button_Y);
-            this.usedLettersGroupBox.Controls.Add(this.button_T);
-            this.usedLettersGroupBox.Controls.Add(this.button_R);
-            this.usedLettersGroupBox.Controls.Add(this.button_E);
-            this.usedLettersGroupBox.Controls.Add(this.button_W);
-            this.usedLettersGroupBox.Controls.Add(this.button_Q);
-            this.usedLettersGroupBox.Location = new System.Drawing.Point(480, 16);
-            this.usedLettersGroupBox.Name = "usedLettersGroupBox";
-            this.usedLettersGroupBox.Size = new System.Drawing.Size(430, 260);
-            this.usedLettersGroupBox.TabIndex = 1;
-            this.usedLettersGroupBox.TabStop = false;
-            this.usedLettersGroupBox.Text = "Used Letters";
+            this.groupLetters.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.groupLetters.Controls.Add(this.buttonBackspace);
+            this.groupLetters.Controls.Add(this.buttonClearWord);
+            this.groupLetters.Controls.Add(this.button_M);
+            this.groupLetters.Controls.Add(this.button_N);
+            this.groupLetters.Controls.Add(this.button_B);
+            this.groupLetters.Controls.Add(this.button_V);
+            this.groupLetters.Controls.Add(this.button_C);
+            this.groupLetters.Controls.Add(this.button_X);
+            this.groupLetters.Controls.Add(this.button_Z);
+            this.groupLetters.Controls.Add(this.button_L);
+            this.groupLetters.Controls.Add(this.button_K);
+            this.groupLetters.Controls.Add(this.button_J);
+            this.groupLetters.Controls.Add(this.button_H);
+            this.groupLetters.Controls.Add(this.button_G);
+            this.groupLetters.Controls.Add(this.button_F);
+            this.groupLetters.Controls.Add(this.button_D);
+            this.groupLetters.Controls.Add(this.button_S);
+            this.groupLetters.Controls.Add(this.button_A);
+            this.groupLetters.Controls.Add(this.button_P);
+            this.groupLetters.Controls.Add(this.button_O);
+            this.groupLetters.Controls.Add(this.button_I);
+            this.groupLetters.Controls.Add(this.button_U);
+            this.groupLetters.Controls.Add(this.button_Y);
+            this.groupLetters.Controls.Add(this.button_T);
+            this.groupLetters.Controls.Add(this.button_R);
+            this.groupLetters.Controls.Add(this.button_E);
+            this.groupLetters.Controls.Add(this.button_W);
+            this.groupLetters.Controls.Add(this.button_Q);
+            this.groupLetters.Location = new System.Drawing.Point(480, 16);
+            this.groupLetters.Name = "groupLetters";
+            this.groupLetters.Size = new System.Drawing.Size(430, 260);
+            this.groupLetters.TabIndex = 1;
+            this.groupLetters.TabStop = false;
+            this.groupLetters.Text = "Used Letters";
             // 
             // buttonBackspace
             // 
@@ -876,41 +876,41 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1284, 611);
+            this.ClientSize = new System.Drawing.Size(934, 611);
             this.Controls.Add(this.newGameButton);
-            this.Controls.Add(this.usedLettersGroupBox);
-            this.Controls.Add(this.guessGroupBox);
+            this.Controls.Add(this.groupLetters);
+            this.Controls.Add(this.groupRounds);
             this.Name = "MainForm";
             this.Text = "Moon Wordle Demo";
-            this.guessGroupBox.ResumeLayout(false);
-            this.guessGroupBox5.ResumeLayout(false);
-            this.guessGroupBox5.PerformLayout();
-            this.guessGroupBox4.ResumeLayout(false);
-            this.guessGroupBox4.PerformLayout();
-            this.guessGroupBox3.ResumeLayout(false);
-            this.guessGroupBox3.PerformLayout();
-            this.guessGroupBox2.ResumeLayout(false);
-            this.guessGroupBox2.PerformLayout();
-            this.guessGroupBox1.ResumeLayout(false);
-            this.guessGroupBox1.PerformLayout();
-            this.guessGroupBox0.ResumeLayout(false);
-            this.guessGroupBox0.PerformLayout();
-            this.usedLettersGroupBox.ResumeLayout(false);
+            this.groupRounds.ResumeLayout(false);
+            this.groupRound6.ResumeLayout(false);
+            this.groupRound6.PerformLayout();
+            this.groupRound5.ResumeLayout(false);
+            this.groupRound5.PerformLayout();
+            this.groupRound4.ResumeLayout(false);
+            this.groupRound4.PerformLayout();
+            this.groupRound3.ResumeLayout(false);
+            this.groupRound3.PerformLayout();
+            this.groupRound2.ResumeLayout(false);
+            this.groupRound2.PerformLayout();
+            this.groupRound1.ResumeLayout(false);
+            this.groupRound1.PerformLayout();
+            this.groupLetters.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox guessGroupBox;
-        private System.Windows.Forms.GroupBox usedLettersGroupBox;
+        private System.Windows.Forms.GroupBox groupRounds;
+        private System.Windows.Forms.GroupBox groupLetters;
         private System.Windows.Forms.Button newGameButton;
-        private System.Windows.Forms.GroupBox guessGroupBox2;
-        private System.Windows.Forms.GroupBox guessGroupBox1;
-        private System.Windows.Forms.GroupBox guessGroupBox0;
-        private System.Windows.Forms.GroupBox guessGroupBox5;
-        private System.Windows.Forms.GroupBox guessGroupBox4;
-        private System.Windows.Forms.GroupBox guessGroupBox3;
+        private System.Windows.Forms.GroupBox groupRound3;
+        private System.Windows.Forms.GroupBox groupRound2;
+        private System.Windows.Forms.GroupBox groupRound1;
+        private System.Windows.Forms.GroupBox groupRound6;
+        private System.Windows.Forms.GroupBox groupRound5;
+        private System.Windows.Forms.GroupBox groupRound4;
         private System.Windows.Forms.Button setButton0;
         private System.Windows.Forms.TextBox guessTextBox4;
         private System.Windows.Forms.TextBox guessTextBox3;
