@@ -77,7 +77,7 @@ namespace Moon_Asg7_Wordle
             }
         }
 
-        private void resetGame()
+        private void resetGame(object sender, EventArgs e)
         {
             // Reset all round groupboxes
             foreach (GroupBox gb in roundGroupBoxes)

@@ -101,6 +101,7 @@
             this.button_W = new System.Windows.Forms.Button();
             this.button_Q = new System.Windows.Forms.Button();
             this.newGameButton = new System.Windows.Forms.Button();
+            this.resetGameButton = new System.Windows.Forms.Button();
             this.groupRounds.SuspendLayout();
             this.groupRound6.SuspendLayout();
             this.groupRound5.SuspendLayout();
@@ -878,11 +879,22 @@
             this.newGameButton.Text = "New Game";
             this.newGameButton.UseVisualStyleBackColor = true;
             // 
+            // resetGameButton
+            // 
+            this.resetGameButton.Location = new System.Drawing.Point(108, 564);
+            this.resetGameButton.Name = "resetGameButton";
+            this.resetGameButton.Size = new System.Drawing.Size(75, 23);
+            this.resetGameButton.TabIndex = 3;
+            this.resetGameButton.Text = "Reset Game";
+            this.resetGameButton.UseVisualStyleBackColor = true;
+            this.resetGameButton.Click += new System.EventHandler(this.resetGame);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(934, 611);
+            this.Controls.Add(this.resetGameButton);
             this.Controls.Add(this.newGameButton);
             this.Controls.Add(this.groupLetters);
             this.Controls.Add(this.groupRounds);
@@ -982,6 +994,7 @@
         private System.Windows.Forms.Button button_Z;
         private System.Windows.Forms.Button buttonBackspace;
         private System.Windows.Forms.Button buttonClearWord;
+        private System.Windows.Forms.Button resetGameButton;
     }
 }
 
