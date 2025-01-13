@@ -13,6 +13,7 @@ namespace Moon_Asg7_Wordle
 {
     public partial class MainForm : Form
     {
+        private MoonAPIReader apiReader;
 
         private Dictionary<int, string> resultMessageDictionary = new Dictionary<int, string>();
         private Dictionary<string, Button> usedLetterDictionary = new Dictionary<string, Button>();
@@ -34,6 +35,8 @@ namespace Moon_Asg7_Wordle
 
         private void setup()
         {
+            apiReader = new MoonAPIReader();
+
             roundGroupBoxes = new List<GroupBox>() {
                 groupRound1, groupRound2, groupRound3,
                 groupRound4, groupRound5, groupRound6 };
@@ -152,6 +155,16 @@ namespace Moon_Asg7_Wordle
                 textBox.Text = textBox.Text.ToUpper();
         }
 
+        private void guessButton_Click(object sender, EventArgs e)
+        {
+            apiReader.testCheckGuess();
+        }
+
+        private void getWoTD_Click(object sender, EventArgs e)
+        {
+            apiReader.testGetWoTD();
+        }
+
         private void keyboardLetterButton_Click(object sender, EventArgs e)
         {
 
@@ -163,6 +176,11 @@ namespace Moon_Asg7_Wordle
         }
 
         private void buttonClearWord_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void apiTest_Click(object sender, EventArgs e)
         {
 
         }

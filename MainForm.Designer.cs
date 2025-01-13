@@ -102,6 +102,8 @@
             this.button_Q = new System.Windows.Forms.Button();
             this.newGameButton = new System.Windows.Forms.Button();
             this.resetGameButton = new System.Windows.Forms.Button();
+            this.testButton = new System.Windows.Forms.Button();
+            this.getWoTDButton = new System.Windows.Forms.Button();
             this.groupRounds.SuspendLayout();
             this.groupRound6.SuspendLayout();
             this.groupRound5.SuspendLayout();
@@ -889,11 +891,33 @@
             this.resetGameButton.UseVisualStyleBackColor = true;
             this.resetGameButton.Click += new System.EventHandler(this.resetGame);
             // 
+            // testButton
+            // 
+            this.testButton.Location = new System.Drawing.Point(490, 301);
+            this.testButton.Name = "testButton";
+            this.testButton.Size = new System.Drawing.Size(155, 23);
+            this.testButton.TabIndex = 4;
+            this.testButton.Text = "Guess (test)";
+            this.testButton.UseVisualStyleBackColor = true;
+            this.testButton.Click += new System.EventHandler(this.guessButton_Click);
+            // 
+            // getWoTDButton
+            // 
+            this.getWoTDButton.Location = new System.Drawing.Point(490, 333);
+            this.getWoTDButton.Name = "getWoTDButton";
+            this.getWoTDButton.Size = new System.Drawing.Size(155, 23);
+            this.getWoTDButton.TabIndex = 5;
+            this.getWoTDButton.Text = "get wotd (test)";
+            this.getWoTDButton.UseVisualStyleBackColor = true;
+            this.getWoTDButton.Click += new System.EventHandler(this.getWoTD_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(934, 611);
+            this.Controls.Add(this.getWoTDButton);
+            this.Controls.Add(this.testButton);
             this.Controls.Add(this.resetGameButton);
             this.Controls.Add(this.newGameButton);
             this.Controls.Add(this.groupLetters);
@@ -995,6 +1019,8 @@
         private System.Windows.Forms.Button buttonBackspace;
         private System.Windows.Forms.Button buttonClearWord;
         private System.Windows.Forms.Button resetGameButton;
+        private System.Windows.Forms.Button testButton;
+        private System.Windows.Forms.Button getWoTDButton;
     }
 }
 
