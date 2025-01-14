@@ -13,7 +13,7 @@ namespace Moon_Asg7_Wordle
 {
     public partial class MainForm : Form
     {
-        private MoonAPIReader apiReader;
+        private MoonAPIReader moonApiReader;
 
         private Dictionary<int, string> resultMessageDictionary = new Dictionary<int, string>();
         private Dictionary<string, Button> usedLetterDictionary = new Dictionary<string, Button>();
@@ -31,11 +31,12 @@ namespace Moon_Asg7_Wordle
         private void MainForm_Load(object sender, EventArgs e)
         {
             setup();
+
         }
 
         private void setup()
         {
-            apiReader = new MoonAPIReader();
+            moonApiReader = new MoonAPIReader();
 
             roundGroupBoxes = new List<GroupBox>() {
                 groupRound1, groupRound2, groupRound3,
@@ -155,15 +156,32 @@ namespace Moon_Asg7_Wordle
                 textBox.Text = textBox.Text.ToUpper();
         }
 
+        /*
+         * Test event handlers:
+         */
+
         private void guessButton_Click(object sender, EventArgs e)
         {
-            apiReader.testCheckGuess();
+            moonApiReader.guess();
         }
 
         private void getWoTD_Click(object sender, EventArgs e)
         {
-            apiReader.testGetWoTD();
+            moonApiReader.getWordForToday();
         }
+
+        private void getWordForDate_Click(object sender, EventArgs e)
+        {
+            moonApiReader.getWordForDate(dateTimePicker.Value);
+        }
+        private void getWordForRandomDate_Click(object sender, EventArgs e)
+        {
+            moonApiReader.getWordForRandomDate();
+        }
+
+        /*
+         * Event handlers for keyboard buttons:
+         */
 
         private void keyboardLetterButton_Click(object sender, EventArgs e)
         {
@@ -180,10 +198,9 @@ namespace Moon_Asg7_Wordle
 
         }
 
-        private void apiTest_Click(object sender, EventArgs e)
+        private void apiHealthButton_Click(object sender, EventArgs e)
         {
-
+            moonApiReader.isApiHealthy();
         }
-
     }
 }

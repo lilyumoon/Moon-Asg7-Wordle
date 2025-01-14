@@ -102,8 +102,13 @@
             this.button_Q = new System.Windows.Forms.Button();
             this.newGameButton = new System.Windows.Forms.Button();
             this.resetGameButton = new System.Windows.Forms.Button();
-            this.testButton = new System.Windows.Forms.Button();
             this.getWoTDButton = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.getWordForDateButton = new System.Windows.Forms.Button();
+            this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.randomWordButton = new System.Windows.Forms.Button();
+            this.apiHealthButton = new System.Windows.Forms.Button();
+            this.label_apiHealth = new System.Windows.Forms.Label();
             this.groupRounds.SuspendLayout();
             this.groupRound6.SuspendLayout();
             this.groupRound5.SuspendLayout();
@@ -891,33 +896,88 @@
             this.resetGameButton.UseVisualStyleBackColor = true;
             this.resetGameButton.Click += new System.EventHandler(this.resetGame);
             // 
-            // testButton
-            // 
-            this.testButton.Location = new System.Drawing.Point(490, 301);
-            this.testButton.Name = "testButton";
-            this.testButton.Size = new System.Drawing.Size(155, 23);
-            this.testButton.TabIndex = 4;
-            this.testButton.Text = "Guess (test)";
-            this.testButton.UseVisualStyleBackColor = true;
-            this.testButton.Click += new System.EventHandler(this.guessButton_Click);
-            // 
             // getWoTDButton
             // 
-            this.getWoTDButton.Location = new System.Drawing.Point(490, 333);
+            this.getWoTDButton.Location = new System.Drawing.Point(490, 347);
             this.getWoTDButton.Name = "getWoTDButton";
             this.getWoTDButton.Size = new System.Drawing.Size(155, 23);
             this.getWoTDButton.TabIndex = 5;
-            this.getWoTDButton.Text = "get wotd (test)";
+            this.getWoTDButton.Text = "get wotd";
             this.getWoTDButton.UseVisualStyleBackColor = true;
             this.getWoTDButton.Click += new System.EventHandler(this.getWoTD_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(490, 328);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(68, 13);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Test controls";
+            // 
+            // getWordForDateButton
+            // 
+            this.getWordForDateButton.Location = new System.Drawing.Point(710, 403);
+            this.getWordForDateButton.Name = "getWordForDateButton";
+            this.getWordForDateButton.Size = new System.Drawing.Size(155, 23);
+            this.getWordForDateButton.TabIndex = 7;
+            this.getWordForDateButton.Text = "get word for date";
+            this.getWordForDateButton.UseVisualStyleBackColor = true;
+            this.getWordForDateButton.Click += new System.EventHandler(this.getWordForDate_Click);
+            // 
+            // dateTimePicker
+            // 
+            this.dateTimePicker.Location = new System.Drawing.Point(493, 406);
+            this.dateTimePicker.MaxDate = new System.DateTime(2025, 1, 14, 0, 0, 0, 0);
+            this.dateTimePicker.MinDate = new System.DateTime(2024, 1, 1, 0, 0, 0, 0);
+            this.dateTimePicker.Name = "dateTimePicker";
+            this.dateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker.TabIndex = 8;
+            this.dateTimePicker.TabStop = false;
+            this.dateTimePicker.Value = new System.DateTime(2025, 1, 14, 0, 0, 0, 0);
+            // 
+            // randomWordButton
+            // 
+            this.randomWordButton.Location = new System.Drawing.Point(710, 347);
+            this.randomWordButton.Name = "randomWordButton";
+            this.randomWordButton.Size = new System.Drawing.Size(155, 23);
+            this.randomWordButton.TabIndex = 9;
+            this.randomWordButton.Text = "get word for random date";
+            this.randomWordButton.UseVisualStyleBackColor = true;
+            this.randomWordButton.Click += new System.EventHandler(this.getWordForRandomDate_Click);
+            // 
+            // apiHealthButton
+            // 
+            this.apiHealthButton.Location = new System.Drawing.Point(710, 444);
+            this.apiHealthButton.Name = "apiHealthButton";
+            this.apiHealthButton.Size = new System.Drawing.Size(155, 23);
+            this.apiHealthButton.TabIndex = 10;
+            this.apiHealthButton.Text = "get api health";
+            this.apiHealthButton.UseVisualStyleBackColor = true;
+            this.apiHealthButton.Click += new System.EventHandler(this.apiHealthButton_Click);
+            // 
+            // label_apiHealth
+            // 
+            this.label_apiHealth.AutoSize = true;
+            this.label_apiHealth.Location = new System.Drawing.Point(532, 279);
+            this.label_apiHealth.Name = "label_apiHealth";
+            this.label_apiHealth.Size = new System.Drawing.Size(323, 13);
+            this.label_apiHealth.TabIndex = 11;
+            this.label_apiHealth.Text = "======= API DOWN. MAY NOT WORK AS INTENDED. =======";
+            this.label_apiHealth.Visible = false;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(934, 611);
+            this.Controls.Add(this.label_apiHealth);
+            this.Controls.Add(this.apiHealthButton);
+            this.Controls.Add(this.randomWordButton);
+            this.Controls.Add(this.dateTimePicker);
+            this.Controls.Add(this.getWordForDateButton);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.getWoTDButton);
-            this.Controls.Add(this.testButton);
             this.Controls.Add(this.resetGameButton);
             this.Controls.Add(this.newGameButton);
             this.Controls.Add(this.groupLetters);
@@ -940,6 +1000,7 @@
             this.groupRound1.PerformLayout();
             this.groupLetters.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -1019,8 +1080,13 @@
         private System.Windows.Forms.Button buttonBackspace;
         private System.Windows.Forms.Button buttonClearWord;
         private System.Windows.Forms.Button resetGameButton;
-        private System.Windows.Forms.Button testButton;
         private System.Windows.Forms.Button getWoTDButton;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button getWordForDateButton;
+        private System.Windows.Forms.DateTimePicker dateTimePicker;
+        private System.Windows.Forms.Button randomWordButton;
+        private System.Windows.Forms.Button apiHealthButton;
+        private System.Windows.Forms.Label label_apiHealth;
     }
 }
 
