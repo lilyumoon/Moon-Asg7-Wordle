@@ -20,8 +20,9 @@ namespace Moon_Asg7_Wordle
         private Dictionary<GroupBox, List<TextBox>> roundLetterDictionary = new Dictionary<GroupBox, List<TextBox>>();
 
         private List<GroupBox> roundGroupBoxes = new List<GroupBox>();
+        private List<TextBox> activeTextBoxes = new List<TextBox>();
 
-        private int roundCount = 0;
+        private int roundCount = -1;
         private string answer = string.Empty;
 
         public MainForm()
@@ -39,13 +40,13 @@ namespace Moon_Asg7_Wordle
             moonApiReader = new MoonAPIReader();
 
             roundGroupBoxes = new List<GroupBox>() {
-                groupRound1, groupRound2, groupRound3,
-                groupRound4, groupRound5, groupRound6 };
+                groupRound0, groupRound1, groupRound2,
+                groupRound3, groupRound4, groupRound5 };
 
             loadDictionaries();
             
             // TEST:
-            roundCount = 1;
+            roundCount = 0;
 
             bool isApiHealthy = await moonApiReader.isApiHealthy();
             if (!isApiHealthy)
@@ -87,34 +88,39 @@ namespace Moon_Asg7_Wordle
 
         private void resetGame(object sender, EventArgs e)
         {
-            // Reset all round groupboxes
+            // Reset all round groupboxes and their text boxes
             foreach (GroupBox gb in roundGroupBoxes)
             {
+                resetGroupedTextBoxes(gb);
                 gb.Enabled = false;
             }
 
             // Reset hint colors of keyboard keys
             resetKeyboardButtons();
 
-            // Enable first round
-            groupRound1.Enabled = true;
+            // Enable first round's group of text boxes
+            groupRound0.Enabled = true;
 
-            // select (focus) the first guess text box of first round
-            roundLetterDictionary[groupRound1][0].Select();
+            // select (focus) the first round's text box
+            roundLetterDictionary[groupRound0][0].Select();
         }
 
-        private void resetGuessTextBoxes()
+        /// <summary>
+        /// Iterates through each 'round' of grouped text boxes and resets each of their text boxes' text and color.
+        /// </summary>
+        private void resetGroupedTextBoxes(GroupBox gb)
         {
-            foreach (GroupBox gb in roundGroupBoxes)
+            foreach (Control c in gb.Controls)
             {
-                foreach (Control c in gb.Controls)
-                {
-                    if (c.GetType() == typeof(TextBox))
-                        resetTextBox((TextBox)c);
-                }
+                if (c.GetType() == typeof(TextBox))
+                    resetTextBox((TextBox)c);
             }
         }
 
+        /// <summary>
+        /// Resets a text box's text and color.
+        /// </summary>
+        /// <param name="textBox">The text box to reset.</param>
         private void resetTextBox(TextBox textBox)
         {
             textBox.Text = string.Empty;
@@ -189,7 +195,18 @@ namespace Moon_Asg7_Wordle
 
         private void keyboardLetterButton_Click(object sender, EventArgs e)
         {
+            string letter = ((Button)sender).Text;
+            int index = getFirstEmptyTextBoxIndex();
 
+            if (index > -1) // -1 => every textbox is filled
+                activeTextBoxes[index].Text = letter;
+        }
+
+        private int getFirstEmptyTextBoxIndex()
+        {
+            int index = -1;
+
+            return index;
         }
 
         private void buttonBackspace_Click(object sender, EventArgs e)
@@ -202,9 +219,9 @@ namespace Moon_Asg7_Wordle
 
         }
 
-        private void apiHealthButton_Click(object sender, EventArgs e)
+        private async void apiHealthButton_Click(object sender, EventArgs e)
         {
-            moonApiReader.isApiHealthy();
+            await moonApiReader.isApiHealthy();
         }
     }
 }
