@@ -28,13 +28,13 @@ namespace Moon_Asg7_Wordle
         {
             InitializeComponent();
         }
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-            setup();
 
+        private async void MainForm_Load(object sender, EventArgs e)
+        {
+            await setup();
         }
 
-        private void setup()
+        private async Task setup()
         {
             moonApiReader = new MoonAPIReader();
 
@@ -43,9 +43,13 @@ namespace Moon_Asg7_Wordle
                 groupRound4, groupRound5, groupRound6 };
 
             loadDictionaries();
-
+            
             // TEST:
             roundCount = 1;
+
+            bool isApiHealthy = await moonApiReader.isApiHealthy();
+            if (!isApiHealthy)
+                label_apiHealth.Visible = true;
         }
 
         private void loadDictionaries()

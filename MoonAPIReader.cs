@@ -125,6 +125,9 @@ namespace Moon_Asg7_Wordle
                 JsonElement jsonRoot = jsonDoc.RootElement;
 
                 string status = jsonRoot.GetProperty("status").GetString();
+
+                Console.WriteLine(status);
+
                 if (!string.Equals(status, "ok"))
                     isHealthy = false;
             }
