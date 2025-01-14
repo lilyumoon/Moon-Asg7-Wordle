@@ -19,10 +19,11 @@ namespace Moon_Asg7_Wordle
 
         private Dictionary<int, string> resultMessageDictionary = new Dictionary<int, string>();
         private Dictionary<string, Button> usedLetterDictionary = new Dictionary<string, Button>();
+
+        // this dictionary is built in order to reduce complexity of some of the in-class suggestions of text box processing
         private Dictionary<GroupBox, List<TextBox>> roundLetterDictionary = new Dictionary<GroupBox, List<TextBox>>();
 
         private List<GroupBox> roundGroupBoxes = new List<GroupBox>();
-        private List<TextBox> activeTextBoxes = new List<TextBox>();
 
         private int roundCount = -1;
         private int entryBoxIndex = -1;
@@ -53,9 +54,6 @@ namespace Moon_Asg7_Wordle
 
             loadDictionaries();
             
-            // TEST:
-            roundCount = 0;
-
             bool isApiHealthy = await moonApiReader.isApiHealthy();
             if (!isApiHealthy)
                 label_apiHealth.Visible = true;
@@ -208,17 +206,10 @@ namespace Moon_Asg7_Wordle
         private void keyboardLetterButton_Click(object sender, EventArgs e)
         {
             string letter = ((Button)sender).Text;
-            int index = getFirstEmptyTextBoxIndex();
+            //int index = getFirstEmptyTextBoxIndex();
 
-            if (index > -1) // -1 => every textbox is filled
-                activeTextBoxes[index].Text = letter;
-        }
-
-        private int getFirstEmptyTextBoxIndex()
-        {
-            int index = -1;
-
-            return index;
+            //if (index > -1) // -1 => every textbox is filled
+            //    activeTextBoxes[index].Text = letter;
         }
 
         private void buttonBackspace_Click(object sender, EventArgs e)
@@ -241,5 +232,33 @@ namespace Moon_Asg7_Wordle
             submitGuess();
             //moonApiReader.guess();
         }
+
+        private TextBox getFirstEmptyActiveTextBox()
+        {
+            // use Linq to filter the active textBoxes by empty Text property and return the first
+            var result = getActiveTextBoxes().Where(tb => tb.Text == string.Empty).FirstOrDefault();
+            return result;
+        }
+
+        private TextBox getLastFilledActiveTextBox()
+        {
+            // use Linq to filter the active textBoxes by non-empty Text property and return the last 
+            var result = getActiveTextBoxes().Where(tb => tb.Text != string.Empty).LastOrDefault();
+            return result;
+        }
+
+        private GroupBox getActiveGroupBox()
+        {
+            // use Linq to filter the roundLetterDictionary keys and return the first Enabled one
+            var result = roundLetterDictionary.Keys.Where(gb => gb.Enabled == true).FirstOrDefault();
+            return result;
+        }
+
+        private List<TextBox> getActiveTextBoxes()
+        {
+            var result = roundLetterDictionary[getActiveGroupBox()];
+            return result;
+        }
+
     }
 }
