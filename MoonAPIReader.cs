@@ -210,7 +210,7 @@ namespace Moon_Asg7_Wordle
         /// <summary>
         /// Gets word for a random date in the format of {"date":"[date]","word":"[word]"}
         /// </summary>
-        public async void getWordForRandomDate()
+        public async Task<string> getWordForRandomDate()
         {
             // pick a random date
             DateTime startDate = new DateTime(2024, 01, 01);
@@ -218,7 +218,8 @@ namespace Moon_Asg7_Wordle
             DateTime randomDate = getRandomDate(startDate, endDate);
 
             // call getWordForDate passing random date in as parameter
-            await getWordForDate(randomDate);
+            string word = await getWordForDate(randomDate);
+            return word;
         }
 
         /// <summary>

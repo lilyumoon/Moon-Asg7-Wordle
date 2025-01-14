@@ -199,16 +199,32 @@ namespace Moon_Asg7_Wordle
 
         private void getWoTD_Click(object sender, EventArgs e)
         {
-            moonApiReader.getWordForToday();
+            getWoTD();
+        }
+
+        private async void getWoTD()
+        {
+            answerLabel.Text = await moonApiReader.getWordForToday();
         }
 
         private void getWordForDate_Click(object sender, EventArgs e)
         {
-            moonApiReader.getWordForDate(dateTimePicker.Value);
+            getWordForDate();
         }
+
+        private async void getWordForDate()
+        {
+            answerLabel.Text = await moonApiReader.getWordForDate(dateTimePicker.Value);
+        }
+
         private void getWordForRandomDate_Click(object sender, EventArgs e)
         {
-            moonApiReader.getWordForRandomDate();
+            getWordForRandomDate();
+        }
+
+        private async void getWordForRandomDate()
+        {
+            answerLabel.Text = await moonApiReader.getWordForRandomDate();
         }
 
         /*

@@ -110,6 +110,7 @@
             this.apiHealthButton = new System.Windows.Forms.Button();
             this.label_apiHealth = new System.Windows.Forms.Label();
             this.answerLabel = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupRounds.SuspendLayout();
             this.groupRound5.SuspendLayout();
             this.groupRound4.SuspendLayout();
@@ -977,11 +978,21 @@
             this.answerLabel.TabIndex = 12;
             this.answerLabel.Text = "word";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(468, 462);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(44, 13);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "answer:";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(934, 611);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.answerLabel);
             this.Controls.Add(this.label_apiHealth);
             this.Controls.Add(this.apiHealthButton);
@@ -1100,6 +1111,7 @@
         private System.Windows.Forms.Button apiHealthButton;
         private System.Windows.Forms.Label label_apiHealth;
         private System.Windows.Forms.Label answerLabel;
+        private System.Windows.Forms.Label label2;
     }
 }
 
