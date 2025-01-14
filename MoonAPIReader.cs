@@ -25,78 +25,84 @@ namespace Moon_Asg7_Wordle
         }
 
         Uri apiPath;
-        Uri guessEndpoint;
-        Uri wordEndpoint;
+        Uri currentWordEndpoint;
+        Uri yesterdayWordEndpoint;
+        Uri tomorrowWordEndpoint;
+        Uri choiceWordEndpoint;
+        Uri apiHealthEndpoint;
 
         HttpClient client = new HttpClient();
 
         public MoonAPIReader()
         {
-            apiPath = new Uri("https://wordle-game-api1.p.rapidapi.com", UriKind.Absolute);
-            guessEndpoint = new Uri(apiPath, "/guess");
-            wordEndpoint = new Uri(apiPath, "/word");
+            apiPath = new Uri("https://wordle-api3.p.rapidapi.com", UriKind.Absolute);
+            currentWordEndpoint = new Uri(apiPath, "getcurrentword");
+            yesterdayWordEndpoint = new Uri(apiPath, "getwordyesterday");
+            tomorrowWordEndpoint = new Uri(apiPath, "getwordtomorrow");
+            choiceWordEndpoint = new Uri(apiPath, "getwordfor");
+            apiHealthEndpoint = new Uri(apiPath, "health");
         }
 
-        public async Task<WordResult> getWordOfTheDayJSON()
-        {
-            WordResult wordResult = new WordResult();
+        //public async Task<WordResult> getWordOfTheDayJSON()
+        //{
+        //    WordResult wordResult = new WordResult();
 
-            // CancellationTokenSource cts = new CancellationTokenSource();
-            // cts.CancelAfter(TimeSpan.FromSeconds(5));
-            // HttpResponseMessage response = await client.GetAsync(wordEndpoint, HttpCompletionOption.ResponseContentRead, cts.Token);
+        //    // CancellationTokenSource cts = new CancellationTokenSource();
+        //    // cts.CancelAfter(TimeSpan.FromSeconds(5));
+        //    // HttpResponseMessage response = await client.GetAsync(wordEndpoint, HttpCompletionOption.ResponseContentRead, cts.Token);
 
-            HttpResponseMessage resp = await client.GetAsync(wordEndpoint, HttpCompletionOption.ResponseHeadersRead);
-            var jsonResponse = await resp.Content.ReadAsStringAsync();
-            JsonDocument jsonDoc = JsonDocument.Parse(jsonResponse);
+        //    HttpResponseMessage resp = await client.GetAsync(wordEndpoint, HttpCompletionOption.ResponseHeadersRead);
+        //    var jsonResponse = await resp.Content.ReadAsStringAsync();
+        //    JsonDocument jsonDoc = JsonDocument.Parse(jsonResponse);
 
-            JsonElement jsonRoot = jsonDoc.RootElement;
+        //    JsonElement jsonRoot = jsonDoc.RootElement;
 
-            string word = jsonRoot.GetProperty("word").GetString();
-            bool isOk = jsonRoot.GetProperty("isOk").GetBoolean();
-            string error = jsonRoot.GetProperty("error").GetString();
+        //    string word = jsonRoot.GetProperty("word").GetString();
+        //    bool isOk = jsonRoot.GetProperty("isOk").GetBoolean();
+        //    string error = jsonRoot.GetProperty("error").GetString();
 
-            wordResult.Word = word;
-            wordResult.IsOk = isOk;
-            wordResult.Error = error;
+        //    wordResult.Word = word;
+        //    wordResult.IsOk = isOk;
+        //    wordResult.Error = error;
 
-            // TEST:
-            Console.WriteLine(word);
-            Console.WriteLine(isOk);
-            Console.WriteLine(error);
+        //    // TEST:
+        //    Console.WriteLine(word);
+        //    Console.WriteLine(isOk);
+        //    Console.WriteLine(error);
 
-            return wordResult;
-        }
+        //    return wordResult;
+        //}
 
-        public async void guess()
-        {
-            string content = "{\"word\":\"apple\",\"timezone\":\"UTC + 0\"}";
+        //public async void guess()
+        //{
+        //    string content = "{\"word\":\"apple\",\"timezone\":\"UTC + 0\"}";
 
-            var client = new HttpClient();
-            var request = new HttpRequestMessage
-            {
-                Method = HttpMethod.Post,
-                RequestUri = new Uri("https://wordle-game-api1.p.rapidapi.com/guess"),
-                Headers =
-                {
-                    { "x-rapidapi-key", "10c1f99ba6msh404cc93f96cd25bp1974b1jsnc7de848f1361" },
-                    { "x-rapidapi-host", "wordle-game-api1.p.rapidapi.com" },
-                },
-                Content = new StringContent(content) 
-                { 
-                    Headers =
-                    {
-                        ContentType = new MediaTypeHeaderValue("application/json")
-                    }
-                }
-            };
+        //    var client = new HttpClient();
+        //    var request = new HttpRequestMessage
+        //    {
+        //        Method = HttpMethod.Post,
+        //        RequestUri = new Uri("https://wordle-game-api1.p.rapidapi.com/guess"),
+        //        Headers =
+        //        {
+        //            { "x-rapidapi-key", "10c1f99ba6msh404cc93f96cd25bp1974b1jsnc7de848f1361" },
+        //            { "x-rapidapi-host", "wordle-game-api1.p.rapidapi.com" },
+        //        },
+        //        Content = new StringContent(content) 
+        //        { 
+        //            Headers =
+        //            {
+        //                ContentType = new MediaTypeHeaderValue("application/json")
+        //            }
+        //        }
+        //    };
 
-            using (var response = await client.SendAsync(request))
-            {
-                response.EnsureSuccessStatusCode();
-                var body = await response.Content.ReadAsStringAsync();
-                Console.WriteLine(body);
-            }
-        }
+        //    using (var response = await client.SendAsync(request))
+        //    {
+        //        response.EnsureSuccessStatusCode();
+        //        var body = await response.Content.ReadAsStringAsync();
+        //        Console.WriteLine(body);
+        //    }
+        //}
 
         /// <summary>
         /// Gets the health of the API in the format of {"status":"ok"}
@@ -109,7 +115,7 @@ namespace Moon_Asg7_Wordle
             var request = new HttpRequestMessage
             {
                 Method = HttpMethod.Get,
-                RequestUri = new Uri("https://wordle-api3.p.rapidapi.com/health"),
+                RequestUri = apiHealthEndpoint,
                 Headers =
                 {
                     { "x-rapidapi-key", "10c1f99ba6msh404cc93f96cd25bp1974b1jsnc7de848f1361" },
@@ -144,7 +150,7 @@ namespace Moon_Asg7_Wordle
             var request = new HttpRequestMessage
             {
                 Method = HttpMethod.Get,
-                RequestUri = new Uri("https://wordle-api3.p.rapidapi.com/getcurrentword"),
+                RequestUri = currentWordEndpoint,
                 Headers =
                 {
                     { "x-rapidapi-key", "10c1f99ba6msh404cc93f96cd25bp1974b1jsnc7de848f1361" },
@@ -168,7 +174,7 @@ namespace Moon_Asg7_Wordle
             var request = new HttpRequestMessage
             {
                 Method = HttpMethod.Get,
-                RequestUri = new Uri("https://wordle-api3.p.rapidapi.com/getwordyesterday"),
+                RequestUri = yesterdayWordEndpoint,
                 Headers =
                 {
                     { "x-rapidapi-key", "10c1f99ba6msh404cc93f96cd25bp1974b1jsnc7de848f1361" },
@@ -186,13 +192,13 @@ namespace Moon_Asg7_Wordle
         /// <summary>
         /// Gets (predicts) tomorrow's word in the format of {"date":"[date]","word":"[word]"}
         /// </summary>
-        public async void getWordForTomrorow()
+        public async void getWordForTomorrow()
         {
             var client = new HttpClient();
             var request = new HttpRequestMessage
             {
                 Method = HttpMethod.Get,
-                RequestUri = new Uri("https://wordle-api3.p.rapidapi.com/getwordtomorrow"),
+                RequestUri = tomorrowWordEndpoint,
                 Headers =
                 {
                     { "x-rapidapi-key", "10c1f99ba6msh404cc93f96cd25bp1974b1jsnc7de848f1361" },
@@ -219,6 +225,7 @@ namespace Moon_Asg7_Wordle
             var request = new HttpRequestMessage
             {
                 Method = HttpMethod.Get,
+                // Building an explicit Uri here because of persistent issues with base/relative path concatenation in Uri constructor...
                 RequestUri = new Uri($"https://wordle-api3.p.rapidapi.com/getwordfor/{date.ToString("yyyy-MM-dd")}"),
                 Headers =
                 {

@@ -299,10 +299,14 @@ namespace Moon_Asg7_Wordle
             await moonApiReader.isApiHealthy();
         }
 
+        /// <summary>
+        /// Event handler for the game's check buttons' 'Click' event.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void checkButton_Click(object sender, EventArgs e)
         {
             submitGuess();
-            //moonApiReader.guess();
         }
 
         /// <summary>
@@ -327,6 +331,10 @@ namespace Moon_Asg7_Wordle
             return result;
         }
 
+        /// <summary>
+        /// Gets the current round's groupbox which contains the input textboxes.
+        /// </summary>
+        /// <returns>The current round's groupbox.</returns>
         private GroupBox getActiveGroupBox()
         {
             // use Linq to filter the roundLetterDictionary keys and return the first Enabled one
@@ -334,6 +342,10 @@ namespace Moon_Asg7_Wordle
             return result;
         }
 
+        /// <summary>
+        /// Gets a list of the current round's textboxes.
+        /// </summary>
+        /// <returns>A list containing the current round's textbox controls.</returns>
         private List<TextBox> getActiveTextBoxes()
         {
             var result = roundLetterDictionary[getActiveGroupBox()];
