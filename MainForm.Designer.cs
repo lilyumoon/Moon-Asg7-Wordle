@@ -109,6 +109,7 @@
             this.randomWordButton = new System.Windows.Forms.Button();
             this.apiHealthButton = new System.Windows.Forms.Button();
             this.label_apiHealth = new System.Windows.Forms.Label();
+            this.answerLabel = new System.Windows.Forms.Label();
             this.groupRounds.SuspendLayout();
             this.groupRound5.SuspendLayout();
             this.groupRound4.SuspendLayout();
@@ -967,11 +968,21 @@
             this.label_apiHealth.Text = "======= API DOWN. MAY NOT WORK AS INTENDED. =======";
             this.label_apiHealth.Visible = false;
             // 
+            // answerLabel
+            // 
+            this.answerLabel.AutoSize = true;
+            this.answerLabel.Location = new System.Drawing.Point(509, 462);
+            this.answerLabel.Name = "answerLabel";
+            this.answerLabel.Size = new System.Drawing.Size(30, 13);
+            this.answerLabel.TabIndex = 12;
+            this.answerLabel.Text = "word";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(934, 611);
+            this.Controls.Add(this.answerLabel);
             this.Controls.Add(this.label_apiHealth);
             this.Controls.Add(this.apiHealthButton);
             this.Controls.Add(this.randomWordButton);
@@ -1088,6 +1099,7 @@
         private System.Windows.Forms.Button randomWordButton;
         private System.Windows.Forms.Button apiHealthButton;
         private System.Windows.Forms.Label label_apiHealth;
+        private System.Windows.Forms.Label answerLabel;
     }
 }
 
