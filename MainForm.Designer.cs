@@ -30,42 +30,42 @@
         {
             this.groupRounds = new System.Windows.Forms.GroupBox();
             this.groupRound5 = new System.Windows.Forms.GroupBox();
-            this.setButton5 = new System.Windows.Forms.Button();
+            this.checkButton5 = new System.Windows.Forms.Button();
             this.guessTextBox27 = new System.Windows.Forms.TextBox();
             this.guessTextBox26 = new System.Windows.Forms.TextBox();
             this.guessTextBox29 = new System.Windows.Forms.TextBox();
             this.guessTextBox28 = new System.Windows.Forms.TextBox();
             this.guessTextBox25 = new System.Windows.Forms.TextBox();
             this.groupRound4 = new System.Windows.Forms.GroupBox();
-            this.setButton4 = new System.Windows.Forms.Button();
+            this.checkButton4 = new System.Windows.Forms.Button();
             this.guessTextBox21 = new System.Windows.Forms.TextBox();
             this.guessTextBox23 = new System.Windows.Forms.TextBox();
             this.guessTextBox22 = new System.Windows.Forms.TextBox();
             this.guessTextBox20 = new System.Windows.Forms.TextBox();
             this.guessTextBox24 = new System.Windows.Forms.TextBox();
             this.groupRound3 = new System.Windows.Forms.GroupBox();
-            this.setButton3 = new System.Windows.Forms.Button();
+            this.checkButton3 = new System.Windows.Forms.Button();
             this.guessTextBox18 = new System.Windows.Forms.TextBox();
             this.guessTextBox15 = new System.Windows.Forms.TextBox();
             this.guessTextBox16 = new System.Windows.Forms.TextBox();
             this.guessTextBox19 = new System.Windows.Forms.TextBox();
             this.guessTextBox17 = new System.Windows.Forms.TextBox();
             this.groupRound2 = new System.Windows.Forms.GroupBox();
-            this.setButton2 = new System.Windows.Forms.Button();
+            this.checkButton2 = new System.Windows.Forms.Button();
             this.guessTextBox10 = new System.Windows.Forms.TextBox();
             this.guessTextBox14 = new System.Windows.Forms.TextBox();
             this.guessTextBox12 = new System.Windows.Forms.TextBox();
             this.guessTextBox11 = new System.Windows.Forms.TextBox();
             this.guessTextBox13 = new System.Windows.Forms.TextBox();
             this.groupRound1 = new System.Windows.Forms.GroupBox();
-            this.setButton1 = new System.Windows.Forms.Button();
+            this.checkButton1 = new System.Windows.Forms.Button();
             this.guessTextBox9 = new System.Windows.Forms.TextBox();
             this.guessTextBox6 = new System.Windows.Forms.TextBox();
             this.guessTextBox8 = new System.Windows.Forms.TextBox();
             this.guessTextBox5 = new System.Windows.Forms.TextBox();
             this.guessTextBox7 = new System.Windows.Forms.TextBox();
             this.groupRound0 = new System.Windows.Forms.GroupBox();
-            this.setButton0 = new System.Windows.Forms.Button();
+            this.checkButton0 = new System.Windows.Forms.Button();
             this.guessTextBox4 = new System.Windows.Forms.TextBox();
             this.guessTextBox3 = new System.Windows.Forms.TextBox();
             this.guessTextBox2 = new System.Windows.Forms.TextBox();
@@ -138,7 +138,7 @@
             // groupRound5
             // 
             this.groupRound5.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.groupRound5.Controls.Add(this.setButton5);
+            this.groupRound5.Controls.Add(this.checkButton5);
             this.groupRound5.Controls.Add(this.guessTextBox27);
             this.groupRound5.Controls.Add(this.guessTextBox26);
             this.groupRound5.Controls.Add(this.guessTextBox29);
@@ -150,15 +150,15 @@
             this.groupRound5.TabIndex = 5;
             this.groupRound5.TabStop = false;
             // 
-            // setButton5
+            // checkButton5
             // 
-            this.setButton5.Location = new System.Drawing.Point(357, 21);
-            this.setButton5.Name = "setButton5";
-            this.setButton5.Size = new System.Drawing.Size(45, 45);
-            this.setButton5.TabIndex = 36;
-            this.setButton5.Text = "Set";
-            this.setButton5.UseVisualStyleBackColor = true;
-            this.setButton5.Click += new System.EventHandler(this.setButton_Click);
+            this.checkButton5.Location = new System.Drawing.Point(357, 21);
+            this.checkButton5.Name = "checkButton5";
+            this.checkButton5.Size = new System.Drawing.Size(50, 45);
+            this.checkButton5.TabIndex = 36;
+            this.checkButton5.Text = "Check";
+            this.checkButton5.UseVisualStyleBackColor = true;
+            this.checkButton5.Click += new System.EventHandler(this.checkButton_Click);
             // 
             // guessTextBox27
             // 
@@ -213,7 +213,7 @@
             // groupRound4
             // 
             this.groupRound4.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.groupRound4.Controls.Add(this.setButton4);
+            this.groupRound4.Controls.Add(this.checkButton4);
             this.groupRound4.Controls.Add(this.guessTextBox21);
             this.groupRound4.Controls.Add(this.guessTextBox23);
             this.groupRound4.Controls.Add(this.guessTextBox22);
@@ -225,15 +225,15 @@
             this.groupRound4.TabIndex = 5;
             this.groupRound4.TabStop = false;
             // 
-            // setButton4
+            // checkButton4
             // 
-            this.setButton4.Location = new System.Drawing.Point(357, 21);
-            this.setButton4.Name = "setButton4";
-            this.setButton4.Size = new System.Drawing.Size(45, 45);
-            this.setButton4.TabIndex = 30;
-            this.setButton4.Text = "Set";
-            this.setButton4.UseVisualStyleBackColor = true;
-            this.setButton4.Click += new System.EventHandler(this.setButton_Click);
+            this.checkButton4.Location = new System.Drawing.Point(357, 21);
+            this.checkButton4.Name = "checkButton4";
+            this.checkButton4.Size = new System.Drawing.Size(50, 45);
+            this.checkButton4.TabIndex = 30;
+            this.checkButton4.Text = "Check";
+            this.checkButton4.UseVisualStyleBackColor = true;
+            this.checkButton4.Click += new System.EventHandler(this.checkButton_Click);
             // 
             // guessTextBox21
             // 
@@ -288,7 +288,7 @@
             // groupRound3
             // 
             this.groupRound3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.groupRound3.Controls.Add(this.setButton3);
+            this.groupRound3.Controls.Add(this.checkButton3);
             this.groupRound3.Controls.Add(this.guessTextBox18);
             this.groupRound3.Controls.Add(this.guessTextBox15);
             this.groupRound3.Controls.Add(this.guessTextBox16);
@@ -300,15 +300,15 @@
             this.groupRound3.TabIndex = 4;
             this.groupRound3.TabStop = false;
             // 
-            // setButton3
+            // checkButton3
             // 
-            this.setButton3.Location = new System.Drawing.Point(357, 21);
-            this.setButton3.Name = "setButton3";
-            this.setButton3.Size = new System.Drawing.Size(45, 45);
-            this.setButton3.TabIndex = 24;
-            this.setButton3.Text = "Set";
-            this.setButton3.UseVisualStyleBackColor = true;
-            this.setButton3.Click += new System.EventHandler(this.setButton_Click);
+            this.checkButton3.Location = new System.Drawing.Point(357, 21);
+            this.checkButton3.Name = "checkButton3";
+            this.checkButton3.Size = new System.Drawing.Size(50, 45);
+            this.checkButton3.TabIndex = 24;
+            this.checkButton3.Text = "Check";
+            this.checkButton3.UseVisualStyleBackColor = true;
+            this.checkButton3.Click += new System.EventHandler(this.checkButton_Click);
             // 
             // guessTextBox18
             // 
@@ -363,7 +363,7 @@
             // groupRound2
             // 
             this.groupRound2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.groupRound2.Controls.Add(this.setButton2);
+            this.groupRound2.Controls.Add(this.checkButton2);
             this.groupRound2.Controls.Add(this.guessTextBox10);
             this.groupRound2.Controls.Add(this.guessTextBox14);
             this.groupRound2.Controls.Add(this.guessTextBox12);
@@ -375,15 +375,15 @@
             this.groupRound2.TabIndex = 3;
             this.groupRound2.TabStop = false;
             // 
-            // setButton2
+            // checkButton2
             // 
-            this.setButton2.Location = new System.Drawing.Point(357, 21);
-            this.setButton2.Name = "setButton2";
-            this.setButton2.Size = new System.Drawing.Size(45, 45);
-            this.setButton2.TabIndex = 18;
-            this.setButton2.Text = "Set";
-            this.setButton2.UseVisualStyleBackColor = true;
-            this.setButton2.Click += new System.EventHandler(this.setButton_Click);
+            this.checkButton2.Location = new System.Drawing.Point(357, 21);
+            this.checkButton2.Name = "checkButton2";
+            this.checkButton2.Size = new System.Drawing.Size(50, 45);
+            this.checkButton2.TabIndex = 18;
+            this.checkButton2.Text = "Check";
+            this.checkButton2.UseVisualStyleBackColor = true;
+            this.checkButton2.Click += new System.EventHandler(this.checkButton_Click);
             // 
             // guessTextBox10
             // 
@@ -438,7 +438,7 @@
             // groupRound1
             // 
             this.groupRound1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.groupRound1.Controls.Add(this.setButton1);
+            this.groupRound1.Controls.Add(this.checkButton1);
             this.groupRound1.Controls.Add(this.guessTextBox9);
             this.groupRound1.Controls.Add(this.guessTextBox6);
             this.groupRound1.Controls.Add(this.guessTextBox8);
@@ -450,15 +450,15 @@
             this.groupRound1.TabIndex = 2;
             this.groupRound1.TabStop = false;
             // 
-            // setButton1
+            // checkButton1
             // 
-            this.setButton1.Location = new System.Drawing.Point(357, 21);
-            this.setButton1.Name = "setButton1";
-            this.setButton1.Size = new System.Drawing.Size(45, 45);
-            this.setButton1.TabIndex = 12;
-            this.setButton1.Text = "Set";
-            this.setButton1.UseVisualStyleBackColor = true;
-            this.setButton1.Click += new System.EventHandler(this.setButton_Click);
+            this.checkButton1.Location = new System.Drawing.Point(357, 21);
+            this.checkButton1.Name = "checkButton1";
+            this.checkButton1.Size = new System.Drawing.Size(50, 45);
+            this.checkButton1.TabIndex = 12;
+            this.checkButton1.Text = "Check";
+            this.checkButton1.UseVisualStyleBackColor = true;
+            this.checkButton1.Click += new System.EventHandler(this.checkButton_Click);
             // 
             // guessTextBox9
             // 
@@ -513,7 +513,7 @@
             // groupRound0
             // 
             this.groupRound0.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.groupRound0.Controls.Add(this.setButton0);
+            this.groupRound0.Controls.Add(this.checkButton0);
             this.groupRound0.Controls.Add(this.guessTextBox4);
             this.groupRound0.Controls.Add(this.guessTextBox3);
             this.groupRound0.Controls.Add(this.guessTextBox2);
@@ -525,15 +525,15 @@
             this.groupRound0.TabIndex = 1;
             this.groupRound0.TabStop = false;
             // 
-            // setButton0
+            // checkButton0
             // 
-            this.setButton0.Location = new System.Drawing.Point(357, 19);
-            this.setButton0.Name = "setButton0";
-            this.setButton0.Size = new System.Drawing.Size(45, 45);
-            this.setButton0.TabIndex = 6;
-            this.setButton0.Text = "Set";
-            this.setButton0.UseVisualStyleBackColor = true;
-            this.setButton0.Click += new System.EventHandler(this.setButton_Click);
+            this.checkButton0.Location = new System.Drawing.Point(357, 19);
+            this.checkButton0.Name = "checkButton0";
+            this.checkButton0.Size = new System.Drawing.Size(50, 45);
+            this.checkButton0.TabIndex = 6;
+            this.checkButton0.Text = "Check";
+            this.checkButton0.UseVisualStyleBackColor = true;
+            this.checkButton0.Click += new System.EventHandler(this.checkButton_Click);
             // 
             // guessTextBox4
             // 
@@ -1016,37 +1016,37 @@
         private System.Windows.Forms.GroupBox groupRound5;
         private System.Windows.Forms.GroupBox groupRound4;
         private System.Windows.Forms.GroupBox groupRound3;
-        private System.Windows.Forms.Button setButton0;
+        private System.Windows.Forms.Button checkButton0;
         private System.Windows.Forms.TextBox guessTextBox4;
         private System.Windows.Forms.TextBox guessTextBox3;
         private System.Windows.Forms.TextBox guessTextBox2;
         private System.Windows.Forms.TextBox guessTextBox0;
         private System.Windows.Forms.TextBox guessTextBox1;
-        private System.Windows.Forms.Button setButton2;
+        private System.Windows.Forms.Button checkButton2;
         private System.Windows.Forms.TextBox guessTextBox10;
         private System.Windows.Forms.TextBox guessTextBox14;
         private System.Windows.Forms.TextBox guessTextBox12;
         private System.Windows.Forms.TextBox guessTextBox11;
         private System.Windows.Forms.TextBox guessTextBox13;
-        private System.Windows.Forms.Button setButton1;
+        private System.Windows.Forms.Button checkButton1;
         private System.Windows.Forms.TextBox guessTextBox9;
         private System.Windows.Forms.TextBox guessTextBox6;
         private System.Windows.Forms.TextBox guessTextBox8;
         private System.Windows.Forms.TextBox guessTextBox5;
         private System.Windows.Forms.TextBox guessTextBox7;
-        private System.Windows.Forms.Button setButton3;
+        private System.Windows.Forms.Button checkButton3;
         private System.Windows.Forms.TextBox guessTextBox18;
         private System.Windows.Forms.TextBox guessTextBox15;
         private System.Windows.Forms.TextBox guessTextBox16;
         private System.Windows.Forms.TextBox guessTextBox19;
         private System.Windows.Forms.TextBox guessTextBox17;
-        private System.Windows.Forms.Button setButton5;
+        private System.Windows.Forms.Button checkButton5;
         private System.Windows.Forms.TextBox guessTextBox27;
         private System.Windows.Forms.TextBox guessTextBox26;
         private System.Windows.Forms.TextBox guessTextBox29;
         private System.Windows.Forms.TextBox guessTextBox28;
         private System.Windows.Forms.TextBox guessTextBox25;
-        private System.Windows.Forms.Button setButton4;
+        private System.Windows.Forms.Button checkButton4;
         private System.Windows.Forms.TextBox guessTextBox21;
         private System.Windows.Forms.TextBox guessTextBox23;
         private System.Windows.Forms.TextBox guessTextBox22;

@@ -13,6 +13,8 @@ namespace Moon_Asg7_Wordle
 {
     public partial class MainForm : Form
     {
+        const int WM_KEYUP = 0x0101;
+
         private MoonAPIReader moonApiReader;
 
         private Dictionary<int, string> resultMessageDictionary = new Dictionary<int, string>();
@@ -23,6 +25,7 @@ namespace Moon_Asg7_Wordle
         private List<TextBox> activeTextBoxes = new List<TextBox>();
 
         private int roundCount = -1;
+        private int entryBoxIndex = -1;
         private string answer = string.Empty;
 
         public MainForm()
@@ -33,6 +36,11 @@ namespace Moon_Asg7_Wordle
         private async void MainForm_Load(object sender, EventArgs e)
         {
             await setup();
+
+            // ensure that the form processes all key events even if a control has focus
+            // and assign a handler for KeyUp events
+            this.KeyPreview = true;
+            this.KeyUp += mainForm_KeyUp;
         }
 
         private async Task setup()
@@ -136,11 +144,6 @@ namespace Moon_Asg7_Wordle
             }
         }
 
-        private void setButton_Click(object sender,  EventArgs e)
-        {
-            submitGuess();
-        }
-
         private void submitGuess()
         {
             // do a check to ensure that all letters are filled.
@@ -148,7 +151,7 @@ namespace Moon_Asg7_Wordle
 
             // use round to select current round groupbox
             //GroupBox currentRoundGB = (GroupBox)Controls.Find($"groupRound{roundCount}", true).FirstOrDefault();
-            GroupBox currentRoundGB = roundGroupBoxes[roundCount - 1];
+            GroupBox currentRoundGB = roundGroupBoxes[roundCount];
 
             // build a string from the characters in current round groupbox's textboxes
             string submission = string.Empty;
@@ -157,6 +160,20 @@ namespace Moon_Asg7_Wordle
                 submission += tb.Text;
             }
             Debug.Write($"checking value of string built from textboxes within {currentRoundGB}. Result: {submission}");
+        }
+
+        /// <summary>
+        /// Event handler for the form's KeyUp event. This is used so that keyboard letter 
+        /// input is processed even if a control other than a textbox is focused.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void mainForm_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode >= Keys.A && e.KeyCode <= Keys.Z)
+            {
+                Console.WriteLine($"You released a letter key: {e.KeyCode}");
+            }
         }
 
         private void textBox_TextChanged(object sender, EventArgs e)
@@ -169,11 +186,6 @@ namespace Moon_Asg7_Wordle
         /*
          * Test event handlers:
          */
-
-        private void guessButton_Click(object sender, EventArgs e)
-        {
-            moonApiReader.guess();
-        }
 
         private void getWoTD_Click(object sender, EventArgs e)
         {
@@ -222,6 +234,12 @@ namespace Moon_Asg7_Wordle
         private async void apiHealthButton_Click(object sender, EventArgs e)
         {
             await moonApiReader.isApiHealthy();
+        }
+
+        private void checkButton_Click(object sender, EventArgs e)
+        {
+            submitGuess();
+            //moonApiReader.guess();
         }
     }
 }
