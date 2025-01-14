@@ -26,7 +26,6 @@ namespace Moon_Asg7_Wordle
         private List<GroupBox> roundGroupBoxes = new List<GroupBox>();
 
         private int roundCount = -1;
-        private int entryBoxIndex = -1;
         private string answer = string.Empty;
 
         public MainForm()
@@ -74,6 +73,7 @@ namespace Moon_Asg7_Wordle
             foreach (char letter in "ABCDEFGHIJKLMNOPQRSTUVWXYZ")
             {
                 Button button = Controls.Find($"button_{letter}", true).FirstOrDefault() as Button;
+                button.Click += keyboardLetterButton_Click;
                 usedLetterDictionary.Add(letter.ToString(), button);
             }
             
@@ -169,8 +169,20 @@ namespace Moon_Asg7_Wordle
         private void mainForm_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode >= Keys.A && e.KeyCode <= Keys.Z)
+                fillLetter(e.KeyCode.ToString());
+        }
+
+        /// <summary>
+        /// Attempts to fill the first empty text box with a letter. Does nothing if there are no empty text boxes.
+        /// </summary>
+        /// <param name="letter">The letter to attempt to add to the text box.</param>
+        private void fillLetter(string letter)
+        {
+            TextBox firstEmpty = getFirstEmptyActiveTextBox();
+            if (firstEmpty != null)
             {
-                Console.WriteLine($"You released a letter key: {e.KeyCode}");
+                firstEmpty.Text = letter.ToUpper();
+                focusNextTextBox();
             }
         }
 
@@ -182,7 +194,7 @@ namespace Moon_Asg7_Wordle
         }
 
         /*
-         * Test event handlers:
+         * API testing event handlers:
          */
 
         private void getWoTD_Click(object sender, EventArgs e)
@@ -203,23 +215,83 @@ namespace Moon_Asg7_Wordle
          * Event handlers for keyboard buttons:
          */
 
+        /// <summary>
+        /// Event handler for the on-screen keyboard's letter button 'Click' events.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void keyboardLetterButton_Click(object sender, EventArgs e)
         {
             string letter = ((Button)sender).Text;
-            //int index = getFirstEmptyTextBoxIndex();
-
-            //if (index > -1) // -1 => every textbox is filled
-            //    activeTextBoxes[index].Text = letter;
+            fillLetter(letter);
         }
 
+        /// <summary>
+        /// Event handler for the on-screen keyboard's backspace button 'Click' event.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonBackspace_Click(object sender, EventArgs e)
         {
-
+            backspace();
         }
 
+        /// <summary>
+        /// Event handler for the on-screen keyboard's clear button 'Click' event.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonClearWord_Click(object sender, EventArgs e)
         {
+            // find all active textboxes with text and clear the text
+            foreach (TextBox tb in getActiveTextBoxes().Where(target => target.Text != string.Empty))
+            {
+                tb.Text = string.Empty;
+            }
 
+            // set focus to the first textbox
+            getActiveTextBoxes().First().Focus();
+        }
+
+        /// <summary>
+        /// Attempts to clear the last filled text box. Moves focus to previous textbox if successful.
+        /// </summary>
+        private void backspace()
+        {
+            var last = getLastFilledActiveTextBox();
+            if (last != null)
+                last.Text = string.Empty;
+
+            // move focus to preceding textbox, if any
+            focusPreviousTextBox();
+        }
+
+        /// <summary>
+        /// Attempts to move focus to the next textbox. If the last is already focused, does nothing.
+        /// </summary>
+        private void focusNextTextBox()
+        {
+            // find the focused text box, if any
+            TextBox focusedTb = getActiveTextBoxes().Find(tb => tb.Focused == true);
+
+            if (focusedTb != null)
+                // if the focused textbox is not the last, move focus forward
+                if (getActiveTextBoxes().IndexOf(focusedTb) != -1)
+                    this.SelectNextControl(focusedTb, true, true, false, false);
+        }
+
+        /// <summary>
+        /// Attempts to move focus to the previous textbox. If the first is already focused, does nothing.
+        /// </summary>
+        private void focusPreviousTextBox()
+        {
+            // find the focused text box, if any
+            TextBox focusedTb = getActiveTextBoxes().Find(tb => tb.Focused == true);
+
+            if (focusedTb != null)
+                // if the focused textbox is not the first, move focus backward
+                if (getActiveTextBoxes().IndexOf(focusedTb) != 0)
+                    this.SelectNextControl(focusedTb, false, true, false, false);
         }
 
         private async void apiHealthButton_Click(object sender, EventArgs e)
@@ -233,6 +305,10 @@ namespace Moon_Asg7_Wordle
             //moonApiReader.guess();
         }
 
+        /// <summary>
+        /// Gets the first empty active text box, or null if none.
+        /// </summary>
+        /// <returns>The first empty active text box control. Null if none.</returns>
         private TextBox getFirstEmptyActiveTextBox()
         {
             // use Linq to filter the active textBoxes by empty Text property and return the first
@@ -240,6 +316,10 @@ namespace Moon_Asg7_Wordle
             return result;
         }
 
+        /// <summary>
+        /// Gets the last filled active text box, or null if none.
+        /// </summary>
+        /// <returns>The last filled active text box control. Null if none.</returns>
         private TextBox getLastFilledActiveTextBox()
         {
             // use Linq to filter the active textBoxes by non-empty Text property and return the last 
