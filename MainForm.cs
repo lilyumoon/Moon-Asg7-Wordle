@@ -38,9 +38,9 @@ namespace Moon_Asg7_Wordle
             await setup();
 
             // ensure that the form processes all key events even if a control has focus
-            // and assign a handler for KeyUp events
+            // and assign a handler for KeyDown events
             this.KeyPreview = true;
-            this.KeyUp += mainForm_KeyUp;
+            this.KeyDown += mainForm_KeyDown;
         }
 
         private async Task setup()
@@ -139,12 +139,8 @@ namespace Moon_Asg7_Wordle
 
         private void submitGuess()
         {
-            // do a check to ensure that all letters are filled.
-            //      or better yet, only enable 'set' button once all letters are filled.
-
-            // use round to select current round groupbox
             //GroupBox currentRoundGB = (GroupBox)Controls.Find($"groupRound{roundCount}", true).FirstOrDefault();
-            GroupBox currentRoundGB = roundGroupBoxes[roundCount];
+            GroupBox currentRoundGB = getActiveGroupBox();
 
             // build a string from the characters in current round groupbox's textboxes
             string submission = string.Empty;
@@ -161,11 +157,9 @@ namespace Moon_Asg7_Wordle
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void mainForm_KeyUp(object sender, KeyEventArgs e)
+        private void mainForm_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode >= Keys.A && e.KeyCode <= Keys.Z)
-                fillLetter(e.KeyCode.ToString());
-            else if (e.KeyCode == Keys.Back)
+            if (e.KeyCode == Keys.Back)
                 backspace();
         }
 
@@ -183,14 +177,50 @@ namespace Moon_Asg7_Wordle
             }
         }
 
-        /*
-         * This handler is no longer necessary or relevant as casing is handled within the fillLetter method.
-         */
         private void textBox_TextChanged(object sender, EventArgs e)
         {
             TextBox textBox = (TextBox)sender;
-            if (textBox.Text != null)
-                textBox.Text = textBox.Text.ToUpper();
+
+            // Temporarily unsubscribe from the TextChanged event to avoid recursion
+            textBox.TextChanged -= textBox_TextChanged;
+
+
+            try
+            {
+                // If the Text is anything except for an empty string...
+                if (textBox.Text != string.Empty)
+                {
+                    char input = textBox.Text[0];
+
+                    // If the Text is a letter, check the casing.
+                    if (char.IsLetter(input))
+                    {
+                        // If the text is lowercase, set it to uppercase.
+                        if (char.IsLower(input))
+                            textBox.Text = char.ToUpper(input).ToString();
+
+                        // move focus forward
+                        focusNextTextBox();
+                    }
+                    else
+                    {
+                        // If it is not a letter, clear it and maintain focus here.
+                        textBox.Text = string.Empty;
+                        textBox.Focus();
+                    }
+                }
+                // If the Text is an empty string, focus the previous textbox.
+                else
+                {
+                    focusPreviousTextBox();
+                }
+            }
+
+            finally
+            {
+                // Resubscribe to the TextChanged event
+                textBox.TextChanged += textBox_TextChanged;
+            }
         }
 
         /*
@@ -298,9 +328,6 @@ namespace Moon_Asg7_Wordle
             var last = getLastFilledActiveTextBox();
             if (last != null)
                 last.Text = string.Empty;
-
-            // move focus to preceding textbox, if any
-            focusPreviousTextBox();
         }
 
         /// <summary>
@@ -313,9 +340,13 @@ namespace Moon_Asg7_Wordle
 
             if (focusedTb != null)
             {
+                int focusedTbIndex = getActiveTextBoxes().IndexOf(focusedTb);
                 // if the focused textbox is not the last, move focus forward
-                if (getActiveTextBoxes().IndexOf(focusedTb) != -1)
-                    this.SelectNextControl(focusedTb, true, true, false, false);
+                if (focusedTbIndex != 4)
+                {
+                    //this.SelectNextControl(focusedTb, true, true, false, false);
+                    getActiveTextBoxes()[focusedTbIndex + 1].Focus();
+                }
                 // if it is, then all textboxes have been filled and the 'Check' button should be enabled
                 else
                 {
@@ -333,9 +364,13 @@ namespace Moon_Asg7_Wordle
             TextBox focusedTb = getActiveTextBoxes().Find(tb => tb.Focused == true);
 
             if (focusedTb != null)
+            {
+                int focusedTbIndex = getActiveTextBoxes().IndexOf(focusedTb);
+
                 // if the focused textbox is not the first, move focus backward
-                if (getActiveTextBoxes().IndexOf(focusedTb) != 0)
-                    this.SelectNextControl(focusedTb, false, true, false, false);
+                if (focusedTbIndex != 0)
+                    getActiveTextBoxes()[focusedTbIndex - 1].Focus();
+            }
         }
 
         /// <summary>

@@ -154,6 +154,7 @@
             // 
             // checkButton5
             // 
+            this.checkButton5.Enabled = false;
             this.checkButton5.Location = new System.Drawing.Point(357, 21);
             this.checkButton5.Name = "checkButton5";
             this.checkButton5.Size = new System.Drawing.Size(50, 45);
@@ -169,6 +170,7 @@
             this.guessTextBox27.MaxLength = 1;
             this.guessTextBox27.MinimumSize = new System.Drawing.Size(60, 60);
             this.guessTextBox27.Name = "guessTextBox27";
+            this.guessTextBox27.ShortcutsEnabled = false;
             this.guessTextBox27.Size = new System.Drawing.Size(60, 20);
             this.guessTextBox27.TabIndex = 127;
             this.guessTextBox27.TextChanged += new System.EventHandler(this.textBox_TextChanged);
@@ -179,6 +181,7 @@
             this.guessTextBox26.MaxLength = 1;
             this.guessTextBox26.MinimumSize = new System.Drawing.Size(60, 60);
             this.guessTextBox26.Name = "guessTextBox26";
+            this.guessTextBox26.ShortcutsEnabled = false;
             this.guessTextBox26.Size = new System.Drawing.Size(60, 20);
             this.guessTextBox26.TabIndex = 126;
             this.guessTextBox26.TextChanged += new System.EventHandler(this.textBox_TextChanged);
@@ -189,6 +192,7 @@
             this.guessTextBox29.MaxLength = 1;
             this.guessTextBox29.MinimumSize = new System.Drawing.Size(60, 60);
             this.guessTextBox29.Name = "guessTextBox29";
+            this.guessTextBox29.ShortcutsEnabled = false;
             this.guessTextBox29.Size = new System.Drawing.Size(60, 20);
             this.guessTextBox29.TabIndex = 129;
             this.guessTextBox29.TextChanged += new System.EventHandler(this.textBox_TextChanged);
@@ -199,6 +203,7 @@
             this.guessTextBox28.MaxLength = 1;
             this.guessTextBox28.MinimumSize = new System.Drawing.Size(60, 60);
             this.guessTextBox28.Name = "guessTextBox28";
+            this.guessTextBox28.ShortcutsEnabled = false;
             this.guessTextBox28.Size = new System.Drawing.Size(60, 20);
             this.guessTextBox28.TabIndex = 128;
             this.guessTextBox28.TextChanged += new System.EventHandler(this.textBox_TextChanged);
@@ -209,6 +214,7 @@
             this.guessTextBox25.MaxLength = 1;
             this.guessTextBox25.MinimumSize = new System.Drawing.Size(60, 60);
             this.guessTextBox25.Name = "guessTextBox25";
+            this.guessTextBox25.ShortcutsEnabled = false;
             this.guessTextBox25.Size = new System.Drawing.Size(60, 20);
             this.guessTextBox25.TabIndex = 125;
             this.guessTextBox25.TextChanged += new System.EventHandler(this.textBox_TextChanged);
@@ -230,6 +236,7 @@
             // 
             // checkButton4
             // 
+            this.checkButton4.Enabled = false;
             this.checkButton4.Location = new System.Drawing.Point(357, 21);
             this.checkButton4.Name = "checkButton4";
             this.checkButton4.Size = new System.Drawing.Size(50, 45);
@@ -245,6 +252,7 @@
             this.guessTextBox21.MaxLength = 1;
             this.guessTextBox21.MinimumSize = new System.Drawing.Size(60, 60);
             this.guessTextBox21.Name = "guessTextBox21";
+            this.guessTextBox21.ShortcutsEnabled = false;
             this.guessTextBox21.Size = new System.Drawing.Size(60, 20);
             this.guessTextBox21.TabIndex = 121;
             this.guessTextBox21.TextChanged += new System.EventHandler(this.textBox_TextChanged);
@@ -255,6 +263,7 @@
             this.guessTextBox23.MaxLength = 1;
             this.guessTextBox23.MinimumSize = new System.Drawing.Size(60, 60);
             this.guessTextBox23.Name = "guessTextBox23";
+            this.guessTextBox23.ShortcutsEnabled = false;
             this.guessTextBox23.Size = new System.Drawing.Size(60, 20);
             this.guessTextBox23.TabIndex = 123;
             this.guessTextBox23.TextChanged += new System.EventHandler(this.textBox_TextChanged);
@@ -265,6 +274,7 @@
             this.guessTextBox22.MaxLength = 1;
             this.guessTextBox22.MinimumSize = new System.Drawing.Size(60, 60);
             this.guessTextBox22.Name = "guessTextBox22";
+            this.guessTextBox22.ShortcutsEnabled = false;
             this.guessTextBox22.Size = new System.Drawing.Size(60, 20);
             this.guessTextBox22.TabIndex = 122;
             this.guessTextBox22.TextChanged += new System.EventHandler(this.textBox_TextChanged);
@@ -275,6 +285,7 @@
             this.guessTextBox20.MaxLength = 1;
             this.guessTextBox20.MinimumSize = new System.Drawing.Size(60, 60);
             this.guessTextBox20.Name = "guessTextBox20";
+            this.guessTextBox20.ShortcutsEnabled = false;
             this.guessTextBox20.Size = new System.Drawing.Size(60, 20);
             this.guessTextBox20.TabIndex = 120;
             this.guessTextBox20.TextChanged += new System.EventHandler(this.textBox_TextChanged);
@@ -285,6 +296,7 @@
             this.guessTextBox24.MaxLength = 1;
             this.guessTextBox24.MinimumSize = new System.Drawing.Size(60, 60);
             this.guessTextBox24.Name = "guessTextBox24";
+            this.guessTextBox24.ShortcutsEnabled = false;
             this.guessTextBox24.Size = new System.Drawing.Size(60, 20);
             this.guessTextBox24.TabIndex = 124;
             this.guessTextBox24.TextChanged += new System.EventHandler(this.textBox_TextChanged);
@@ -306,6 +318,7 @@
             // 
             // checkButton3
             // 
+            this.checkButton3.Enabled = false;
             this.checkButton3.Location = new System.Drawing.Point(357, 21);
             this.checkButton3.Name = "checkButton3";
             this.checkButton3.Size = new System.Drawing.Size(50, 45);
@@ -321,6 +334,7 @@
             this.guessTextBox18.MaxLength = 1;
             this.guessTextBox18.MinimumSize = new System.Drawing.Size(60, 60);
             this.guessTextBox18.Name = "guessTextBox18";
+            this.guessTextBox18.ShortcutsEnabled = false;
             this.guessTextBox18.Size = new System.Drawing.Size(60, 20);
             this.guessTextBox18.TabIndex = 118;
             this.guessTextBox18.TextChanged += new System.EventHandler(this.textBox_TextChanged);
@@ -331,6 +345,7 @@
             this.guessTextBox15.MaxLength = 1;
             this.guessTextBox15.MinimumSize = new System.Drawing.Size(60, 60);
             this.guessTextBox15.Name = "guessTextBox15";
+            this.guessTextBox15.ShortcutsEnabled = false;
             this.guessTextBox15.Size = new System.Drawing.Size(60, 20);
             this.guessTextBox15.TabIndex = 115;
             this.guessTextBox15.TextChanged += new System.EventHandler(this.textBox_TextChanged);
@@ -341,6 +356,7 @@
             this.guessTextBox16.MaxLength = 1;
             this.guessTextBox16.MinimumSize = new System.Drawing.Size(60, 60);
             this.guessTextBox16.Name = "guessTextBox16";
+            this.guessTextBox16.ShortcutsEnabled = false;
             this.guessTextBox16.Size = new System.Drawing.Size(60, 20);
             this.guessTextBox16.TabIndex = 116;
             this.guessTextBox16.TextChanged += new System.EventHandler(this.textBox_TextChanged);
@@ -351,6 +367,7 @@
             this.guessTextBox19.MaxLength = 1;
             this.guessTextBox19.MinimumSize = new System.Drawing.Size(60, 60);
             this.guessTextBox19.Name = "guessTextBox19";
+            this.guessTextBox19.ShortcutsEnabled = false;
             this.guessTextBox19.Size = new System.Drawing.Size(60, 20);
             this.guessTextBox19.TabIndex = 119;
             this.guessTextBox19.TextChanged += new System.EventHandler(this.textBox_TextChanged);
@@ -361,6 +378,7 @@
             this.guessTextBox17.MaxLength = 1;
             this.guessTextBox17.MinimumSize = new System.Drawing.Size(60, 60);
             this.guessTextBox17.Name = "guessTextBox17";
+            this.guessTextBox17.ShortcutsEnabled = false;
             this.guessTextBox17.Size = new System.Drawing.Size(60, 20);
             this.guessTextBox17.TabIndex = 117;
             this.guessTextBox17.TextChanged += new System.EventHandler(this.textBox_TextChanged);
@@ -382,6 +400,7 @@
             // 
             // checkButton2
             // 
+            this.checkButton2.Enabled = false;
             this.checkButton2.Location = new System.Drawing.Point(357, 21);
             this.checkButton2.Name = "checkButton2";
             this.checkButton2.Size = new System.Drawing.Size(50, 45);
@@ -397,6 +416,7 @@
             this.guessTextBox10.MaxLength = 1;
             this.guessTextBox10.MinimumSize = new System.Drawing.Size(60, 60);
             this.guessTextBox10.Name = "guessTextBox10";
+            this.guessTextBox10.ShortcutsEnabled = false;
             this.guessTextBox10.Size = new System.Drawing.Size(60, 20);
             this.guessTextBox10.TabIndex = 110;
             this.guessTextBox10.TextChanged += new System.EventHandler(this.textBox_TextChanged);
@@ -407,6 +427,7 @@
             this.guessTextBox14.MaxLength = 1;
             this.guessTextBox14.MinimumSize = new System.Drawing.Size(60, 60);
             this.guessTextBox14.Name = "guessTextBox14";
+            this.guessTextBox14.ShortcutsEnabled = false;
             this.guessTextBox14.Size = new System.Drawing.Size(60, 20);
             this.guessTextBox14.TabIndex = 114;
             this.guessTextBox14.TextChanged += new System.EventHandler(this.textBox_TextChanged);
@@ -417,6 +438,7 @@
             this.guessTextBox12.MaxLength = 1;
             this.guessTextBox12.MinimumSize = new System.Drawing.Size(60, 60);
             this.guessTextBox12.Name = "guessTextBox12";
+            this.guessTextBox12.ShortcutsEnabled = false;
             this.guessTextBox12.Size = new System.Drawing.Size(60, 20);
             this.guessTextBox12.TabIndex = 112;
             this.guessTextBox12.TextChanged += new System.EventHandler(this.textBox_TextChanged);
@@ -427,6 +449,7 @@
             this.guessTextBox11.MaxLength = 1;
             this.guessTextBox11.MinimumSize = new System.Drawing.Size(60, 60);
             this.guessTextBox11.Name = "guessTextBox11";
+            this.guessTextBox11.ShortcutsEnabled = false;
             this.guessTextBox11.Size = new System.Drawing.Size(60, 20);
             this.guessTextBox11.TabIndex = 111;
             this.guessTextBox11.TextChanged += new System.EventHandler(this.textBox_TextChanged);
@@ -437,6 +460,7 @@
             this.guessTextBox13.MaxLength = 1;
             this.guessTextBox13.MinimumSize = new System.Drawing.Size(60, 60);
             this.guessTextBox13.Name = "guessTextBox13";
+            this.guessTextBox13.ShortcutsEnabled = false;
             this.guessTextBox13.Size = new System.Drawing.Size(60, 20);
             this.guessTextBox13.TabIndex = 113;
             this.guessTextBox13.TextChanged += new System.EventHandler(this.textBox_TextChanged);
@@ -458,6 +482,7 @@
             // 
             // checkButton1
             // 
+            this.checkButton1.Enabled = false;
             this.checkButton1.Location = new System.Drawing.Point(357, 21);
             this.checkButton1.Name = "checkButton1";
             this.checkButton1.Size = new System.Drawing.Size(50, 45);
@@ -473,6 +498,7 @@
             this.guessTextBox9.MaxLength = 1;
             this.guessTextBox9.MinimumSize = new System.Drawing.Size(60, 60);
             this.guessTextBox9.Name = "guessTextBox9";
+            this.guessTextBox9.ShortcutsEnabled = false;
             this.guessTextBox9.Size = new System.Drawing.Size(60, 20);
             this.guessTextBox9.TabIndex = 109;
             this.guessTextBox9.TextChanged += new System.EventHandler(this.textBox_TextChanged);
@@ -483,6 +509,7 @@
             this.guessTextBox6.MaxLength = 1;
             this.guessTextBox6.MinimumSize = new System.Drawing.Size(60, 60);
             this.guessTextBox6.Name = "guessTextBox6";
+            this.guessTextBox6.ShortcutsEnabled = false;
             this.guessTextBox6.Size = new System.Drawing.Size(60, 20);
             this.guessTextBox6.TabIndex = 106;
             this.guessTextBox6.TextChanged += new System.EventHandler(this.textBox_TextChanged);
@@ -493,6 +520,7 @@
             this.guessTextBox8.MaxLength = 1;
             this.guessTextBox8.MinimumSize = new System.Drawing.Size(60, 60);
             this.guessTextBox8.Name = "guessTextBox8";
+            this.guessTextBox8.ShortcutsEnabled = false;
             this.guessTextBox8.Size = new System.Drawing.Size(60, 20);
             this.guessTextBox8.TabIndex = 108;
             this.guessTextBox8.TextChanged += new System.EventHandler(this.textBox_TextChanged);
@@ -503,6 +531,7 @@
             this.guessTextBox5.MaxLength = 1;
             this.guessTextBox5.MinimumSize = new System.Drawing.Size(60, 60);
             this.guessTextBox5.Name = "guessTextBox5";
+            this.guessTextBox5.ShortcutsEnabled = false;
             this.guessTextBox5.Size = new System.Drawing.Size(60, 20);
             this.guessTextBox5.TabIndex = 105;
             this.guessTextBox5.TextChanged += new System.EventHandler(this.textBox_TextChanged);
@@ -513,6 +542,7 @@
             this.guessTextBox7.MaxLength = 1;
             this.guessTextBox7.MinimumSize = new System.Drawing.Size(60, 60);
             this.guessTextBox7.Name = "guessTextBox7";
+            this.guessTextBox7.ShortcutsEnabled = false;
             this.guessTextBox7.Size = new System.Drawing.Size(60, 20);
             this.guessTextBox7.TabIndex = 107;
             this.guessTextBox7.TextChanged += new System.EventHandler(this.textBox_TextChanged);
@@ -534,6 +564,7 @@
             // 
             // checkButton0
             // 
+            this.checkButton0.Enabled = false;
             this.checkButton0.Location = new System.Drawing.Point(357, 19);
             this.checkButton0.Name = "checkButton0";
             this.checkButton0.Size = new System.Drawing.Size(50, 45);
@@ -549,6 +580,7 @@
             this.guessTextBox4.MaxLength = 1;
             this.guessTextBox4.MinimumSize = new System.Drawing.Size(60, 60);
             this.guessTextBox4.Name = "guessTextBox4";
+            this.guessTextBox4.ShortcutsEnabled = false;
             this.guessTextBox4.Size = new System.Drawing.Size(60, 20);
             this.guessTextBox4.TabIndex = 104;
             this.guessTextBox4.TextChanged += new System.EventHandler(this.textBox_TextChanged);
@@ -559,6 +591,7 @@
             this.guessTextBox3.MaxLength = 1;
             this.guessTextBox3.MinimumSize = new System.Drawing.Size(60, 60);
             this.guessTextBox3.Name = "guessTextBox3";
+            this.guessTextBox3.ShortcutsEnabled = false;
             this.guessTextBox3.Size = new System.Drawing.Size(60, 20);
             this.guessTextBox3.TabIndex = 103;
             this.guessTextBox3.TextChanged += new System.EventHandler(this.textBox_TextChanged);
@@ -569,6 +602,7 @@
             this.guessTextBox2.MaxLength = 1;
             this.guessTextBox2.MinimumSize = new System.Drawing.Size(60, 60);
             this.guessTextBox2.Name = "guessTextBox2";
+            this.guessTextBox2.ShortcutsEnabled = false;
             this.guessTextBox2.Size = new System.Drawing.Size(60, 20);
             this.guessTextBox2.TabIndex = 102;
             this.guessTextBox2.TextChanged += new System.EventHandler(this.textBox_TextChanged);
@@ -579,6 +613,7 @@
             this.guessTextBox0.MaxLength = 1;
             this.guessTextBox0.MinimumSize = new System.Drawing.Size(60, 60);
             this.guessTextBox0.Name = "guessTextBox0";
+            this.guessTextBox0.ShortcutsEnabled = false;
             this.guessTextBox0.Size = new System.Drawing.Size(60, 20);
             this.guessTextBox0.TabIndex = 100;
             this.guessTextBox0.TextChanged += new System.EventHandler(this.textBox_TextChanged);
@@ -589,6 +624,7 @@
             this.guessTextBox1.MaxLength = 1;
             this.guessTextBox1.MinimumSize = new System.Drawing.Size(60, 60);
             this.guessTextBox1.Name = "guessTextBox1";
+            this.guessTextBox1.ShortcutsEnabled = false;
             this.guessTextBox1.Size = new System.Drawing.Size(60, 20);
             this.guessTextBox1.TabIndex = 101;
             this.guessTextBox1.TextChanged += new System.EventHandler(this.textBox_TextChanged);
