@@ -144,7 +144,7 @@ namespace Moon_Asg7_Wordle
         /// <summary>
         /// Gets Today's word in the format of {"date":"[date]","word":"[word]"}
         /// </summary>
-        public async void getWordForToday()
+        public async Task<string> getWordForToday()
         {
             var client = new HttpClient();
             var request = new HttpRequestMessage
@@ -162,13 +162,21 @@ namespace Moon_Asg7_Wordle
                 response.EnsureSuccessStatusCode();
                 var body = await response.Content.ReadAsStringAsync();
                 Console.WriteLine(body);
+
+                JsonDocument jsonDoc = JsonDocument.Parse(body);
+                JsonElement jsonRoot = jsonDoc.RootElement;
+
+                string word = jsonRoot.GetProperty("word").GetString();
+
+                Console.WriteLine(word);
+                return word;
             }
         }
 
         /// <summary>
         /// Gets yesterday's word in the format of {"date":"[date]","word":"[word]"}
         /// </summary>
-        public async void getWordForYesterday()
+        public async Task<string> getWordForYesterday()
         {
             var client = new HttpClient();
             var request = new HttpRequestMessage
@@ -185,14 +193,21 @@ namespace Moon_Asg7_Wordle
             {
                 response.EnsureSuccessStatusCode();
                 var body = await response.Content.ReadAsStringAsync();
-                Console.WriteLine(body);
+
+                JsonDocument jsonDoc = JsonDocument.Parse(body);
+                JsonElement jsonRoot = jsonDoc.RootElement;
+
+                string word = jsonRoot.GetProperty("word").GetString();
+
+                Console.WriteLine(word);
+                return word;
             }
         }
 
         /// <summary>
         /// Gets (predicts) tomorrow's word in the format of {"date":"[date]","word":"[word]"}
         /// </summary>
-        public async void getWordForTomorrow()
+        public async Task<string> getWordForTomorrow()
         {
             var client = new HttpClient();
             var request = new HttpRequestMessage
@@ -209,7 +224,14 @@ namespace Moon_Asg7_Wordle
             {
                 response.EnsureSuccessStatusCode();
                 var body = await response.Content.ReadAsStringAsync();
-                Console.WriteLine(body);
+
+                JsonDocument jsonDoc = JsonDocument.Parse(body);
+                JsonElement jsonRoot = jsonDoc.RootElement;
+
+                string word = jsonRoot.GetProperty("word").GetString();
+
+                Console.WriteLine(word);
+                return word;
             }
         }
 
@@ -217,10 +239,8 @@ namespace Moon_Asg7_Wordle
         /// Gets word for a specified date in the format of {"date":"[date]","word":"[word]"}
         /// </summary>
         /// <param name="date"></param>
-        public async void getWordForDate(DateTime date)
+        public async Task<string> getWordForDate(DateTime date)
         {
-            string word = string.Empty;
-
             var client = new HttpClient();
             var request = new HttpRequestMessage
             {
@@ -237,14 +257,21 @@ namespace Moon_Asg7_Wordle
             {
                 response.EnsureSuccessStatusCode();
                 var body = await response.Content.ReadAsStringAsync();
-                Console.WriteLine(body);
+
+                JsonDocument jsonDoc = JsonDocument.Parse(body);
+                JsonElement jsonRoot = jsonDoc.RootElement;
+
+                string word = jsonRoot.GetProperty("word").GetString();
+
+                Console.WriteLine(word);
+                return word;
             }
         }
 
         /// <summary>
         /// Gets word for a random date in the format of {"date":"[date]","word":"[word]"}
         /// </summary>
-        public void getWordForRandomDate()
+        public async void getWordForRandomDate()
         {
             // pick a random date
             DateTime startDate = new DateTime(2024, 01, 01);
@@ -252,7 +279,7 @@ namespace Moon_Asg7_Wordle
             DateTime randomDate = getRandomDate(startDate, endDate);
 
             // call getWordForDate passing random date in as parameter
-            getWordForDate(randomDate);
+            await getWordForDate(randomDate);
         }
 
         /// <summary>
