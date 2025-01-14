@@ -56,6 +56,8 @@ namespace Moon_Asg7_Wordle
             bool isApiHealthy = await moonApiReader.isApiHealthy();
             if (!isApiHealthy)
                 label_apiHealth.Visible = true;
+
+            resetGame();
         }
 
         private void loadDictionaries()
@@ -94,6 +96,11 @@ namespace Moon_Asg7_Wordle
 
         private void resetGame(object sender, EventArgs e)
         {
+            resetGame();
+        }
+
+        private void resetGame()
+        {
             // Reset all round groupboxes and their text boxes
             foreach (GroupBox gb in roundGroupBoxes)
             {
@@ -104,34 +111,22 @@ namespace Moon_Asg7_Wordle
             // Reset hint colors of keyboard keys
             resetKeyboardButtons();
 
-            // Enable first round's group of text boxes
+            // Enable first round's group of text boxes and set focus to the first
             groupRound0.Enabled = true;
-
-            // select (focus) the first round's text box
             roundLetterDictionary[groupRound0][0].Select();
         }
 
         /// <summary>
-        /// Iterates through each 'round' of grouped text boxes and resets each of their text boxes' text and color.
+        /// Iterates through each of a groupbox's child text boxes and resets text and color.
         /// </summary>
         private void resetGroupedTextBoxes(GroupBox gb)
         {
-            foreach (Control c in gb.Controls)
+            foreach (TextBox textBox in roundLetterDictionary[gb])
             {
-                if (c.GetType() == typeof(TextBox))
-                    resetTextBox((TextBox)c);
+                textBox.Text = string.Empty;
+                textBox.BackColor = Control.DefaultBackColor;
+                textBox.ForeColor = Control.DefaultForeColor;
             }
-        }
-
-        /// <summary>
-        /// Resets a text box's text and color.
-        /// </summary>
-        /// <param name="textBox">The text box to reset.</param>
-        private void resetTextBox(TextBox textBox)
-        {
-            textBox.Text = string.Empty;
-            textBox.BackColor = Control.DefaultBackColor;
-            textBox.ForeColor = Control.DefaultForeColor;
         }
 
         private void resetKeyboardButtons()
@@ -161,7 +156,7 @@ namespace Moon_Asg7_Wordle
         }
 
         /// <summary>
-        /// Event handler for the form's KeyUp event. This is used so that keyboard letter 
+        /// Event handler for the form's KeyUp event. This is used so that keyboard 
         /// input is processed even if a control other than a textbox is focused.
         /// </summary>
         /// <param name="sender"></param>
@@ -170,6 +165,8 @@ namespace Moon_Asg7_Wordle
         {
             if (e.KeyCode >= Keys.A && e.KeyCode <= Keys.Z)
                 fillLetter(e.KeyCode.ToString());
+            else if (e.KeyCode == Keys.Back)
+                backspace();
         }
 
         /// <summary>
@@ -186,6 +183,9 @@ namespace Moon_Asg7_Wordle
             }
         }
 
+        /*
+         * This handler is no longer necessary or relevant as casing is handled within the fillLetter method.
+         */
         private void textBox_TextChanged(object sender, EventArgs e)
         {
             TextBox textBox = (TextBox)sender;
@@ -199,12 +199,18 @@ namespace Moon_Asg7_Wordle
 
         private void getWoTD_Click(object sender, EventArgs e)
         {
-            getWoTD();
+            getWordOfTheDay();
         }
 
-        private async void getWoTD()
+        /// <summary>
+        /// Gets and stores the current word of the day.
+        /// </summary>
+        private async void getWordOfTheDay()
         {
-            answerLabel.Text = await moonApiReader.getWordForToday();
+            answer = await moonApiReader.getWordForToday();
+
+            // test:
+            answerLabel.Text = answer;
         }
 
         private void getWordForDate_Click(object sender, EventArgs e)
@@ -212,9 +218,15 @@ namespace Moon_Asg7_Wordle
             getWordForDate();
         }
 
+        /// <summary>
+        /// Gets and stores the word of the day for a particular date.
+        /// </summary>
         private async void getWordForDate()
         {
-            answerLabel.Text = await moonApiReader.getWordForDate(dateTimePicker.Value);
+            answer = await moonApiReader.getWordForDate(dateTimePicker.Value);
+            
+            // test:
+            answerLabel.Text = answer;
         }
 
         private void getWordForRandomDate_Click(object sender, EventArgs e)
@@ -222,9 +234,15 @@ namespace Moon_Asg7_Wordle
             getWordForRandomDate();
         }
 
+        /// <summary>
+        /// Gets and stores the word of the day for a random date.
+        /// </summary>
         private async void getWordForRandomDate()
         {
-            answerLabel.Text = await moonApiReader.getWordForRandomDate();
+            answer = await moonApiReader.getWordForRandomDate();
+
+            // test:
+            answerLabel.Text = answer;
         }
 
         /*
@@ -274,6 +292,9 @@ namespace Moon_Asg7_Wordle
         /// </summary>
         private void backspace()
         {
+            // should not be able to submit an answer, because as soon as backspace happens, there will not be 5 filled textboxes.
+            setCheckButtonEnabledState(false);
+
             var last = getLastFilledActiveTextBox();
             if (last != null)
                 last.Text = string.Empty;
@@ -291,9 +312,16 @@ namespace Moon_Asg7_Wordle
             TextBox focusedTb = getActiveTextBoxes().Find(tb => tb.Focused == true);
 
             if (focusedTb != null)
+            {
                 // if the focused textbox is not the last, move focus forward
                 if (getActiveTextBoxes().IndexOf(focusedTb) != -1)
                     this.SelectNextControl(focusedTb, true, true, false, false);
+                // if it is, then all textboxes have been filled and the 'Check' button should be enabled
+                else
+                {
+                    setCheckButtonEnabledState(true);
+                }
+            }
         }
 
         /// <summary>
@@ -310,6 +338,20 @@ namespace Moon_Asg7_Wordle
                     this.SelectNextControl(focusedTb, false, true, false, false);
         }
 
+        /// <summary>
+        /// Enables or disables the current round's check button based on given parameter.
+        /// </summary>
+        /// <param name="shouldBeEnabled">true if should be enabled</param>
+        private void setCheckButtonEnabledState(bool shouldBeEnabled)
+        {
+            foreach (Control c in getActiveGroupBox().Controls)
+            {
+                if (c.GetType() == typeof(Button))
+                    c.Enabled = shouldBeEnabled;
+            }
+        }
+
+        // test:
         private async void apiHealthButton_Click(object sender, EventArgs e)
         {
             await moonApiReader.isApiHealthy();
