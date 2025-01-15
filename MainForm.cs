@@ -504,9 +504,6 @@ namespace Moon_Asg7_Wordle
         /// </summary>
         private void backspace()
         {
-            // should not be able to submit an answer, because as soon as backspace happens, there will not be 5 filled textboxes.
-            //setCheckButtonEnabledState(false);
-
             TextBox last = getLastFilledActiveTextBox();
             if (last != null)
                 last.Text = string.Empty;
@@ -529,11 +526,6 @@ namespace Moon_Asg7_Wordle
                 {
                     getActiveTextBoxes()[focusedTbIndex + 1].Focus();
                 }
-                //// if it is, then all textboxes have been filled and the 'Check' button should be enabled
-                //else
-                //{
-                //    setCheckButtonEnabledState(true);
-                //}
             }
 
             // if focusedTb is null, some other control has focus
@@ -575,19 +567,6 @@ namespace Moon_Asg7_Wordle
                 }
             }
         }
-
-        /// <summary>
-        /// Enables or disables the current round's check button based on given parameter.
-        /// </summary>
-        /// <param name="shouldBeEnabled">true if should be enabled</param>
-        //private void setCheckButtonEnabledState(bool shouldBeEnabled)
-        //{
-        //    foreach (Control c in getActiveGroupBox().Controls)
-        //    {
-        //        if (c.GetType() == typeof(Button))
-        //            c.Enabled = shouldBeEnabled;
-        //    }
-        //}
 
         private void setOnscreenKeyboardEnabledState(bool shouldBeEnabled)
         {

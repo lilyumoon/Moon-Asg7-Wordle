@@ -60,8 +60,6 @@ namespace Moon_Asg7_Wordle
 
                 string status = jsonRoot.GetProperty("status").GetString();
 
-                Console.WriteLine(status);
-
                 if (!string.Equals(status, "ok"))
                     isHealthy = false;
             }
@@ -89,14 +87,12 @@ namespace Moon_Asg7_Wordle
             {
                 response.EnsureSuccessStatusCode();
                 var body = await response.Content.ReadAsStringAsync();
-                Console.WriteLine(body);
 
                 JsonDocument jsonDoc = JsonDocument.Parse(body);
                 JsonElement jsonRoot = jsonDoc.RootElement;
 
                 string word = jsonRoot.GetProperty("word").GetString();
 
-                Console.WriteLine(word);
                 return word;
             }
         }
@@ -127,7 +123,6 @@ namespace Moon_Asg7_Wordle
 
                 string word = jsonRoot.GetProperty("word").GetString();
 
-                Console.WriteLine(word);
                 return word;
             }
         }
@@ -158,7 +153,6 @@ namespace Moon_Asg7_Wordle
 
                 string word = jsonRoot.GetProperty("word").GetString();
 
-                Console.WriteLine(word);
                 return word;
             }
         }
@@ -191,7 +185,6 @@ namespace Moon_Asg7_Wordle
 
                 string word = jsonRoot.GetProperty("word").GetString();
 
-                Console.WriteLine(word);
                 return word;
             }
         }
