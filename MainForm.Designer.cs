@@ -160,6 +160,7 @@
             // 
             // guessTextBox27
             // 
+            this.guessTextBox27.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.guessTextBox27.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guessTextBox27.Location = new System.Drawing.Point(144, 14);
             this.guessTextBox27.MaxLength = 1;
@@ -173,6 +174,7 @@
             // 
             // guessTextBox26
             // 
+            this.guessTextBox26.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.guessTextBox26.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guessTextBox26.Location = new System.Drawing.Point(76, 14);
             this.guessTextBox26.MaxLength = 1;
@@ -186,6 +188,7 @@
             // 
             // guessTextBox29
             // 
+            this.guessTextBox29.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.guessTextBox29.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guessTextBox29.Location = new System.Drawing.Point(280, 14);
             this.guessTextBox29.MaxLength = 1;
@@ -199,6 +202,7 @@
             // 
             // guessTextBox28
             // 
+            this.guessTextBox28.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.guessTextBox28.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guessTextBox28.Location = new System.Drawing.Point(212, 14);
             this.guessTextBox28.MaxLength = 1;
@@ -212,6 +216,7 @@
             // 
             // guessTextBox25
             // 
+            this.guessTextBox25.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.guessTextBox25.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guessTextBox25.Location = new System.Drawing.Point(8, 14);
             this.guessTextBox25.MaxLength = 1;
@@ -252,6 +257,7 @@
             // 
             // guessTextBox21
             // 
+            this.guessTextBox21.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.guessTextBox21.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guessTextBox21.Location = new System.Drawing.Point(76, 14);
             this.guessTextBox21.MaxLength = 1;
@@ -265,6 +271,7 @@
             // 
             // guessTextBox23
             // 
+            this.guessTextBox23.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.guessTextBox23.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guessTextBox23.Location = new System.Drawing.Point(212, 14);
             this.guessTextBox23.MaxLength = 1;
@@ -278,6 +285,7 @@
             // 
             // guessTextBox22
             // 
+            this.guessTextBox22.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.guessTextBox22.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guessTextBox22.Location = new System.Drawing.Point(144, 14);
             this.guessTextBox22.MaxLength = 1;
@@ -291,6 +299,7 @@
             // 
             // guessTextBox20
             // 
+            this.guessTextBox20.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.guessTextBox20.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guessTextBox20.Location = new System.Drawing.Point(8, 14);
             this.guessTextBox20.MaxLength = 1;
@@ -304,6 +313,7 @@
             // 
             // guessTextBox24
             // 
+            this.guessTextBox24.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.guessTextBox24.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guessTextBox24.Location = new System.Drawing.Point(280, 14);
             this.guessTextBox24.MaxLength = 1;
@@ -344,6 +354,7 @@
             // 
             // guessTextBox18
             // 
+            this.guessTextBox18.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.guessTextBox18.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guessTextBox18.Location = new System.Drawing.Point(212, 14);
             this.guessTextBox18.MaxLength = 1;
@@ -357,6 +368,7 @@
             // 
             // guessTextBox15
             // 
+            this.guessTextBox15.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.guessTextBox15.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guessTextBox15.Location = new System.Drawing.Point(8, 14);
             this.guessTextBox15.MaxLength = 1;
@@ -370,6 +382,7 @@
             // 
             // guessTextBox16
             // 
+            this.guessTextBox16.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.guessTextBox16.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guessTextBox16.Location = new System.Drawing.Point(76, 14);
             this.guessTextBox16.MaxLength = 1;
@@ -383,6 +396,7 @@
             // 
             // guessTextBox19
             // 
+            this.guessTextBox19.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.guessTextBox19.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guessTextBox19.Location = new System.Drawing.Point(280, 14);
             this.guessTextBox19.MaxLength = 1;
@@ -396,6 +410,7 @@
             // 
             // guessTextBox17
             // 
+            this.guessTextBox17.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.guessTextBox17.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guessTextBox17.Location = new System.Drawing.Point(144, 14);
             this.guessTextBox17.MaxLength = 1;
@@ -436,6 +451,7 @@
             // 
             // guessTextBox10
             // 
+            this.guessTextBox10.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.guessTextBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guessTextBox10.Location = new System.Drawing.Point(8, 14);
             this.guessTextBox10.MaxLength = 1;
@@ -449,6 +465,7 @@
             // 
             // guessTextBox14
             // 
+            this.guessTextBox14.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.guessTextBox14.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guessTextBox14.Location = new System.Drawing.Point(280, 14);
             this.guessTextBox14.MaxLength = 1;
@@ -462,6 +479,7 @@
             // 
             // guessTextBox12
             // 
+            this.guessTextBox12.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.guessTextBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guessTextBox12.Location = new System.Drawing.Point(144, 14);
             this.guessTextBox12.MaxLength = 1;
@@ -475,6 +493,7 @@
             // 
             // guessTextBox11
             // 
+            this.guessTextBox11.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.guessTextBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guessTextBox11.Location = new System.Drawing.Point(76, 14);
             this.guessTextBox11.MaxLength = 1;
@@ -488,6 +507,7 @@
             // 
             // guessTextBox13
             // 
+            this.guessTextBox13.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.guessTextBox13.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guessTextBox13.Location = new System.Drawing.Point(212, 14);
             this.guessTextBox13.MaxLength = 1;
@@ -528,6 +548,7 @@
             // 
             // guessTextBox9
             // 
+            this.guessTextBox9.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.guessTextBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guessTextBox9.Location = new System.Drawing.Point(280, 14);
             this.guessTextBox9.MaxLength = 1;
@@ -541,6 +562,7 @@
             // 
             // guessTextBox6
             // 
+            this.guessTextBox6.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.guessTextBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guessTextBox6.Location = new System.Drawing.Point(76, 14);
             this.guessTextBox6.MaxLength = 1;
@@ -554,6 +576,7 @@
             // 
             // guessTextBox8
             // 
+            this.guessTextBox8.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.guessTextBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guessTextBox8.Location = new System.Drawing.Point(212, 14);
             this.guessTextBox8.MaxLength = 1;
@@ -567,6 +590,7 @@
             // 
             // guessTextBox5
             // 
+            this.guessTextBox5.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.guessTextBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guessTextBox5.Location = new System.Drawing.Point(8, 14);
             this.guessTextBox5.MaxLength = 1;
@@ -580,6 +604,7 @@
             // 
             // guessTextBox7
             // 
+            this.guessTextBox7.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.guessTextBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guessTextBox7.Location = new System.Drawing.Point(144, 14);
             this.guessTextBox7.MaxLength = 1;
@@ -620,6 +645,7 @@
             // 
             // guessTextBox4
             // 
+            this.guessTextBox4.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.guessTextBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guessTextBox4.Location = new System.Drawing.Point(280, 12);
             this.guessTextBox4.MaxLength = 1;
@@ -633,6 +659,7 @@
             // 
             // guessTextBox3
             // 
+            this.guessTextBox3.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.guessTextBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guessTextBox3.Location = new System.Drawing.Point(212, 12);
             this.guessTextBox3.MaxLength = 1;
@@ -646,6 +673,7 @@
             // 
             // guessTextBox2
             // 
+            this.guessTextBox2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.guessTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guessTextBox2.Location = new System.Drawing.Point(144, 12);
             this.guessTextBox2.MaxLength = 1;
@@ -659,6 +687,7 @@
             // 
             // guessTextBox0
             // 
+            this.guessTextBox0.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.guessTextBox0.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guessTextBox0.Location = new System.Drawing.Point(8, 12);
             this.guessTextBox0.MaxLength = 1;
@@ -672,6 +701,7 @@
             // 
             // guessTextBox1
             // 
+            this.guessTextBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.guessTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guessTextBox1.Location = new System.Drawing.Point(76, 12);
             this.guessTextBox1.MaxLength = 1;
@@ -723,7 +753,7 @@
             // buttonBackspace
             // 
             this.buttonBackspace.Enabled = false;
-            this.buttonBackspace.Location = new System.Drawing.Point(20, 195);
+            this.buttonBackspace.Location = new System.Drawing.Point(20, 197);
             this.buttonBackspace.Name = "buttonBackspace";
             this.buttonBackspace.Size = new System.Drawing.Size(75, 30);
             this.buttonBackspace.TabIndex = 27;
@@ -735,7 +765,7 @@
             // buttonClearWord
             // 
             this.buttonClearWord.Enabled = false;
-            this.buttonClearWord.Location = new System.Drawing.Point(230, 195);
+            this.buttonClearWord.Location = new System.Drawing.Point(230, 197);
             this.buttonClearWord.Name = "buttonClearWord";
             this.buttonClearWord.Size = new System.Drawing.Size(180, 30);
             this.buttonClearWord.TabIndex = 26;

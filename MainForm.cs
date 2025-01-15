@@ -95,11 +95,6 @@ namespace Moon_Asg7_Wordle
             }
         }
 
-        private void resetGame(object sender, EventArgs e)
-        {
-            resetGame();
-        }
-
         private void resetGame()
         {
             // disable all controls that start a new game
@@ -129,25 +124,7 @@ namespace Moon_Asg7_Wordle
 
             // Enable first round's text boxes and set focus to the first
             roundGroupBoxes[roundCount].Enabled = true;
-            roundLetterDictionary[groupRound0][0].Select();
-        }
-
-        private void setOnscreenKeyboardEnabledState(bool shouldBeEnabled)
-        {
-            foreach (var button in usedLetterDictionary.Values)
-            {
-                button.Enabled = shouldBeEnabled;
-            }
-            buttonClearWord.Enabled = shouldBeEnabled;
-            buttonBackspace.Enabled = shouldBeEnabled;
-        }
-
-        private void setWordPickerControlsEnabledState(bool shouldBeEnabled)
-        {
-            todayGameButton.Enabled = shouldBeEnabled;
-            randomGameButton.Enabled = shouldBeEnabled;
-            pastGameButton.Enabled = shouldBeEnabled;
-            dateTimePicker.Enabled = shouldBeEnabled;
+            roundLetterDictionary[groupRound0][0].Focus();
         }
 
         private void submitGuess()
@@ -328,8 +305,10 @@ namespace Moon_Asg7_Wordle
                 // if there are rounds left, start next round
                 if (roundCount < 6)
                 {
-                    roundGroupBoxes[roundCount].Enabled = true;
-                    getFirstEmptyActiveTextBox().Focus();
+                    GroupBox activeGb = roundGroupBoxes[roundCount];
+                    activeGb.Enabled = true;
+                    var tb = getFirstEmptyActiveTextBox();
+                    tb.Focus();
                 }
                 // if there are not rounds left, give end-game feedback
                 else
@@ -543,7 +522,6 @@ namespace Moon_Asg7_Wordle
                 // if the focused textbox is not the last, move focus forward
                 if (focusedTbIndex != 4)
                 {
-                    //this.SelectNextControl(focusedTb, true, true, false, false);
                     getActiveTextBoxes()[focusedTbIndex + 1].Focus();
                 }
                 // if it is, then all textboxes have been filled and the 'Check' button should be enabled
@@ -585,6 +563,24 @@ namespace Moon_Asg7_Wordle
             }
         }
 
+        private void setOnscreenKeyboardEnabledState(bool shouldBeEnabled)
+        {
+            foreach (var button in usedLetterDictionary.Values)
+            {
+                button.Enabled = shouldBeEnabled;
+            }
+            buttonClearWord.Enabled = shouldBeEnabled;
+            buttonBackspace.Enabled = shouldBeEnabled;
+        }
+
+        private void setWordPickerControlsEnabledState(bool shouldBeEnabled)
+        {
+            todayGameButton.Enabled = shouldBeEnabled;
+            randomGameButton.Enabled = shouldBeEnabled;
+            pastGameButton.Enabled = shouldBeEnabled;
+            dateTimePicker.Enabled = shouldBeEnabled;
+        }
+
         /// <summary>
         /// Event handler for the game's check buttons' 'Click' event.
         /// </summary>
@@ -602,7 +598,7 @@ namespace Moon_Asg7_Wordle
         private TextBox getFirstEmptyActiveTextBox()
         {
             // use Linq to filter the active textBoxes by empty Text property and return the first
-            var result = getActiveTextBoxes().Where(tb => tb.Text == string.Empty).FirstOrDefault();
+            TextBox result = getActiveTextBoxes().Where(tb => tb.Text == string.Empty).FirstOrDefault();
             return result;
         }
 
@@ -613,7 +609,7 @@ namespace Moon_Asg7_Wordle
         private TextBox getLastFilledActiveTextBox()
         {
             // use Linq to filter the active textBoxes by non-empty Text property and return the last 
-            var result = getActiveTextBoxes().Where(tb => tb.Text != string.Empty).LastOrDefault();
+            TextBox result = getActiveTextBoxes().Where(tb => tb.Text != string.Empty).LastOrDefault();
             return result;
         }
 
@@ -624,7 +620,7 @@ namespace Moon_Asg7_Wordle
         private GroupBox getActiveGroupBox()
         {
             // use Linq to filter the roundLetterDictionary keys and return the first Enabled one
-            var result = roundLetterDictionary.Keys.Where(gb => gb.Enabled == true).FirstOrDefault();
+            GroupBox result = roundLetterDictionary.Keys.Where(gb => gb.Enabled == true).FirstOrDefault();
             return result;
         }
 
@@ -634,7 +630,7 @@ namespace Moon_Asg7_Wordle
         /// <returns>A list containing the current round's textbox controls.</returns>
         private List<TextBox> getActiveTextBoxes()
         {
-            var result = roundLetterDictionary[getActiveGroupBox()];
+            List<TextBox> result = roundLetterDictionary[getActiveGroupBox()];
             return result;
         }
 
