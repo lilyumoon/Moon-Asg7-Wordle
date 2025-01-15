@@ -103,7 +103,7 @@
             this.todayGameButton = new System.Windows.Forms.Button();
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label_apiHealth = new System.Windows.Forms.Label();
-            this.endGameLabel = new System.Windows.Forms.Label();
+            this.feedbackLabel = new System.Windows.Forms.Label();
             this.randomGameButton = new System.Windows.Forms.Button();
             this.pastGameButton = new System.Windows.Forms.Button();
             this.groupRounds.SuspendLayout();
@@ -130,17 +130,17 @@
             this.groupRounds.Size = new System.Drawing.Size(448, 542);
             this.groupRounds.TabIndex = 0;
             this.groupRounds.TabStop = false;
-            this.groupRounds.Text = "Make Your Guess";
             // 
             // groupRound5
             // 
-            this.groupRound5.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.groupRound5.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.groupRound5.Controls.Add(this.checkButton5);
             this.groupRound5.Controls.Add(this.guessTextBox27);
             this.groupRound5.Controls.Add(this.guessTextBox26);
             this.groupRound5.Controls.Add(this.guessTextBox29);
             this.groupRound5.Controls.Add(this.guessTextBox28);
             this.groupRound5.Controls.Add(this.guessTextBox25);
+            this.groupRound5.Enabled = false;
             this.groupRound5.Location = new System.Drawing.Point(16, 446);
             this.groupRound5.Name = "groupRound5";
             this.groupRound5.Size = new System.Drawing.Size(416, 80);
@@ -225,13 +225,14 @@
             // 
             // groupRound4
             // 
-            this.groupRound4.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.groupRound4.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.groupRound4.Controls.Add(this.checkButton4);
             this.groupRound4.Controls.Add(this.guessTextBox21);
             this.groupRound4.Controls.Add(this.guessTextBox23);
             this.groupRound4.Controls.Add(this.guessTextBox22);
             this.groupRound4.Controls.Add(this.guessTextBox20);
             this.groupRound4.Controls.Add(this.guessTextBox24);
+            this.groupRound4.Enabled = false;
             this.groupRound4.Location = new System.Drawing.Point(16, 360);
             this.groupRound4.Name = "groupRound4";
             this.groupRound4.Size = new System.Drawing.Size(416, 80);
@@ -316,13 +317,14 @@
             // 
             // groupRound3
             // 
-            this.groupRound3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.groupRound3.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.groupRound3.Controls.Add(this.checkButton3);
             this.groupRound3.Controls.Add(this.guessTextBox18);
             this.groupRound3.Controls.Add(this.guessTextBox15);
             this.groupRound3.Controls.Add(this.guessTextBox16);
             this.groupRound3.Controls.Add(this.guessTextBox19);
             this.groupRound3.Controls.Add(this.guessTextBox17);
+            this.groupRound3.Enabled = false;
             this.groupRound3.Location = new System.Drawing.Point(16, 274);
             this.groupRound3.Name = "groupRound3";
             this.groupRound3.Size = new System.Drawing.Size(416, 80);
@@ -407,13 +409,14 @@
             // 
             // groupRound2
             // 
-            this.groupRound2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.groupRound2.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.groupRound2.Controls.Add(this.checkButton2);
             this.groupRound2.Controls.Add(this.guessTextBox10);
             this.groupRound2.Controls.Add(this.guessTextBox14);
             this.groupRound2.Controls.Add(this.guessTextBox12);
             this.groupRound2.Controls.Add(this.guessTextBox11);
             this.groupRound2.Controls.Add(this.guessTextBox13);
+            this.groupRound2.Enabled = false;
             this.groupRound2.Location = new System.Drawing.Point(16, 188);
             this.groupRound2.Name = "groupRound2";
             this.groupRound2.Size = new System.Drawing.Size(416, 80);
@@ -498,13 +501,14 @@
             // 
             // groupRound1
             // 
-            this.groupRound1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.groupRound1.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.groupRound1.Controls.Add(this.checkButton1);
             this.groupRound1.Controls.Add(this.guessTextBox9);
             this.groupRound1.Controls.Add(this.guessTextBox6);
             this.groupRound1.Controls.Add(this.guessTextBox8);
             this.groupRound1.Controls.Add(this.guessTextBox5);
             this.groupRound1.Controls.Add(this.guessTextBox7);
+            this.groupRound1.Enabled = false;
             this.groupRound1.Location = new System.Drawing.Point(16, 102);
             this.groupRound1.Name = "groupRound1";
             this.groupRound1.Size = new System.Drawing.Size(416, 80);
@@ -589,13 +593,14 @@
             // 
             // groupRound0
             // 
-            this.groupRound0.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.groupRound0.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.groupRound0.Controls.Add(this.checkButton0);
             this.groupRound0.Controls.Add(this.guessTextBox4);
             this.groupRound0.Controls.Add(this.guessTextBox3);
             this.groupRound0.Controls.Add(this.guessTextBox2);
             this.groupRound0.Controls.Add(this.guessTextBox0);
             this.groupRound0.Controls.Add(this.guessTextBox1);
+            this.groupRound0.Enabled = false;
             this.groupRound0.Location = new System.Drawing.Point(16, 16);
             this.groupRound0.Name = "groupRound0";
             this.groupRound0.Size = new System.Drawing.Size(416, 80);
@@ -714,10 +719,10 @@
             this.groupLetters.Size = new System.Drawing.Size(430, 260);
             this.groupLetters.TabIndex = 1;
             this.groupLetters.TabStop = false;
-            this.groupLetters.Text = "Used Letters";
             // 
             // buttonBackspace
             // 
+            this.buttonBackspace.Enabled = false;
             this.buttonBackspace.Location = new System.Drawing.Point(20, 195);
             this.buttonBackspace.Name = "buttonBackspace";
             this.buttonBackspace.Size = new System.Drawing.Size(75, 30);
@@ -729,6 +734,7 @@
             // 
             // buttonClearWord
             // 
+            this.buttonClearWord.Enabled = false;
             this.buttonClearWord.Location = new System.Drawing.Point(230, 195);
             this.buttonClearWord.Name = "buttonClearWord";
             this.buttonClearWord.Size = new System.Drawing.Size(180, 30);
@@ -740,6 +746,7 @@
             // 
             // button_M
             // 
+            this.button_M.Enabled = false;
             this.button_M.Location = new System.Drawing.Point(295, 145);
             this.button_M.Name = "button_M";
             this.button_M.Size = new System.Drawing.Size(30, 40);
@@ -750,6 +757,7 @@
             // 
             // button_N
             // 
+            this.button_N.Enabled = false;
             this.button_N.Location = new System.Drawing.Point(255, 145);
             this.button_N.Name = "button_N";
             this.button_N.Size = new System.Drawing.Size(30, 40);
@@ -760,6 +768,7 @@
             // 
             // button_B
             // 
+            this.button_B.Enabled = false;
             this.button_B.Location = new System.Drawing.Point(215, 145);
             this.button_B.Name = "button_B";
             this.button_B.Size = new System.Drawing.Size(30, 40);
@@ -770,6 +779,7 @@
             // 
             // button_V
             // 
+            this.button_V.Enabled = false;
             this.button_V.Location = new System.Drawing.Point(175, 145);
             this.button_V.Name = "button_V";
             this.button_V.Size = new System.Drawing.Size(30, 40);
@@ -780,6 +790,7 @@
             // 
             // button_C
             // 
+            this.button_C.Enabled = false;
             this.button_C.Location = new System.Drawing.Point(135, 145);
             this.button_C.Name = "button_C";
             this.button_C.Size = new System.Drawing.Size(30, 40);
@@ -790,6 +801,7 @@
             // 
             // button_X
             // 
+            this.button_X.Enabled = false;
             this.button_X.Location = new System.Drawing.Point(95, 145);
             this.button_X.Name = "button_X";
             this.button_X.Size = new System.Drawing.Size(30, 40);
@@ -800,6 +812,7 @@
             // 
             // button_Z
             // 
+            this.button_Z.Enabled = false;
             this.button_Z.Location = new System.Drawing.Point(55, 145);
             this.button_Z.Name = "button_Z";
             this.button_Z.Size = new System.Drawing.Size(30, 40);
@@ -810,6 +823,7 @@
             // 
             // button_L
             // 
+            this.button_L.Enabled = false;
             this.button_L.Location = new System.Drawing.Point(355, 95);
             this.button_L.Name = "button_L";
             this.button_L.Size = new System.Drawing.Size(30, 40);
@@ -820,6 +834,7 @@
             // 
             // button_K
             // 
+            this.button_K.Enabled = false;
             this.button_K.Location = new System.Drawing.Point(315, 95);
             this.button_K.Name = "button_K";
             this.button_K.Size = new System.Drawing.Size(30, 40);
@@ -830,6 +845,7 @@
             // 
             // button_J
             // 
+            this.button_J.Enabled = false;
             this.button_J.Location = new System.Drawing.Point(275, 95);
             this.button_J.Name = "button_J";
             this.button_J.Size = new System.Drawing.Size(30, 40);
@@ -840,6 +856,7 @@
             // 
             // button_H
             // 
+            this.button_H.Enabled = false;
             this.button_H.Location = new System.Drawing.Point(235, 95);
             this.button_H.Name = "button_H";
             this.button_H.Size = new System.Drawing.Size(30, 40);
@@ -850,6 +867,7 @@
             // 
             // button_G
             // 
+            this.button_G.Enabled = false;
             this.button_G.Location = new System.Drawing.Point(195, 95);
             this.button_G.Name = "button_G";
             this.button_G.Size = new System.Drawing.Size(30, 40);
@@ -860,6 +878,7 @@
             // 
             // button_F
             // 
+            this.button_F.Enabled = false;
             this.button_F.Location = new System.Drawing.Point(155, 95);
             this.button_F.Name = "button_F";
             this.button_F.Size = new System.Drawing.Size(30, 40);
@@ -870,6 +889,7 @@
             // 
             // button_D
             // 
+            this.button_D.Enabled = false;
             this.button_D.Location = new System.Drawing.Point(115, 95);
             this.button_D.Name = "button_D";
             this.button_D.Size = new System.Drawing.Size(30, 40);
@@ -880,6 +900,7 @@
             // 
             // button_S
             // 
+            this.button_S.Enabled = false;
             this.button_S.Location = new System.Drawing.Point(75, 95);
             this.button_S.Name = "button_S";
             this.button_S.Size = new System.Drawing.Size(30, 40);
@@ -890,6 +911,7 @@
             // 
             // button_A
             // 
+            this.button_A.Enabled = false;
             this.button_A.Location = new System.Drawing.Point(35, 95);
             this.button_A.Name = "button_A";
             this.button_A.Size = new System.Drawing.Size(30, 40);
@@ -900,6 +922,7 @@
             // 
             // button_P
             // 
+            this.button_P.Enabled = false;
             this.button_P.Location = new System.Drawing.Point(380, 45);
             this.button_P.Name = "button_P";
             this.button_P.Size = new System.Drawing.Size(30, 40);
@@ -910,6 +933,7 @@
             // 
             // button_O
             // 
+            this.button_O.Enabled = false;
             this.button_O.Location = new System.Drawing.Point(340, 45);
             this.button_O.Name = "button_O";
             this.button_O.Size = new System.Drawing.Size(30, 40);
@@ -920,6 +944,7 @@
             // 
             // button_I
             // 
+            this.button_I.Enabled = false;
             this.button_I.Location = new System.Drawing.Point(300, 45);
             this.button_I.Name = "button_I";
             this.button_I.Size = new System.Drawing.Size(30, 40);
@@ -930,6 +955,7 @@
             // 
             // button_U
             // 
+            this.button_U.Enabled = false;
             this.button_U.Location = new System.Drawing.Point(260, 45);
             this.button_U.Name = "button_U";
             this.button_U.Size = new System.Drawing.Size(30, 40);
@@ -940,6 +966,7 @@
             // 
             // button_Y
             // 
+            this.button_Y.Enabled = false;
             this.button_Y.Location = new System.Drawing.Point(220, 45);
             this.button_Y.Name = "button_Y";
             this.button_Y.Size = new System.Drawing.Size(30, 40);
@@ -950,6 +977,7 @@
             // 
             // button_T
             // 
+            this.button_T.Enabled = false;
             this.button_T.Location = new System.Drawing.Point(180, 45);
             this.button_T.Name = "button_T";
             this.button_T.Size = new System.Drawing.Size(30, 40);
@@ -960,6 +988,7 @@
             // 
             // button_R
             // 
+            this.button_R.Enabled = false;
             this.button_R.Location = new System.Drawing.Point(140, 45);
             this.button_R.Name = "button_R";
             this.button_R.Size = new System.Drawing.Size(30, 40);
@@ -970,6 +999,7 @@
             // 
             // button_E
             // 
+            this.button_E.Enabled = false;
             this.button_E.Location = new System.Drawing.Point(100, 45);
             this.button_E.Name = "button_E";
             this.button_E.Size = new System.Drawing.Size(30, 40);
@@ -980,6 +1010,7 @@
             // 
             // button_W
             // 
+            this.button_W.Enabled = false;
             this.button_W.Location = new System.Drawing.Point(60, 45);
             this.button_W.Name = "button_W";
             this.button_W.Size = new System.Drawing.Size(30, 40);
@@ -990,6 +1021,7 @@
             // 
             // button_Q
             // 
+            this.button_Q.Enabled = false;
             this.button_Q.Location = new System.Drawing.Point(20, 45);
             this.button_Q.Name = "button_Q";
             this.button_Q.Size = new System.Drawing.Size(30, 40);
@@ -1002,7 +1034,7 @@
             // 
             this.todayGameButton.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.todayGameButton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.todayGameButton.Location = new System.Drawing.Point(485, 374);
+            this.todayGameButton.Location = new System.Drawing.Point(485, 303);
             this.todayGameButton.Name = "todayGameButton";
             this.todayGameButton.Size = new System.Drawing.Size(155, 23);
             this.todayGameButton.TabIndex = 5;
@@ -1014,7 +1046,7 @@
             // dateTimePicker
             // 
             this.dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker.Location = new System.Drawing.Point(660, 420);
+            this.dateTimePicker.Location = new System.Drawing.Point(660, 389);
             this.dateTimePicker.MaxDate = new System.DateTime(2025, 1, 14, 0, 0, 0, 0);
             this.dateTimePicker.MinDate = new System.DateTime(2024, 1, 1, 0, 0, 0, 0);
             this.dateTimePicker.Name = "dateTimePicker";
@@ -1022,7 +1054,6 @@
             this.dateTimePicker.TabIndex = 8;
             this.dateTimePicker.TabStop = false;
             this.dateTimePicker.Value = new System.DateTime(2025, 1, 14, 0, 0, 0, 0);
-            this.dateTimePicker.ValueChanged += new System.EventHandler(this.dateTimePicker_ValueChanged);
             // 
             // label_apiHealth
             // 
@@ -1035,23 +1066,23 @@
             this.label_apiHealth.Text = "======= API DOWN. MAY NOT WORK AS INTENDED. =======";
             this.label_apiHealth.Visible = false;
             // 
-            // endGameLabel
+            // feedbackLabel
             // 
-            this.endGameLabel.AutoSize = true;
-            this.endGameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.endGameLabel.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.endGameLabel.Location = new System.Drawing.Point(636, 313);
-            this.endGameLabel.Name = "endGameLabel";
-            this.endGameLabel.Size = new System.Drawing.Size(113, 20);
-            this.endGameLabel.TabIndex = 14;
-            this.endGameLabel.Text = "endgametext";
-            this.endGameLabel.Visible = false;
+            this.feedbackLabel.AutoSize = true;
+            this.feedbackLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.feedbackLabel.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.feedbackLabel.Location = new System.Drawing.Point(497, 431);
+            this.feedbackLabel.Name = "feedbackLabel";
+            this.feedbackLabel.Size = new System.Drawing.Size(113, 20);
+            this.feedbackLabel.TabIndex = 14;
+            this.feedbackLabel.Text = "endgametext";
+            this.feedbackLabel.Visible = false;
             // 
             // randomGameButton
             // 
             this.randomGameButton.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.randomGameButton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.randomGameButton.Location = new System.Drawing.Point(485, 462);
+            this.randomGameButton.Location = new System.Drawing.Point(485, 346);
             this.randomGameButton.Name = "randomGameButton";
             this.randomGameButton.Size = new System.Drawing.Size(155, 23);
             this.randomGameButton.TabIndex = 15;
@@ -1064,13 +1095,14 @@
             // 
             this.pastGameButton.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.pastGameButton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.pastGameButton.Location = new System.Drawing.Point(485, 417);
+            this.pastGameButton.Location = new System.Drawing.Point(485, 389);
             this.pastGameButton.Name = "pastGameButton";
             this.pastGameButton.Size = new System.Drawing.Size(155, 23);
             this.pastGameButton.TabIndex = 16;
             this.pastGameButton.TabStop = false;
             this.pastGameButton.Text = "Go Back in Time!";
             this.pastGameButton.UseVisualStyleBackColor = false;
+            this.pastGameButton.Click += new System.EventHandler(this.getWordForDate_Click);
             // 
             // MainForm
             // 
@@ -1079,7 +1111,7 @@
             this.ClientSize = new System.Drawing.Size(934, 595);
             this.Controls.Add(this.pastGameButton);
             this.Controls.Add(this.randomGameButton);
-            this.Controls.Add(this.endGameLabel);
+            this.Controls.Add(this.feedbackLabel);
             this.Controls.Add(this.label_apiHealth);
             this.Controls.Add(this.dateTimePicker);
             this.Controls.Add(this.todayGameButton);
@@ -1184,7 +1216,7 @@
         private System.Windows.Forms.Button todayGameButton;
         private System.Windows.Forms.DateTimePicker dateTimePicker;
         private System.Windows.Forms.Label label_apiHealth;
-        private System.Windows.Forms.Label endGameLabel;
+        private System.Windows.Forms.Label feedbackLabel;
         private System.Windows.Forms.Button randomGameButton;
         private System.Windows.Forms.Button pastGameButton;
     }

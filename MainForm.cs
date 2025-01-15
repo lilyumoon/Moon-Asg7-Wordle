@@ -14,8 +14,6 @@ namespace Moon_Asg7_Wordle
 {
     public partial class MainForm : Form
     {
-        const int WM_KEYUP = 0x0101;
-
         private MoonAPIReader moonApiReader;
 
         private Dictionary<int, string> resultMessageDictionary = new Dictionary<int, string>();
@@ -28,6 +26,8 @@ namespace Moon_Asg7_Wordle
 
         private int roundCount = -1;
         private string answer = string.Empty;
+
+        // Unused. Had over-enthusiastically planned to track which days were completed, but decided it was too far out of scope.
         Dictionary<string, bool> completedDays = new Dictionary<string, bool>();
 
         public MainForm()
@@ -55,24 +55,22 @@ namespace Moon_Asg7_Wordle
 
             buildDictionaries();
             
+            // if API is down, display a warning
             bool isApiHealthy = await moonApiReader.isApiHealthy();
             if (!isApiHealthy)
                 label_apiHealth.Visible = true;
-
-            getWordOfTheDay();
-            resetGame();
         }
 
         private void buildDictionaries()
         {
             // (round count, result message) dictionary
-            resultMessageDictionary.Add(1, "No way, you cheated!");
-            resultMessageDictionary.Add(2, "Very Impressive!");
-            resultMessageDictionary.Add(3, "Excellent!");
-            resultMessageDictionary.Add(4, "Nicely done.");
-            resultMessageDictionary.Add(5, "Cutting it close...");
-            resultMessageDictionary.Add(6, "Barely squeaked by there, friend");
-            resultMessageDictionary.Add(7, "Better luck next time. :-)");
+            resultMessageDictionary.Add(0, "No way, you cheated!");
+            resultMessageDictionary.Add(1, "Very Impressive!");
+            resultMessageDictionary.Add(2, "Excellent!");
+            resultMessageDictionary.Add(3, "Nicely done.");
+            resultMessageDictionary.Add(4, "Cutting it close...");
+            resultMessageDictionary.Add(5, "Barely squeaked by there, friend");
+            resultMessageDictionary.Add(6, "Better luck next time. :-)");
 
             // (used letter, Button) dictionary
             foreach (char letter in "ABCDEFGHIJKLMNOPQRSTUVWXYZ")
@@ -104,6 +102,9 @@ namespace Moon_Asg7_Wordle
 
         private void resetGame()
         {
+            // disable all controls that start a new game
+            setWordPickerControlsEnabledState(false);
+
             // Reset all round groupboxes and their text boxes
             foreach (GroupBox gb in roundGroupBoxes)
             {
@@ -116,11 +117,12 @@ namespace Moon_Asg7_Wordle
                 gb.Enabled = false;
             }
 
-            // Reset hint colors of keyboard keys
+            // Reset hint colors and enabled state of keyboard keys
             foreach (var button in usedLetterDictionary.Values)
             {
                 button.BackColor = Control.DefaultBackColor;
             }
+            setOnscreenKeyboardEnabledState(true);
 
             // reset round count
             roundCount = 0;
@@ -128,6 +130,24 @@ namespace Moon_Asg7_Wordle
             // Enable first round's text boxes and set focus to the first
             roundGroupBoxes[roundCount].Enabled = true;
             roundLetterDictionary[groupRound0][0].Select();
+        }
+
+        private void setOnscreenKeyboardEnabledState(bool shouldBeEnabled)
+        {
+            foreach (var button in usedLetterDictionary.Values)
+            {
+                button.Enabled = shouldBeEnabled;
+            }
+            buttonClearWord.Enabled = shouldBeEnabled;
+            buttonBackspace.Enabled = shouldBeEnabled;
+        }
+
+        private void setWordPickerControlsEnabledState(bool shouldBeEnabled)
+        {
+            todayGameButton.Enabled = shouldBeEnabled;
+            randomGameButton.Enabled = shouldBeEnabled;
+            pastGameButton.Enabled = shouldBeEnabled;
+            dateTimePicker.Enabled = shouldBeEnabled;
         }
 
         private void submitGuess()
@@ -146,10 +166,15 @@ namespace Moon_Asg7_Wordle
 
             // if guess is valid, check it. If not, give invalid-guess feedback.
             if (isValid)
+            {
+                feedbackLabel.Visible = false;
                 checkGuess(submission);
+            }
             else
             {
                 // give feedback if guess is not valid
+                feedbackLabel.Text = "Not in the word list. Please try again!";
+                feedbackLabel.Visible = true;
             }
         }
 
@@ -187,18 +212,10 @@ namespace Moon_Asg7_Wordle
             /*
              * 
              * Special case for consideration: 
-             *  ex. guess = crack; answer = knock
+             *  ex. guess = crack; answer = knock (word of the day - 1/15/25)
              *  
              *  issue: with old logic, first c would be yellow and second c would be green
              * 
-             * (Initial) workaround logic:
-             * first identify and track exact matches
-             * 
-             *      then, identify partial matches, but only for letters/positions not already identified as exact matches
-             *    
-             *    if the letter exists in another position within the answer,
-             *           mark yellow
-             *        otherwise, mark gray
              * 
              */
 
@@ -292,18 +309,39 @@ namespace Moon_Asg7_Wordle
                 }
             }
 
-            // if the game is not over, start the next round. Otherwise, give end-game feedback.
             roundGroupBoxes[roundCount].Enabled = false;
-            roundCount++;
-            if (roundCount < 6)
+            
+            // if answer was guessed, end game and give feedback
+            if (Wordle.checkWordStatus(submission, answer) == Wordle.WordStatus.CorrectWord)
             {
-                roundGroupBoxes[roundCount].Enabled = true;
-                getFirstEmptyActiveTextBox().Focus();
+                setOnscreenKeyboardEnabledState(false);
+                setWordPickerControlsEnabledState(true);
+                feedbackLabel.Text = resultMessageDictionary[roundCount];
+                feedbackLabel.Visible = true;
+                roundCount = -1;
             }
+
+            // if answer was not guessed...
             else
             {
-                // do end-game feedback
+                roundCount++;
+                // if there are rounds left, start next round
+                if (roundCount < 6)
+                {
+                    roundGroupBoxes[roundCount].Enabled = true;
+                    getFirstEmptyActiveTextBox().Focus();
+                }
+                // if there are not rounds left, give end-game feedback
+                else
+                {
+                    setOnscreenKeyboardEnabledState(false);
+                    setWordPickerControlsEnabledState(true);
+                    feedbackLabel.Text = resultMessageDictionary[roundCount];
+                    feedbackLabel.Visible = true;
+                    roundCount = -1;
+                }
             }
+
         }
 
         /// <summary>
@@ -314,8 +352,10 @@ namespace Moon_Asg7_Wordle
         /// <param name="e"></param>
         private void mainForm_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Back)
+            if (e.KeyCode == Keys.Back && roundCount != -1)
                 backspace();
+            else if (e.KeyCode == Keys.Enter && roundCount != -1)
+                submitGuess();
         }
 
         /// <summary>
@@ -332,13 +372,17 @@ namespace Moon_Asg7_Wordle
             }
         }
 
+        /// <summary>
+        /// Event handler for textbox TextChanged events. Corrects casing and handles focus progression.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void textBox_TextChanged(object sender, EventArgs e)
         {
             TextBox textBox = (TextBox)sender;
 
             // Temporarily unsubscribe from the TextChanged event to avoid recursion
             textBox.TextChanged -= textBox_TextChanged;
-
 
             try
             {
@@ -364,11 +408,9 @@ namespace Moon_Asg7_Wordle
                         textBox.Focus();
                     }
                 }
-                // If the Text is an empty string, focus the previous textbox.
-                else
-                {
+                // If the Text is an empty string and the game is not over, focus the previous textbox.
+                else if (roundCount != -1)
                     focusPreviousTextBox();
-                }
             }
 
             finally
@@ -378,27 +420,22 @@ namespace Moon_Asg7_Wordle
             }
         }
 
-        /*
-         * API testing event handlers:
-         */
-
         private void getWoTD_Click(object sender, EventArgs e)
         {
             getWordOfTheDay();
         }
 
         /// <summary>
-        /// Gets and stores the current word of the day.
+        /// Gets today's WoTD and starts a new game.
         /// </summary>
         private async void getWordOfTheDay()
         {
+            setWordPickerControlsEnabledState(false);
+
             answer = await moonApiReader.getWordForToday();
             answer = answer.ToUpper();
 
             resetGame();
-
-            // test:
-            answerLabel.Text = answer;
         }
 
         private void getWordForDate_Click(object sender, EventArgs e)
@@ -407,15 +444,16 @@ namespace Moon_Asg7_Wordle
         }
 
         /// <summary>
-        /// Gets and stores the word of the day for a particular date.
+        /// Gets the WoTD for a chosen date and starts a new game.
         /// </summary>
         private async void getWordForDate()
         {
+            setWordPickerControlsEnabledState(false);
+
             answer = await moonApiReader.getWordForDate(dateTimePicker.Value);
             answer = answer.ToUpper();
 
-            // test:
-            answerLabel.Text = answer;
+            resetGame();
         }
 
         private void getWordForRandomDate_Click(object sender, EventArgs e)
@@ -424,15 +462,16 @@ namespace Moon_Asg7_Wordle
         }
 
         /// <summary>
-        /// Gets and stores the word of the day for a random date.
+        /// Gets a random day's WoTD and starts a new game.
         /// </summary>
         private async void getWordForRandomDate()
         {
+            setWordPickerControlsEnabledState(false);
+
             answer = await moonApiReader.getWordForRandomDate();
             answer = answer.ToUpper();
 
-            // test:
-            answerLabel.Text = answer;
+            resetGame();
         }
 
         /*
@@ -546,12 +585,6 @@ namespace Moon_Asg7_Wordle
             }
         }
 
-        // test:
-        private async void apiHealthButton_Click(object sender, EventArgs e)
-        {
-            await moonApiReader.isApiHealthy();
-        }
-
         /// <summary>
         /// Event handler for the game's check buttons' 'Click' event.
         /// </summary>
@@ -605,17 +638,5 @@ namespace Moon_Asg7_Wordle
             return result;
         }
 
-        private void dateTimePicker_ValueChanged(object sender, EventArgs e)
-        {
-            dateTimeValueChanged();
-        }
-
-        private void dateTimeValueChanged()
-        {
-            int daysAgo = (DateTime.Today - dateTimePicker.Value).Days;
-            Console.WriteLine($"Selected date was {daysAgo} days ago.");
-
-            bool hasCompleted = completedDays.ContainsKey(dateTimePicker.Value.ToString("yyyy-MM-dd"));
-        }
     }
 }
