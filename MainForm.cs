@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 
 namespace Moon_Asg7_Wordle
 {
@@ -27,6 +28,7 @@ namespace Moon_Asg7_Wordle
 
         private int roundCount = -1;
         private string answer = string.Empty;
+        Dictionary<string, bool> completedDays = new Dictionary<string, bool>();
 
         public MainForm()
         {
@@ -51,16 +53,17 @@ namespace Moon_Asg7_Wordle
                 groupRound0, groupRound1, groupRound2,
                 groupRound3, groupRound4, groupRound5 };
 
-            loadDictionaries();
+            buildDictionaries();
             
             bool isApiHealthy = await moonApiReader.isApiHealthy();
             if (!isApiHealthy)
                 label_apiHealth.Visible = true;
 
+            getWordOfTheDay();
             resetGame();
         }
 
-        private void loadDictionaries()
+        private void buildDictionaries()
         {
             // (round count, result message) dictionary
             resultMessageDictionary.Add(1, "No way, you cheated!");
@@ -104,42 +107,31 @@ namespace Moon_Asg7_Wordle
             // Reset all round groupboxes and their text boxes
             foreach (GroupBox gb in roundGroupBoxes)
             {
-                resetGroupedTextBoxes(gb);
+                foreach (TextBox textBox in roundLetterDictionary[gb])
+                {
+                    textBox.Text = string.Empty;
+                    textBox.BackColor = Control.DefaultBackColor;
+                    textBox.ForeColor = Control.DefaultForeColor;
+                }
                 gb.Enabled = false;
             }
 
             // Reset hint colors of keyboard keys
-            resetKeyboardButtons();
+            foreach (var button in usedLetterDictionary.Values)
+            {
+                button.BackColor = Control.DefaultBackColor;
+            }
 
-            // Enable first round's group of text boxes and set focus to the first
-            groupRound0.Enabled = true;
+            // reset round count
+            roundCount = 0;
+
+            // Enable first round's text boxes and set focus to the first
+            roundGroupBoxes[roundCount].Enabled = true;
             roundLetterDictionary[groupRound0][0].Select();
-        }
-
-        /// <summary>
-        /// Iterates through each of a groupbox's child text boxes and resets text and color.
-        /// </summary>
-        private void resetGroupedTextBoxes(GroupBox gb)
-        {
-            foreach (TextBox textBox in roundLetterDictionary[gb])
-            {
-                textBox.Text = string.Empty;
-                textBox.BackColor = Control.DefaultBackColor;
-                textBox.ForeColor = Control.DefaultForeColor;
-            }
-        }
-
-        private void resetKeyboardButtons()
-        {
-            foreach (var kvp in usedLetterDictionary)
-            {
-                kvp.Value.BackColor = Control.DefaultBackColor;
-            }
         }
 
         private void submitGuess()
         {
-            //GroupBox currentRoundGB = (GroupBox)Controls.Find($"groupRound{roundCount}", true).FirstOrDefault();
             GroupBox currentRoundGB = getActiveGroupBox();
 
             // build a string from the characters in current round groupbox's textboxes
@@ -148,7 +140,170 @@ namespace Moon_Asg7_Wordle
             {
                 submission += tb.Text;
             }
-            Debug.Write($"checking value of string built from textboxes within {currentRoundGB}. Result: {submission}");
+
+            // validate submitted guess
+            bool isValid = validateGuess(submission);
+
+            // if guess is valid, check it. If not, give invalid-guess feedback.
+            if (isValid)
+                checkGuess(submission);
+            else
+            {
+                // give feedback if guess is not valid
+            }
+        }
+
+        /// <summary>
+        /// Checks if the submitted guess is a valid word.
+        /// </summary>
+        /// <param name="submission">The guess to validate.</param>
+        /// <returns>true if valid</returns>
+        private bool validateGuess(string submission)
+        {
+            bool isValid = false;
+
+            Wordle.WordStatus wordStatus = Wordle.checkWordStatus(submission, answer);
+            if (wordStatus == Wordle.WordStatus.ValidWord || wordStatus == Wordle.WordStatus.CorrectWord)
+                isValid = true;
+
+            return isValid;
+        }
+
+        private void checkGuess(string submission)
+        {
+            // build a list of letter statuses mapped to submission characters
+            List<Wordle.LetterStatus> letterStatuses = new List<Wordle.LetterStatus>();
+
+            for (int i = 1; i < 6; i++)
+            {
+                int letterIndex = i - 1;
+
+                // get the letter status from Wordle.cs
+                Wordle.LetterStatus letterStatus = Wordle.checkLetterStatus(i, submission[letterIndex].ToString(), answer);
+
+                letterStatuses.Add(letterStatus);
+            }
+
+            /*
+             * 
+             * Special case for consideration: 
+             *  ex. guess = crack; answer = knock
+             *  
+             *  issue: with old logic, first c would be yellow and second c would be green
+             * 
+             * (Initial) workaround logic:
+             * first identify and track exact matches
+             * 
+             *      then, identify partial matches, but only for letters/positions not already identified as exact matches
+             *    
+             *    if the letter exists in another position within the answer,
+             *           mark yellow
+             *        otherwise, mark gray
+             * 
+             */
+
+            Color[] textBoxFeedbackColors = new Color[] { Color.Gray, Color.Gray, Color.Gray, Color.Gray, Color.Gray };
+            bool[] consumedAnswerPositions = new bool[5];
+            bool[] consumedGuessPositions = new bool[5];
+
+            // identify and set feedback colors for any exact matches, and consume guess and answer positions
+            for (int i = 0; i < 5; i++)
+            {
+                if (letterStatuses[i] == Wordle.LetterStatus.CorrectLetter)
+                {
+                    consumedAnswerPositions[i] = true;
+                    consumedGuessPositions[i] = true;
+                    textBoxFeedbackColors[i] = Color.Green;
+                }
+            }
+
+            // second pass: handle potential false positives for ValidLetter
+            for (int i = 0; i < 5; i++)
+            {
+                if (!consumedGuessPositions[i] && letterStatuses[i] == Wordle.LetterStatus.ValidLetter)
+                {
+                    char letterToCheck = submission[i];
+
+                    // count occurrences of the letter in both the guess and the answer,
+                    // considering only unconsumed answer positions
+                    int submissionLetterCount = 0;
+                    int answerLetterCount = 0;
+
+                    for (int j = 0; j < 5; j++)
+                    {
+                        if (!consumedGuessPositions[j] && submission[j] == letterToCheck)
+                            submissionLetterCount++;
+                        if (!consumedAnswerPositions[j] && answer[j] == letterToCheck)
+                            answerLetterCount++;
+                    }
+
+                    // if there are more occurrences in the guess than in the answer, adjust the statuses
+                    if (submissionLetterCount > answerLetterCount)
+                    {
+                        int excessCount = submissionLetterCount - answerLetterCount;
+
+                        // loop through the guess to correct the excess ValidLetter occurrences
+                        for (int j = 0; j < 5 && excessCount > 0; j++)
+                        {
+                            if (!consumedGuessPositions[j] &&
+                                submission[j] == letterToCheck &&
+                                letterStatuses[j] == Wordle.LetterStatus.ValidLetter)
+                            {
+                                letterStatuses[j] = Wordle.LetterStatus.NotInWord;
+                                excessCount--;
+                            }
+                        }
+                    }
+                }
+            } // (end second pass)
+
+            // iterate through each active textbox and apply the feedback color
+            List<TextBox> activeTextBoxes = getActiveTextBoxes();
+            for (int i = 0; i < 5; i++)
+            {
+                activeTextBoxes[i].BackColor = textBoxFeedbackColors[i];
+            }
+
+            // give feedback via on-screen keyboard keys
+            for (int i = 0; i < 5; i++)
+            {
+                string letter = submission[i].ToString();
+
+                // skip the current iteration if the key has already been marked 'green'
+                if (usedLetterDictionary[letter].BackColor != Color.Green)
+                {
+                    Color keyboardFeedbackColor;
+
+                    if (letterStatuses[i] == Wordle.LetterStatus.CorrectLetter)
+                        keyboardFeedbackColor = Color.Green;
+                    else if (letterStatuses[i] == Wordle.LetterStatus.ValidLetter)
+                        keyboardFeedbackColor = Color.Yellow;
+                    else
+                    {
+                        // only mark the key as gray if it's not already yellow
+                        if (usedLetterDictionary[letter].BackColor != Color.Yellow)
+                            keyboardFeedbackColor = Color.Gray;
+                        else
+                            keyboardFeedbackColor = Color.Yellow;
+                    }
+
+                    // apply feedback color to key
+                    usedLetterDictionary[letter].BackColor = keyboardFeedbackColor;
+                }
+            }
+
+            // if the game is not over, start the next round. Otherwise, give end-game feedback.
+            roundGroupBoxes[roundCount].Enabled = false;
+            roundCount++;
+            if (roundCount < 6)
+            {
+                roundGroupBoxes[roundCount].Enabled = true;
+                getFirstEmptyActiveTextBox().Focus();
+            }
+            else
+            {
+                // do end-game feedback
+            }
         }
 
         /// <summary>
@@ -238,6 +393,9 @@ namespace Moon_Asg7_Wordle
         private async void getWordOfTheDay()
         {
             answer = await moonApiReader.getWordForToday();
+            answer = answer.ToUpper();
+
+            resetGame();
 
             // test:
             answerLabel.Text = answer;
@@ -254,7 +412,8 @@ namespace Moon_Asg7_Wordle
         private async void getWordForDate()
         {
             answer = await moonApiReader.getWordForDate(dateTimePicker.Value);
-            
+            answer = answer.ToUpper();
+
             // test:
             answerLabel.Text = answer;
         }
@@ -270,13 +429,14 @@ namespace Moon_Asg7_Wordle
         private async void getWordForRandomDate()
         {
             answer = await moonApiReader.getWordForRandomDate();
+            answer = answer.ToUpper();
 
             // test:
             answerLabel.Text = answer;
         }
 
         /*
-         * Event handlers for keyboard buttons:
+         * Event handlers for on-screen keyboard buttons:
          */
 
         /// <summary>
@@ -445,5 +605,17 @@ namespace Moon_Asg7_Wordle
             return result;
         }
 
+        private void dateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            dateTimeValueChanged();
+        }
+
+        private void dateTimeValueChanged()
+        {
+            int daysAgo = (DateTime.Today - dateTimePicker.Value).Days;
+            Console.WriteLine($"Selected date was {daysAgo} days ago.");
+
+            bool hasCompleted = completedDays.ContainsKey(dateTimePicker.Value.ToString("yyyy-MM-dd"));
+        }
     }
 }

@@ -111,6 +111,7 @@
             this.label_apiHealth = new System.Windows.Forms.Label();
             this.answerLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.completedLabel = new System.Windows.Forms.Label();
             this.groupRounds.SuspendLayout();
             this.groupRound5.SuspendLayout();
             this.groupRound4.SuspendLayout();
@@ -166,57 +167,67 @@
             // 
             // guessTextBox27
             // 
+            this.guessTextBox27.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guessTextBox27.Location = new System.Drawing.Point(144, 14);
             this.guessTextBox27.MaxLength = 1;
             this.guessTextBox27.MinimumSize = new System.Drawing.Size(60, 60);
             this.guessTextBox27.Name = "guessTextBox27";
             this.guessTextBox27.ShortcutsEnabled = false;
-            this.guessTextBox27.Size = new System.Drawing.Size(60, 20);
+            this.guessTextBox27.Size = new System.Drawing.Size(60, 62);
             this.guessTextBox27.TabIndex = 127;
+            this.guessTextBox27.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.guessTextBox27.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             // 
             // guessTextBox26
             // 
+            this.guessTextBox26.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guessTextBox26.Location = new System.Drawing.Point(76, 14);
             this.guessTextBox26.MaxLength = 1;
             this.guessTextBox26.MinimumSize = new System.Drawing.Size(60, 60);
             this.guessTextBox26.Name = "guessTextBox26";
             this.guessTextBox26.ShortcutsEnabled = false;
-            this.guessTextBox26.Size = new System.Drawing.Size(60, 20);
+            this.guessTextBox26.Size = new System.Drawing.Size(60, 62);
             this.guessTextBox26.TabIndex = 126;
+            this.guessTextBox26.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.guessTextBox26.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             // 
             // guessTextBox29
             // 
+            this.guessTextBox29.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guessTextBox29.Location = new System.Drawing.Point(280, 14);
             this.guessTextBox29.MaxLength = 1;
             this.guessTextBox29.MinimumSize = new System.Drawing.Size(60, 60);
             this.guessTextBox29.Name = "guessTextBox29";
             this.guessTextBox29.ShortcutsEnabled = false;
-            this.guessTextBox29.Size = new System.Drawing.Size(60, 20);
+            this.guessTextBox29.Size = new System.Drawing.Size(60, 62);
             this.guessTextBox29.TabIndex = 129;
+            this.guessTextBox29.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.guessTextBox29.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             // 
             // guessTextBox28
             // 
+            this.guessTextBox28.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guessTextBox28.Location = new System.Drawing.Point(212, 14);
             this.guessTextBox28.MaxLength = 1;
             this.guessTextBox28.MinimumSize = new System.Drawing.Size(60, 60);
             this.guessTextBox28.Name = "guessTextBox28";
             this.guessTextBox28.ShortcutsEnabled = false;
-            this.guessTextBox28.Size = new System.Drawing.Size(60, 20);
+            this.guessTextBox28.Size = new System.Drawing.Size(60, 62);
             this.guessTextBox28.TabIndex = 128;
+            this.guessTextBox28.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.guessTextBox28.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             // 
             // guessTextBox25
             // 
+            this.guessTextBox25.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guessTextBox25.Location = new System.Drawing.Point(8, 14);
             this.guessTextBox25.MaxLength = 1;
             this.guessTextBox25.MinimumSize = new System.Drawing.Size(60, 60);
             this.guessTextBox25.Name = "guessTextBox25";
             this.guessTextBox25.ShortcutsEnabled = false;
-            this.guessTextBox25.Size = new System.Drawing.Size(60, 20);
+            this.guessTextBox25.Size = new System.Drawing.Size(60, 62);
             this.guessTextBox25.TabIndex = 125;
+            this.guessTextBox25.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.guessTextBox25.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             // 
             // groupRound4
@@ -248,57 +259,67 @@
             // 
             // guessTextBox21
             // 
+            this.guessTextBox21.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guessTextBox21.Location = new System.Drawing.Point(76, 14);
             this.guessTextBox21.MaxLength = 1;
             this.guessTextBox21.MinimumSize = new System.Drawing.Size(60, 60);
             this.guessTextBox21.Name = "guessTextBox21";
             this.guessTextBox21.ShortcutsEnabled = false;
-            this.guessTextBox21.Size = new System.Drawing.Size(60, 20);
+            this.guessTextBox21.Size = new System.Drawing.Size(60, 62);
             this.guessTextBox21.TabIndex = 121;
+            this.guessTextBox21.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.guessTextBox21.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             // 
             // guessTextBox23
             // 
+            this.guessTextBox23.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guessTextBox23.Location = new System.Drawing.Point(212, 14);
             this.guessTextBox23.MaxLength = 1;
             this.guessTextBox23.MinimumSize = new System.Drawing.Size(60, 60);
             this.guessTextBox23.Name = "guessTextBox23";
             this.guessTextBox23.ShortcutsEnabled = false;
-            this.guessTextBox23.Size = new System.Drawing.Size(60, 20);
+            this.guessTextBox23.Size = new System.Drawing.Size(60, 62);
             this.guessTextBox23.TabIndex = 123;
+            this.guessTextBox23.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.guessTextBox23.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             // 
             // guessTextBox22
             // 
+            this.guessTextBox22.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guessTextBox22.Location = new System.Drawing.Point(144, 14);
             this.guessTextBox22.MaxLength = 1;
             this.guessTextBox22.MinimumSize = new System.Drawing.Size(60, 60);
             this.guessTextBox22.Name = "guessTextBox22";
             this.guessTextBox22.ShortcutsEnabled = false;
-            this.guessTextBox22.Size = new System.Drawing.Size(60, 20);
+            this.guessTextBox22.Size = new System.Drawing.Size(60, 62);
             this.guessTextBox22.TabIndex = 122;
+            this.guessTextBox22.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.guessTextBox22.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             // 
             // guessTextBox20
             // 
+            this.guessTextBox20.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guessTextBox20.Location = new System.Drawing.Point(8, 14);
             this.guessTextBox20.MaxLength = 1;
             this.guessTextBox20.MinimumSize = new System.Drawing.Size(60, 60);
             this.guessTextBox20.Name = "guessTextBox20";
             this.guessTextBox20.ShortcutsEnabled = false;
-            this.guessTextBox20.Size = new System.Drawing.Size(60, 20);
+            this.guessTextBox20.Size = new System.Drawing.Size(60, 62);
             this.guessTextBox20.TabIndex = 120;
+            this.guessTextBox20.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.guessTextBox20.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             // 
             // guessTextBox24
             // 
+            this.guessTextBox24.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guessTextBox24.Location = new System.Drawing.Point(280, 14);
             this.guessTextBox24.MaxLength = 1;
             this.guessTextBox24.MinimumSize = new System.Drawing.Size(60, 60);
             this.guessTextBox24.Name = "guessTextBox24";
             this.guessTextBox24.ShortcutsEnabled = false;
-            this.guessTextBox24.Size = new System.Drawing.Size(60, 20);
+            this.guessTextBox24.Size = new System.Drawing.Size(60, 62);
             this.guessTextBox24.TabIndex = 124;
+            this.guessTextBox24.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.guessTextBox24.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             // 
             // groupRound3
@@ -330,57 +351,67 @@
             // 
             // guessTextBox18
             // 
+            this.guessTextBox18.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guessTextBox18.Location = new System.Drawing.Point(212, 14);
             this.guessTextBox18.MaxLength = 1;
             this.guessTextBox18.MinimumSize = new System.Drawing.Size(60, 60);
             this.guessTextBox18.Name = "guessTextBox18";
             this.guessTextBox18.ShortcutsEnabled = false;
-            this.guessTextBox18.Size = new System.Drawing.Size(60, 20);
+            this.guessTextBox18.Size = new System.Drawing.Size(60, 62);
             this.guessTextBox18.TabIndex = 118;
+            this.guessTextBox18.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.guessTextBox18.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             // 
             // guessTextBox15
             // 
+            this.guessTextBox15.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guessTextBox15.Location = new System.Drawing.Point(8, 14);
             this.guessTextBox15.MaxLength = 1;
             this.guessTextBox15.MinimumSize = new System.Drawing.Size(60, 60);
             this.guessTextBox15.Name = "guessTextBox15";
             this.guessTextBox15.ShortcutsEnabled = false;
-            this.guessTextBox15.Size = new System.Drawing.Size(60, 20);
+            this.guessTextBox15.Size = new System.Drawing.Size(60, 62);
             this.guessTextBox15.TabIndex = 115;
+            this.guessTextBox15.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.guessTextBox15.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             // 
             // guessTextBox16
             // 
+            this.guessTextBox16.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guessTextBox16.Location = new System.Drawing.Point(76, 14);
             this.guessTextBox16.MaxLength = 1;
             this.guessTextBox16.MinimumSize = new System.Drawing.Size(60, 60);
             this.guessTextBox16.Name = "guessTextBox16";
             this.guessTextBox16.ShortcutsEnabled = false;
-            this.guessTextBox16.Size = new System.Drawing.Size(60, 20);
+            this.guessTextBox16.Size = new System.Drawing.Size(60, 62);
             this.guessTextBox16.TabIndex = 116;
+            this.guessTextBox16.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.guessTextBox16.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             // 
             // guessTextBox19
             // 
+            this.guessTextBox19.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guessTextBox19.Location = new System.Drawing.Point(280, 14);
             this.guessTextBox19.MaxLength = 1;
             this.guessTextBox19.MinimumSize = new System.Drawing.Size(60, 60);
             this.guessTextBox19.Name = "guessTextBox19";
             this.guessTextBox19.ShortcutsEnabled = false;
-            this.guessTextBox19.Size = new System.Drawing.Size(60, 20);
+            this.guessTextBox19.Size = new System.Drawing.Size(60, 62);
             this.guessTextBox19.TabIndex = 119;
+            this.guessTextBox19.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.guessTextBox19.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             // 
             // guessTextBox17
             // 
+            this.guessTextBox17.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guessTextBox17.Location = new System.Drawing.Point(144, 14);
             this.guessTextBox17.MaxLength = 1;
             this.guessTextBox17.MinimumSize = new System.Drawing.Size(60, 60);
             this.guessTextBox17.Name = "guessTextBox17";
             this.guessTextBox17.ShortcutsEnabled = false;
-            this.guessTextBox17.Size = new System.Drawing.Size(60, 20);
+            this.guessTextBox17.Size = new System.Drawing.Size(60, 62);
             this.guessTextBox17.TabIndex = 117;
+            this.guessTextBox17.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.guessTextBox17.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             // 
             // groupRound2
@@ -412,57 +443,67 @@
             // 
             // guessTextBox10
             // 
+            this.guessTextBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guessTextBox10.Location = new System.Drawing.Point(8, 14);
             this.guessTextBox10.MaxLength = 1;
             this.guessTextBox10.MinimumSize = new System.Drawing.Size(60, 60);
             this.guessTextBox10.Name = "guessTextBox10";
             this.guessTextBox10.ShortcutsEnabled = false;
-            this.guessTextBox10.Size = new System.Drawing.Size(60, 20);
+            this.guessTextBox10.Size = new System.Drawing.Size(60, 62);
             this.guessTextBox10.TabIndex = 110;
+            this.guessTextBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.guessTextBox10.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             // 
             // guessTextBox14
             // 
+            this.guessTextBox14.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guessTextBox14.Location = new System.Drawing.Point(280, 14);
             this.guessTextBox14.MaxLength = 1;
             this.guessTextBox14.MinimumSize = new System.Drawing.Size(60, 60);
             this.guessTextBox14.Name = "guessTextBox14";
             this.guessTextBox14.ShortcutsEnabled = false;
-            this.guessTextBox14.Size = new System.Drawing.Size(60, 20);
+            this.guessTextBox14.Size = new System.Drawing.Size(60, 62);
             this.guessTextBox14.TabIndex = 114;
+            this.guessTextBox14.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.guessTextBox14.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             // 
             // guessTextBox12
             // 
+            this.guessTextBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guessTextBox12.Location = new System.Drawing.Point(144, 14);
             this.guessTextBox12.MaxLength = 1;
             this.guessTextBox12.MinimumSize = new System.Drawing.Size(60, 60);
             this.guessTextBox12.Name = "guessTextBox12";
             this.guessTextBox12.ShortcutsEnabled = false;
-            this.guessTextBox12.Size = new System.Drawing.Size(60, 20);
+            this.guessTextBox12.Size = new System.Drawing.Size(60, 62);
             this.guessTextBox12.TabIndex = 112;
+            this.guessTextBox12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.guessTextBox12.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             // 
             // guessTextBox11
             // 
+            this.guessTextBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guessTextBox11.Location = new System.Drawing.Point(76, 14);
             this.guessTextBox11.MaxLength = 1;
             this.guessTextBox11.MinimumSize = new System.Drawing.Size(60, 60);
             this.guessTextBox11.Name = "guessTextBox11";
             this.guessTextBox11.ShortcutsEnabled = false;
-            this.guessTextBox11.Size = new System.Drawing.Size(60, 20);
+            this.guessTextBox11.Size = new System.Drawing.Size(60, 62);
             this.guessTextBox11.TabIndex = 111;
+            this.guessTextBox11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.guessTextBox11.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             // 
             // guessTextBox13
             // 
+            this.guessTextBox13.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guessTextBox13.Location = new System.Drawing.Point(212, 14);
             this.guessTextBox13.MaxLength = 1;
             this.guessTextBox13.MinimumSize = new System.Drawing.Size(60, 60);
             this.guessTextBox13.Name = "guessTextBox13";
             this.guessTextBox13.ShortcutsEnabled = false;
-            this.guessTextBox13.Size = new System.Drawing.Size(60, 20);
+            this.guessTextBox13.Size = new System.Drawing.Size(60, 62);
             this.guessTextBox13.TabIndex = 113;
+            this.guessTextBox13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.guessTextBox13.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             // 
             // groupRound1
@@ -494,57 +535,67 @@
             // 
             // guessTextBox9
             // 
+            this.guessTextBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guessTextBox9.Location = new System.Drawing.Point(280, 14);
             this.guessTextBox9.MaxLength = 1;
             this.guessTextBox9.MinimumSize = new System.Drawing.Size(60, 60);
             this.guessTextBox9.Name = "guessTextBox9";
             this.guessTextBox9.ShortcutsEnabled = false;
-            this.guessTextBox9.Size = new System.Drawing.Size(60, 20);
+            this.guessTextBox9.Size = new System.Drawing.Size(60, 62);
             this.guessTextBox9.TabIndex = 109;
+            this.guessTextBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.guessTextBox9.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             // 
             // guessTextBox6
             // 
+            this.guessTextBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guessTextBox6.Location = new System.Drawing.Point(76, 14);
             this.guessTextBox6.MaxLength = 1;
             this.guessTextBox6.MinimumSize = new System.Drawing.Size(60, 60);
             this.guessTextBox6.Name = "guessTextBox6";
             this.guessTextBox6.ShortcutsEnabled = false;
-            this.guessTextBox6.Size = new System.Drawing.Size(60, 20);
+            this.guessTextBox6.Size = new System.Drawing.Size(60, 62);
             this.guessTextBox6.TabIndex = 106;
+            this.guessTextBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.guessTextBox6.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             // 
             // guessTextBox8
             // 
+            this.guessTextBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guessTextBox8.Location = new System.Drawing.Point(212, 14);
             this.guessTextBox8.MaxLength = 1;
             this.guessTextBox8.MinimumSize = new System.Drawing.Size(60, 60);
             this.guessTextBox8.Name = "guessTextBox8";
             this.guessTextBox8.ShortcutsEnabled = false;
-            this.guessTextBox8.Size = new System.Drawing.Size(60, 20);
+            this.guessTextBox8.Size = new System.Drawing.Size(60, 62);
             this.guessTextBox8.TabIndex = 108;
+            this.guessTextBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.guessTextBox8.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             // 
             // guessTextBox5
             // 
+            this.guessTextBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guessTextBox5.Location = new System.Drawing.Point(8, 14);
             this.guessTextBox5.MaxLength = 1;
             this.guessTextBox5.MinimumSize = new System.Drawing.Size(60, 60);
             this.guessTextBox5.Name = "guessTextBox5";
             this.guessTextBox5.ShortcutsEnabled = false;
-            this.guessTextBox5.Size = new System.Drawing.Size(60, 20);
+            this.guessTextBox5.Size = new System.Drawing.Size(60, 62);
             this.guessTextBox5.TabIndex = 105;
+            this.guessTextBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.guessTextBox5.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             // 
             // guessTextBox7
             // 
+            this.guessTextBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guessTextBox7.Location = new System.Drawing.Point(144, 14);
             this.guessTextBox7.MaxLength = 1;
             this.guessTextBox7.MinimumSize = new System.Drawing.Size(60, 60);
             this.guessTextBox7.Name = "guessTextBox7";
             this.guessTextBox7.ShortcutsEnabled = false;
-            this.guessTextBox7.Size = new System.Drawing.Size(60, 20);
+            this.guessTextBox7.Size = new System.Drawing.Size(60, 62);
             this.guessTextBox7.TabIndex = 107;
+            this.guessTextBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.guessTextBox7.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             // 
             // groupRound0
@@ -576,57 +627,67 @@
             // 
             // guessTextBox4
             // 
+            this.guessTextBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guessTextBox4.Location = new System.Drawing.Point(280, 12);
             this.guessTextBox4.MaxLength = 1;
             this.guessTextBox4.MinimumSize = new System.Drawing.Size(60, 60);
             this.guessTextBox4.Name = "guessTextBox4";
             this.guessTextBox4.ShortcutsEnabled = false;
-            this.guessTextBox4.Size = new System.Drawing.Size(60, 20);
+            this.guessTextBox4.Size = new System.Drawing.Size(60, 62);
             this.guessTextBox4.TabIndex = 104;
+            this.guessTextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.guessTextBox4.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             // 
             // guessTextBox3
             // 
+            this.guessTextBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guessTextBox3.Location = new System.Drawing.Point(212, 12);
             this.guessTextBox3.MaxLength = 1;
             this.guessTextBox3.MinimumSize = new System.Drawing.Size(60, 60);
             this.guessTextBox3.Name = "guessTextBox3";
             this.guessTextBox3.ShortcutsEnabled = false;
-            this.guessTextBox3.Size = new System.Drawing.Size(60, 20);
+            this.guessTextBox3.Size = new System.Drawing.Size(60, 62);
             this.guessTextBox3.TabIndex = 103;
+            this.guessTextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.guessTextBox3.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             // 
             // guessTextBox2
             // 
+            this.guessTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guessTextBox2.Location = new System.Drawing.Point(144, 12);
             this.guessTextBox2.MaxLength = 1;
             this.guessTextBox2.MinimumSize = new System.Drawing.Size(60, 60);
             this.guessTextBox2.Name = "guessTextBox2";
             this.guessTextBox2.ShortcutsEnabled = false;
-            this.guessTextBox2.Size = new System.Drawing.Size(60, 20);
+            this.guessTextBox2.Size = new System.Drawing.Size(60, 62);
             this.guessTextBox2.TabIndex = 102;
+            this.guessTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.guessTextBox2.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             // 
             // guessTextBox0
             // 
+            this.guessTextBox0.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guessTextBox0.Location = new System.Drawing.Point(8, 12);
             this.guessTextBox0.MaxLength = 1;
             this.guessTextBox0.MinimumSize = new System.Drawing.Size(60, 60);
             this.guessTextBox0.Name = "guessTextBox0";
             this.guessTextBox0.ShortcutsEnabled = false;
-            this.guessTextBox0.Size = new System.Drawing.Size(60, 20);
+            this.guessTextBox0.Size = new System.Drawing.Size(60, 62);
             this.guessTextBox0.TabIndex = 100;
+            this.guessTextBox0.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.guessTextBox0.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             // 
             // guessTextBox1
             // 
+            this.guessTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guessTextBox1.Location = new System.Drawing.Point(76, 12);
             this.guessTextBox1.MaxLength = 1;
             this.guessTextBox1.MinimumSize = new System.Drawing.Size(60, 60);
             this.guessTextBox1.Name = "guessTextBox1";
             this.guessTextBox1.ShortcutsEnabled = false;
-            this.guessTextBox1.Size = new System.Drawing.Size(60, 20);
+            this.guessTextBox1.Size = new System.Drawing.Size(60, 62);
             this.guessTextBox1.TabIndex = 101;
+            this.guessTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.guessTextBox1.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             // 
             // groupLetters
@@ -970,7 +1031,7 @@
             // 
             // getWoTDButton
             // 
-            this.getWoTDButton.Location = new System.Drawing.Point(490, 347);
+            this.getWoTDButton.Location = new System.Drawing.Point(490, 434);
             this.getWoTDButton.Name = "getWoTDButton";
             this.getWoTDButton.Size = new System.Drawing.Size(155, 23);
             this.getWoTDButton.TabIndex = 5;
@@ -982,7 +1043,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(490, 328);
+            this.label1.Location = new System.Drawing.Point(490, 415);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(68, 13);
             this.label1.TabIndex = 6;
@@ -990,7 +1051,7 @@
             // 
             // getWordForDateButton
             // 
-            this.getWordForDateButton.Location = new System.Drawing.Point(710, 403);
+            this.getWordForDateButton.Location = new System.Drawing.Point(710, 490);
             this.getWordForDateButton.Name = "getWordForDateButton";
             this.getWordForDateButton.Size = new System.Drawing.Size(155, 23);
             this.getWordForDateButton.TabIndex = 7;
@@ -1001,18 +1062,19 @@
             // 
             // dateTimePicker
             // 
-            this.dateTimePicker.Location = new System.Drawing.Point(493, 406);
+            this.dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker.Location = new System.Drawing.Point(480, 311);
             this.dateTimePicker.MaxDate = new System.DateTime(2025, 1, 14, 0, 0, 0, 0);
             this.dateTimePicker.MinDate = new System.DateTime(2024, 1, 1, 0, 0, 0, 0);
             this.dateTimePicker.Name = "dateTimePicker";
             this.dateTimePicker.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker.TabIndex = 8;
-            this.dateTimePicker.TabStop = false;
             this.dateTimePicker.Value = new System.DateTime(2025, 1, 14, 0, 0, 0, 0);
+            this.dateTimePicker.ValueChanged += new System.EventHandler(this.dateTimePicker_ValueChanged);
             // 
             // randomWordButton
             // 
-            this.randomWordButton.Location = new System.Drawing.Point(710, 347);
+            this.randomWordButton.Location = new System.Drawing.Point(710, 434);
             this.randomWordButton.Name = "randomWordButton";
             this.randomWordButton.Size = new System.Drawing.Size(155, 23);
             this.randomWordButton.TabIndex = 9;
@@ -1023,7 +1085,7 @@
             // 
             // apiHealthButton
             // 
-            this.apiHealthButton.Location = new System.Drawing.Point(710, 444);
+            this.apiHealthButton.Location = new System.Drawing.Point(710, 531);
             this.apiHealthButton.Name = "apiHealthButton";
             this.apiHealthButton.Size = new System.Drawing.Size(155, 23);
             this.apiHealthButton.TabIndex = 10;
@@ -1046,7 +1108,7 @@
             // answerLabel
             // 
             this.answerLabel.AutoSize = true;
-            this.answerLabel.Location = new System.Drawing.Point(509, 462);
+            this.answerLabel.Location = new System.Drawing.Point(509, 549);
             this.answerLabel.Name = "answerLabel";
             this.answerLabel.Size = new System.Drawing.Size(30, 13);
             this.answerLabel.TabIndex = 12;
@@ -1055,17 +1117,29 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(468, 462);
+            this.label2.Location = new System.Drawing.Point(468, 549);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(44, 13);
             this.label2.TabIndex = 13;
             this.label2.Text = "answer:";
+            // 
+            // completedLabel
+            // 
+            this.completedLabel.AutoSize = true;
+            this.completedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.completedLabel.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.completedLabel.Location = new System.Drawing.Point(706, 311);
+            this.completedLabel.Name = "completedLabel";
+            this.completedLabel.Size = new System.Drawing.Size(139, 20);
+            this.completedLabel.TabIndex = 14;
+            this.completedLabel.Text = "completion label";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(934, 611);
+            this.Controls.Add(this.completedLabel);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.answerLabel);
             this.Controls.Add(this.label_apiHealth);
@@ -1186,6 +1260,7 @@
         private System.Windows.Forms.Label label_apiHealth;
         private System.Windows.Forms.Label answerLabel;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label completedLabel;
     }
 }
 
