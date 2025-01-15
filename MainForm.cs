@@ -152,6 +152,10 @@ namespace Moon_Asg7_Wordle
                 // give feedback if guess is not valid
                 feedbackLabel.Text = "Not in the word list. Please try again!";
                 feedbackLabel.Visible = true;
+
+                TextBox lastFilled = getLastFilledActiveTextBox();
+                if (lastFilled != null)
+                    lastFilled.Focus();
             }
         }
 
@@ -332,9 +336,15 @@ namespace Moon_Asg7_Wordle
         private void mainForm_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Back && roundCount != -1)
+            {
                 backspace();
+                e.Handled = true;
+            }
             else if (e.KeyCode == Keys.Enter && roundCount != -1)
+            {
                 submitGuess();
+                e.Handled = true;
+            }
         }
 
         /// <summary>
@@ -345,10 +355,7 @@ namespace Moon_Asg7_Wordle
         {
             TextBox firstEmpty = getFirstEmptyActiveTextBox();
             if (firstEmpty != null)
-            {
                 firstEmpty.Text = letter.ToUpper();
-                focusNextTextBox();
-            }
         }
 
         /// <summary>
@@ -378,7 +385,7 @@ namespace Moon_Asg7_Wordle
                             textBox.Text = char.ToUpper(input).ToString();
 
                         // move focus forward
-                        focusNextTextBox();
+                        focusNextEmptyTextBox();
                     }
                     else
                     {
@@ -387,9 +394,6 @@ namespace Moon_Asg7_Wordle
                         textBox.Focus();
                     }
                 }
-                // If the Text is an empty string and the game is not over, focus the previous textbox.
-                else if (roundCount != -1)
-                    focusPreviousTextBox();
             }
 
             finally
@@ -501,17 +505,18 @@ namespace Moon_Asg7_Wordle
         private void backspace()
         {
             // should not be able to submit an answer, because as soon as backspace happens, there will not be 5 filled textboxes.
-            setCheckButtonEnabledState(false);
+            //setCheckButtonEnabledState(false);
 
-            var last = getLastFilledActiveTextBox();
+            TextBox last = getLastFilledActiveTextBox();
             if (last != null)
                 last.Text = string.Empty;
+            focusPreviousTextBox();
         }
 
         /// <summary>
         /// Attempts to move focus to the next textbox. If the last is already focused, does nothing.
         /// </summary>
-        private void focusNextTextBox()
+        private void focusNextEmptyTextBox()
         {
             // find the focused text box, if any
             TextBox focusedTb = getActiveTextBoxes().Find(tb => tb.Focused == true);
@@ -524,11 +529,20 @@ namespace Moon_Asg7_Wordle
                 {
                     getActiveTextBoxes()[focusedTbIndex + 1].Focus();
                 }
-                // if it is, then all textboxes have been filled and the 'Check' button should be enabled
-                else
-                {
-                    setCheckButtonEnabledState(true);
-                }
+                //// if it is, then all textboxes have been filled and the 'Check' button should be enabled
+                //else
+                //{
+                //    setCheckButtonEnabledState(true);
+                //}
+            }
+
+            // if focusedTb is null, some other control has focus
+            else
+            {
+                // if there exists a next empty textbox, manually set the focus to it
+                TextBox nextEmpty = getFirstEmptyActiveTextBox();
+                if (nextEmpty != null)
+                    nextEmpty.Focus();
             }
         }
 
@@ -548,20 +562,32 @@ namespace Moon_Asg7_Wordle
                 if (focusedTbIndex != 0)
                     getActiveTextBoxes()[focusedTbIndex - 1].Focus();
             }
+            else
+            {
+                TextBox nextEmpty = getFirstEmptyActiveTextBox();
+                if (nextEmpty != null)
+                    nextEmpty.Focus();
+                else
+                {
+                    TextBox lastFilled = getLastFilledActiveTextBox();
+                    if (lastFilled != null)
+                        lastFilled.Focus();
+                }
+            }
         }
 
         /// <summary>
         /// Enables or disables the current round's check button based on given parameter.
         /// </summary>
         /// <param name="shouldBeEnabled">true if should be enabled</param>
-        private void setCheckButtonEnabledState(bool shouldBeEnabled)
-        {
-            foreach (Control c in getActiveGroupBox().Controls)
-            {
-                if (c.GetType() == typeof(Button))
-                    c.Enabled = shouldBeEnabled;
-            }
-        }
+        //private void setCheckButtonEnabledState(bool shouldBeEnabled)
+        //{
+        //    foreach (Control c in getActiveGroupBox().Controls)
+        //    {
+        //        if (c.GetType() == typeof(Button))
+        //            c.Enabled = shouldBeEnabled;
+        //    }
+        //}
 
         private void setOnscreenKeyboardEnabledState(bool shouldBeEnabled)
         {

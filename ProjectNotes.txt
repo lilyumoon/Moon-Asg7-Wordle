@@ -210,7 +210,7 @@ Please leave me the following feedback:
 
 
 	* What is something new you learned?
-		I brushed up on a lot of relevant processes and consulted some of my old code, which was interesting to look through. In one iteration of this project, I ended up going down a rabbithole of low level event handling (while trying to figure out how to catch KeyUp events regardless of which control was focused), and it was interesting digging into Windows Message structures and callbacks and the potential for implementing very custom behavior.
+		I brushed up on a lot of relevant processes and consulted some of my old code, which was interesting to look through. In one iteration of this project, I ended up going down a rabbithole of low level event handling (while trying to figure out how to catch KeyUp events regardless of which control was focused), and it was interesting digging into Windows Message structures and callbacks and the potential for implementing very custom behavior. I still have trouble making things more complicated than they need to be, but I think that is currently a function of having a little extra time and enjoying the process. I should still practice having a better and more intentional workflow and get less side-tracked though. ChatGPT is a really nice resource - I hadn't used it for programming before the past month. I like that it's being highlighted as a tool and that ethics and responsible use are touched on with it. I've been trying to minimize my usage, but it has been nice to use it when stuck with debugging or when learning about new things.
 
 
 	* What could I do better for next years class?

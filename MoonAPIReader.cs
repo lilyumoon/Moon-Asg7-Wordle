@@ -15,23 +15,12 @@ namespace Moon_Asg7_Wordle
     public class MoonAPIReader
     {
 
-        public class WordResult
-        {
-            public string Word { get; set; }
-            public bool IsOk { get; set; }
-            public string Error {  get; set; }
-
-            public WordResult() { }
-        }
-
         Uri apiPath;
         Uri currentWordEndpoint;
         Uri yesterdayWordEndpoint;
         Uri tomorrowWordEndpoint;
         Uri choiceWordEndpoint;
         Uri apiHealthEndpoint;
-
-        HttpClient client = new HttpClient();
 
         public MoonAPIReader()
         {

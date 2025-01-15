@@ -149,7 +149,6 @@
             // 
             // checkButton5
             // 
-            this.checkButton5.Enabled = false;
             this.checkButton5.Location = new System.Drawing.Point(357, 21);
             this.checkButton5.Name = "checkButton5";
             this.checkButton5.Size = new System.Drawing.Size(50, 45);
@@ -246,7 +245,6 @@
             // 
             // checkButton4
             // 
-            this.checkButton4.Enabled = false;
             this.checkButton4.Location = new System.Drawing.Point(357, 21);
             this.checkButton4.Name = "checkButton4";
             this.checkButton4.Size = new System.Drawing.Size(50, 45);
@@ -343,7 +341,6 @@
             // 
             // checkButton3
             // 
-            this.checkButton3.Enabled = false;
             this.checkButton3.Location = new System.Drawing.Point(357, 21);
             this.checkButton3.Name = "checkButton3";
             this.checkButton3.Size = new System.Drawing.Size(50, 45);
@@ -440,7 +437,6 @@
             // 
             // checkButton2
             // 
-            this.checkButton2.Enabled = false;
             this.checkButton2.Location = new System.Drawing.Point(357, 21);
             this.checkButton2.Name = "checkButton2";
             this.checkButton2.Size = new System.Drawing.Size(50, 45);
@@ -537,7 +533,6 @@
             // 
             // checkButton1
             // 
-            this.checkButton1.Enabled = false;
             this.checkButton1.Location = new System.Drawing.Point(357, 21);
             this.checkButton1.Name = "checkButton1";
             this.checkButton1.Size = new System.Drawing.Size(50, 45);
@@ -634,7 +629,6 @@
             // 
             // checkButton0
             // 
-            this.checkButton0.Enabled = false;
             this.checkButton0.Location = new System.Drawing.Point(357, 19);
             this.checkButton0.Name = "checkButton0";
             this.checkButton0.Size = new System.Drawing.Size(50, 45);
