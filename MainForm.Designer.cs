@@ -100,18 +100,12 @@
             this.button_E = new System.Windows.Forms.Button();
             this.button_W = new System.Windows.Forms.Button();
             this.button_Q = new System.Windows.Forms.Button();
-            this.newGameButton = new System.Windows.Forms.Button();
-            this.resetGameButton = new System.Windows.Forms.Button();
-            this.getWoTDButton = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.getWordForDateButton = new System.Windows.Forms.Button();
+            this.todayGameButton = new System.Windows.Forms.Button();
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.randomWordButton = new System.Windows.Forms.Button();
-            this.apiHealthButton = new System.Windows.Forms.Button();
             this.label_apiHealth = new System.Windows.Forms.Label();
-            this.answerLabel = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.completedLabel = new System.Windows.Forms.Label();
+            this.endGameLabel = new System.Windows.Forms.Label();
+            this.randomGameButton = new System.Windows.Forms.Button();
+            this.pastGameButton = new System.Windows.Forms.Button();
             this.groupRounds.SuspendLayout();
             this.groupRound5.SuspendLayout();
             this.groupRound4.SuspendLayout();
@@ -131,7 +125,7 @@
             this.groupRounds.Controls.Add(this.groupRound2);
             this.groupRounds.Controls.Add(this.groupRound1);
             this.groupRounds.Controls.Add(this.groupRound0);
-            this.groupRounds.Location = new System.Drawing.Point(16, 16);
+            this.groupRounds.Location = new System.Drawing.Point(21, 25);
             this.groupRounds.Name = "groupRounds";
             this.groupRounds.Size = new System.Drawing.Size(448, 542);
             this.groupRounds.TabIndex = 0;
@@ -160,7 +154,6 @@
             this.checkButton5.Name = "checkButton5";
             this.checkButton5.Size = new System.Drawing.Size(50, 45);
             this.checkButton5.TabIndex = 36;
-            this.checkButton5.TabStop = false;
             this.checkButton5.Text = "Check";
             this.checkButton5.UseVisualStyleBackColor = true;
             this.checkButton5.Click += new System.EventHandler(this.checkButton_Click);
@@ -252,7 +245,6 @@
             this.checkButton4.Name = "checkButton4";
             this.checkButton4.Size = new System.Drawing.Size(50, 45);
             this.checkButton4.TabIndex = 30;
-            this.checkButton4.TabStop = false;
             this.checkButton4.Text = "Check";
             this.checkButton4.UseVisualStyleBackColor = true;
             this.checkButton4.Click += new System.EventHandler(this.checkButton_Click);
@@ -344,7 +336,6 @@
             this.checkButton3.Name = "checkButton3";
             this.checkButton3.Size = new System.Drawing.Size(50, 45);
             this.checkButton3.TabIndex = 24;
-            this.checkButton3.TabStop = false;
             this.checkButton3.Text = "Check";
             this.checkButton3.UseVisualStyleBackColor = true;
             this.checkButton3.Click += new System.EventHandler(this.checkButton_Click);
@@ -436,7 +427,6 @@
             this.checkButton2.Name = "checkButton2";
             this.checkButton2.Size = new System.Drawing.Size(50, 45);
             this.checkButton2.TabIndex = 18;
-            this.checkButton2.TabStop = false;
             this.checkButton2.Text = "Check";
             this.checkButton2.UseVisualStyleBackColor = true;
             this.checkButton2.Click += new System.EventHandler(this.checkButton_Click);
@@ -528,7 +518,6 @@
             this.checkButton1.Name = "checkButton1";
             this.checkButton1.Size = new System.Drawing.Size(50, 45);
             this.checkButton1.TabIndex = 12;
-            this.checkButton1.TabStop = false;
             this.checkButton1.Text = "Check";
             this.checkButton1.UseVisualStyleBackColor = true;
             this.checkButton1.Click += new System.EventHandler(this.checkButton_Click);
@@ -620,7 +609,6 @@
             this.checkButton0.Name = "checkButton0";
             this.checkButton0.Size = new System.Drawing.Size(50, 45);
             this.checkButton0.TabIndex = 6;
-            this.checkButton0.TabStop = false;
             this.checkButton0.Text = "Check";
             this.checkButton0.UseVisualStyleBackColor = true;
             this.checkButton0.Click += new System.EventHandler(this.checkButton_Click);
@@ -721,7 +709,7 @@
             this.groupLetters.Controls.Add(this.button_E);
             this.groupLetters.Controls.Add(this.button_W);
             this.groupLetters.Controls.Add(this.button_Q);
-            this.groupLetters.Location = new System.Drawing.Point(480, 16);
+            this.groupLetters.Location = new System.Drawing.Point(485, 25);
             this.groupLetters.Name = "groupLetters";
             this.groupLetters.Size = new System.Drawing.Size(430, 260);
             this.groupLetters.TabIndex = 1;
@@ -734,6 +722,7 @@
             this.buttonBackspace.Name = "buttonBackspace";
             this.buttonBackspace.Size = new System.Drawing.Size(75, 30);
             this.buttonBackspace.TabIndex = 27;
+            this.buttonBackspace.TabStop = false;
             this.buttonBackspace.Text = "<===";
             this.buttonBackspace.UseVisualStyleBackColor = true;
             this.buttonBackspace.Click += new System.EventHandler(this.buttonBackspace_Click);
@@ -744,6 +733,7 @@
             this.buttonClearWord.Name = "buttonClearWord";
             this.buttonClearWord.Size = new System.Drawing.Size(180, 30);
             this.buttonClearWord.TabIndex = 26;
+            this.buttonClearWord.TabStop = false;
             this.buttonClearWord.Text = "Clear Word";
             this.buttonClearWord.UseVisualStyleBackColor = true;
             this.buttonClearWord.Click += new System.EventHandler(this.buttonClearWord_Click);
@@ -1008,149 +998,91 @@
             this.button_Q.Text = "Q";
             this.button_Q.UseVisualStyleBackColor = true;
             // 
-            // newGameButton
+            // todayGameButton
             // 
-            this.newGameButton.Location = new System.Drawing.Point(16, 564);
-            this.newGameButton.Name = "newGameButton";
-            this.newGameButton.Size = new System.Drawing.Size(75, 23);
-            this.newGameButton.TabIndex = 2;
-            this.newGameButton.TabStop = false;
-            this.newGameButton.Text = "New Game";
-            this.newGameButton.UseVisualStyleBackColor = true;
-            // 
-            // resetGameButton
-            // 
-            this.resetGameButton.Location = new System.Drawing.Point(108, 564);
-            this.resetGameButton.Name = "resetGameButton";
-            this.resetGameButton.Size = new System.Drawing.Size(75, 23);
-            this.resetGameButton.TabIndex = 3;
-            this.resetGameButton.TabStop = false;
-            this.resetGameButton.Text = "Reset Game";
-            this.resetGameButton.UseVisualStyleBackColor = true;
-            this.resetGameButton.Click += new System.EventHandler(this.resetGame);
-            // 
-            // getWoTDButton
-            // 
-            this.getWoTDButton.Location = new System.Drawing.Point(490, 434);
-            this.getWoTDButton.Name = "getWoTDButton";
-            this.getWoTDButton.Size = new System.Drawing.Size(155, 23);
-            this.getWoTDButton.TabIndex = 5;
-            this.getWoTDButton.TabStop = false;
-            this.getWoTDButton.Text = "get wotd";
-            this.getWoTDButton.UseVisualStyleBackColor = true;
-            this.getWoTDButton.Click += new System.EventHandler(this.getWoTD_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(490, 415);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 13);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Test controls";
-            // 
-            // getWordForDateButton
-            // 
-            this.getWordForDateButton.Location = new System.Drawing.Point(710, 490);
-            this.getWordForDateButton.Name = "getWordForDateButton";
-            this.getWordForDateButton.Size = new System.Drawing.Size(155, 23);
-            this.getWordForDateButton.TabIndex = 7;
-            this.getWordForDateButton.TabStop = false;
-            this.getWordForDateButton.Text = "get word for date";
-            this.getWordForDateButton.UseVisualStyleBackColor = true;
-            this.getWordForDateButton.Click += new System.EventHandler(this.getWordForDate_Click);
+            this.todayGameButton.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.todayGameButton.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.todayGameButton.Location = new System.Drawing.Point(485, 374);
+            this.todayGameButton.Name = "todayGameButton";
+            this.todayGameButton.Size = new System.Drawing.Size(155, 23);
+            this.todayGameButton.TabIndex = 5;
+            this.todayGameButton.TabStop = false;
+            this.todayGameButton.Text = "Get Today\'s Puzzle!";
+            this.todayGameButton.UseVisualStyleBackColor = false;
+            this.todayGameButton.Click += new System.EventHandler(this.getWoTD_Click);
             // 
             // dateTimePicker
             // 
             this.dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker.Location = new System.Drawing.Point(480, 311);
+            this.dateTimePicker.Location = new System.Drawing.Point(660, 420);
             this.dateTimePicker.MaxDate = new System.DateTime(2025, 1, 14, 0, 0, 0, 0);
             this.dateTimePicker.MinDate = new System.DateTime(2024, 1, 1, 0, 0, 0, 0);
             this.dateTimePicker.Name = "dateTimePicker";
-            this.dateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker.Size = new System.Drawing.Size(250, 20);
             this.dateTimePicker.TabIndex = 8;
+            this.dateTimePicker.TabStop = false;
             this.dateTimePicker.Value = new System.DateTime(2025, 1, 14, 0, 0, 0, 0);
             this.dateTimePicker.ValueChanged += new System.EventHandler(this.dateTimePicker_ValueChanged);
-            // 
-            // randomWordButton
-            // 
-            this.randomWordButton.Location = new System.Drawing.Point(710, 434);
-            this.randomWordButton.Name = "randomWordButton";
-            this.randomWordButton.Size = new System.Drawing.Size(155, 23);
-            this.randomWordButton.TabIndex = 9;
-            this.randomWordButton.TabStop = false;
-            this.randomWordButton.Text = "get word for random date";
-            this.randomWordButton.UseVisualStyleBackColor = true;
-            this.randomWordButton.Click += new System.EventHandler(this.getWordForRandomDate_Click);
-            // 
-            // apiHealthButton
-            // 
-            this.apiHealthButton.Location = new System.Drawing.Point(710, 531);
-            this.apiHealthButton.Name = "apiHealthButton";
-            this.apiHealthButton.Size = new System.Drawing.Size(155, 23);
-            this.apiHealthButton.TabIndex = 10;
-            this.apiHealthButton.TabStop = false;
-            this.apiHealthButton.Text = "get api health";
-            this.apiHealthButton.UseVisualStyleBackColor = true;
-            this.apiHealthButton.Click += new System.EventHandler(this.apiHealthButton_Click);
             // 
             // label_apiHealth
             // 
             this.label_apiHealth.AutoSize = true;
             this.label_apiHealth.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_apiHealth.Location = new System.Drawing.Point(508, 279);
+            this.label_apiHealth.Location = new System.Drawing.Point(95, 9);
             this.label_apiHealth.Name = "label_apiHealth";
             this.label_apiHealth.Size = new System.Drawing.Size(374, 13);
             this.label_apiHealth.TabIndex = 11;
             this.label_apiHealth.Text = "======= API DOWN. MAY NOT WORK AS INTENDED. =======";
             this.label_apiHealth.Visible = false;
             // 
-            // answerLabel
+            // endGameLabel
             // 
-            this.answerLabel.AutoSize = true;
-            this.answerLabel.Location = new System.Drawing.Point(509, 549);
-            this.answerLabel.Name = "answerLabel";
-            this.answerLabel.Size = new System.Drawing.Size(30, 13);
-            this.answerLabel.TabIndex = 12;
-            this.answerLabel.Text = "word";
+            this.endGameLabel.AutoSize = true;
+            this.endGameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.endGameLabel.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.endGameLabel.Location = new System.Drawing.Point(636, 313);
+            this.endGameLabel.Name = "endGameLabel";
+            this.endGameLabel.Size = new System.Drawing.Size(113, 20);
+            this.endGameLabel.TabIndex = 14;
+            this.endGameLabel.Text = "endgametext";
+            this.endGameLabel.Visible = false;
             // 
-            // label2
+            // randomGameButton
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(468, 549);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 13);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "answer:";
+            this.randomGameButton.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.randomGameButton.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.randomGameButton.Location = new System.Drawing.Point(485, 462);
+            this.randomGameButton.Name = "randomGameButton";
+            this.randomGameButton.Size = new System.Drawing.Size(155, 23);
+            this.randomGameButton.TabIndex = 15;
+            this.randomGameButton.TabStop = false;
+            this.randomGameButton.Text = "Do a Mystery Puzzle!";
+            this.randomGameButton.UseVisualStyleBackColor = false;
+            this.randomGameButton.Click += new System.EventHandler(this.getWordForRandomDate_Click);
             // 
-            // completedLabel
+            // pastGameButton
             // 
-            this.completedLabel.AutoSize = true;
-            this.completedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.completedLabel.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.completedLabel.Location = new System.Drawing.Point(706, 311);
-            this.completedLabel.Name = "completedLabel";
-            this.completedLabel.Size = new System.Drawing.Size(139, 20);
-            this.completedLabel.TabIndex = 14;
-            this.completedLabel.Text = "completion label";
+            this.pastGameButton.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.pastGameButton.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.pastGameButton.Location = new System.Drawing.Point(485, 417);
+            this.pastGameButton.Name = "pastGameButton";
+            this.pastGameButton.Size = new System.Drawing.Size(155, 23);
+            this.pastGameButton.TabIndex = 16;
+            this.pastGameButton.TabStop = false;
+            this.pastGameButton.Text = "Go Back in Time!";
+            this.pastGameButton.UseVisualStyleBackColor = false;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(934, 611);
-            this.Controls.Add(this.completedLabel);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.answerLabel);
+            this.ClientSize = new System.Drawing.Size(934, 595);
+            this.Controls.Add(this.pastGameButton);
+            this.Controls.Add(this.randomGameButton);
+            this.Controls.Add(this.endGameLabel);
             this.Controls.Add(this.label_apiHealth);
-            this.Controls.Add(this.apiHealthButton);
-            this.Controls.Add(this.randomWordButton);
             this.Controls.Add(this.dateTimePicker);
-            this.Controls.Add(this.getWordForDateButton);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.getWoTDButton);
-            this.Controls.Add(this.resetGameButton);
-            this.Controls.Add(this.newGameButton);
+            this.Controls.Add(this.todayGameButton);
             this.Controls.Add(this.groupLetters);
             this.Controls.Add(this.groupRounds);
             this.Name = "MainForm";
@@ -1179,7 +1111,6 @@
 
         private System.Windows.Forms.GroupBox groupRounds;
         private System.Windows.Forms.GroupBox groupLetters;
-        private System.Windows.Forms.Button newGameButton;
         private System.Windows.Forms.GroupBox groupRound2;
         private System.Windows.Forms.GroupBox groupRound1;
         private System.Windows.Forms.GroupBox groupRound0;
@@ -1250,17 +1181,12 @@
         private System.Windows.Forms.Button button_Z;
         private System.Windows.Forms.Button buttonBackspace;
         private System.Windows.Forms.Button buttonClearWord;
-        private System.Windows.Forms.Button resetGameButton;
-        private System.Windows.Forms.Button getWoTDButton;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button getWordForDateButton;
+        private System.Windows.Forms.Button todayGameButton;
         private System.Windows.Forms.DateTimePicker dateTimePicker;
-        private System.Windows.Forms.Button randomWordButton;
-        private System.Windows.Forms.Button apiHealthButton;
         private System.Windows.Forms.Label label_apiHealth;
-        private System.Windows.Forms.Label answerLabel;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label completedLabel;
+        private System.Windows.Forms.Label endGameLabel;
+        private System.Windows.Forms.Button randomGameButton;
+        private System.Windows.Forms.Button pastGameButton;
     }
 }
 

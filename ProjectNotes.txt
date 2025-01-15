@@ -103,6 +103,9 @@
 
 
 
+======= OUTDATED DUE TO USING A DIFFERENT API AND BEING TOO LAZY TO UPDATE THE DOCUMENTATION HERE. IGNORE THE FOLLOWING SECTION.
+=======					(The currently documented API does not have an endpoint to get past WoTDs)
+=======
 ======= API info (Personal):
 	* rapidapi.com
 	* key: 10c1f99ba6msh404cc93f96cd25bp1974b1jsnc7de848f1361
@@ -155,7 +158,7 @@
 						"error": "invalid input, expected string!"
 					}
 
-
+======= END OUTDATED.
 
 
 
@@ -202,12 +205,13 @@ Please leave me the following feedback:
 
 
 
-What did you think of the assignment?
+	* What did you think of the assignment?
+		It was a lot of fun to work on. I've been enjoying working with Forms. There are a lot of parallels between the workflow with Visual Studio's UI, and Unity's UI (which I've used extensively in the past). I had Unity set up to interface with VSCode, so I had not had experience with Visual Studio's design editor before this course.
 
 
+	* What is something new you learned?
+		I brushed up on a lot of relevant processes and consulted some of my old code, which was interesting to look through. In one iteration of this project, I ended up going down a rabbithole of low level event handling (while trying to figure out how to catch KeyUp events regardless of which control was focused), and it was interesting digging into Windows Message structures and callbacks and the potential for implementing very custom behavior.
 
-What is something new you learned?
 
-
-
-What could I do better for next years class?
+	* What could I do better for next years class?
+		I think the content is great. I've said it before, but I still appreciate that there are multiple videos for each 'lesson', and the continuous updates that are inherent in revisiting the curriculum each semester of the course.
