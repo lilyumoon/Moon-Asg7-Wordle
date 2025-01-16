@@ -19,8 +19,6 @@ namespace Moon_Asg7_Wordle
         private Dictionary<int, string> resultMessageDictionary = new Dictionary<int, string>();
         private Dictionary<string, Button> usedLetterDictionary = new Dictionary<string, Button>();
 
-        // this dictionary is built in order to reduce complexity of some of the in-class suggesti
-        // ons of text box processing
         private Dictionary<GroupBox, List<TextBox>> roundLetterDictionary = new Dictionary<GroupBox, List<TextBox>>();
 
         private List<GroupBox> roundGroupBoxes = new List<GroupBox>();
