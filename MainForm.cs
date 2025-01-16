@@ -19,7 +19,8 @@ namespace Moon_Asg7_Wordle
         private Dictionary<int, string> resultMessageDictionary = new Dictionary<int, string>();
         private Dictionary<string, Button> usedLetterDictionary = new Dictionary<string, Button>();
 
-        // this dictionary is built in order to reduce complexity of some of the in-class suggestions of text box processing
+        // this dictionary is built in order to reduce complexity of some of the in-class suggesti
+        // ons of text box processing
         private Dictionary<GroupBox, List<TextBox>> roundLetterDictionary = new Dictionary<GroupBox, List<TextBox>>();
 
         private List<GroupBox> roundGroupBoxes = new List<GroupBox>();
@@ -95,8 +96,11 @@ namespace Moon_Asg7_Wordle
             }
         }
 
-        private void resetGame()
+        private void startNewGame()
         {
+            // display some text when the game begins to make it more intuitive that it's started
+            groupRounds.Text = "Make a guess!";
+
             // disable all controls that start a new game
             setWordPickerControlsEnabledState(false);
 
@@ -121,6 +125,7 @@ namespace Moon_Asg7_Wordle
 
             // reset round count
             roundCount = 0;
+            answerLabel.Visible = false;
 
             // Enable first round's text boxes and set focus to the first
             roundGroupBoxes[roundCount].Enabled = true;
@@ -211,7 +216,7 @@ namespace Moon_Asg7_Wordle
                 {
                     consumedAnswerPositions[i] = true;
                     consumedGuessPositions[i] = true;
-                    textBoxFeedbackColors[i] = Color.Green;
+                    textBoxFeedbackColors[i] = Color.LightGreen;
                 }
             }
 
@@ -224,36 +229,44 @@ namespace Moon_Asg7_Wordle
 
                     // count occurrences of the letter in both the guess and the answer,
                     // considering only unconsumed answer positions
-                    int submissionLetterCount = 0;
-                    int answerLetterCount = 0;
+                    int submissionLetterOccurrences = 0;
+                    int answerLetterOccurrences = 0;
 
                     for (int j = 0; j < 5; j++)
                     {
                         if (!consumedGuessPositions[j] && submission[j] == letterToCheck)
-                            submissionLetterCount++;
+                            submissionLetterOccurrences++;
                         if (!consumedAnswerPositions[j] && answer[j] == letterToCheck)
-                            answerLetterCount++;
+                            answerLetterOccurrences++;
                     }
 
                     // if there are more occurrences in the guess than in the answer, adjust the statuses
-                    if (submissionLetterCount > answerLetterCount)
+                    if (submissionLetterOccurrences > answerLetterOccurrences)
                     {
-                        int excessCount = submissionLetterCount - answerLetterCount;
+                        int excessOccurrences = submissionLetterOccurrences - answerLetterOccurrences;
 
                         // loop through the guess to correct the excess ValidLetter occurrences
-                        for (int j = 0; j < 5 && excessCount > 0; j++)
+                        for (int j = 0; j < 5 && excessOccurrences > 0; j++)
                         {
                             if (!consumedGuessPositions[j] &&
                                 submission[j] == letterToCheck &&
                                 letterStatuses[j] == Wordle.LetterStatus.ValidLetter)
                             {
                                 letterStatuses[j] = Wordle.LetterStatus.NotInWord;
-                                excessCount--;
+                                consumedGuessPositions[j] = true;
+                                excessOccurrences--;
                             }
                         }
                     }
                 }
             } // (end second pass)
+
+            // set feedback colors for valid letters
+            for (int i = 0; i < 5; i++)
+            {
+                if (letterStatuses[i] == Wordle.LetterStatus.ValidLetter)
+                    textBoxFeedbackColors[i] = Color.LightGoldenrodYellow;
+            }
 
             // iterate through each active textbox and apply the feedback color
             List<TextBox> activeTextBoxes = getActiveTextBoxes();
@@ -268,21 +281,21 @@ namespace Moon_Asg7_Wordle
                 string letter = submission[i].ToString();
 
                 // skip the current iteration if the key has already been marked 'green'
-                if (usedLetterDictionary[letter].BackColor != Color.Green)
+                if (usedLetterDictionary[letter].BackColor != Color.LightGreen)
                 {
                     Color keyboardFeedbackColor;
 
                     if (letterStatuses[i] == Wordle.LetterStatus.CorrectLetter)
-                        keyboardFeedbackColor = Color.Green;
+                        keyboardFeedbackColor = Color.LightGreen;
                     else if (letterStatuses[i] == Wordle.LetterStatus.ValidLetter)
-                        keyboardFeedbackColor = Color.Yellow;
+                        keyboardFeedbackColor = Color.LightGoldenrodYellow;
                     else
                     {
                         // only mark the key as gray if it's not already yellow
-                        if (usedLetterDictionary[letter].BackColor != Color.Yellow)
+                        if (usedLetterDictionary[letter].BackColor != Color.LightGoldenrodYellow)
                             keyboardFeedbackColor = Color.Gray;
                         else
-                            keyboardFeedbackColor = Color.Yellow;
+                            keyboardFeedbackColor = Color.LightGoldenrodYellow;
                     }
 
                     // apply feedback color to key
@@ -290,6 +303,7 @@ namespace Moon_Asg7_Wordle
                 }
             }
 
+            // disable the text boxes for the guess that was just submitted
             roundGroupBoxes[roundCount].Enabled = false;
             
             // if answer was guessed, end game and give feedback
@@ -299,6 +313,7 @@ namespace Moon_Asg7_Wordle
                 setWordPickerControlsEnabledState(true);
                 feedbackLabel.Text = resultMessageDictionary[roundCount];
                 feedbackLabel.Visible = true;
+                groupRounds.Text = string.Empty;
                 roundCount = -1;
             }
 
@@ -321,6 +336,9 @@ namespace Moon_Asg7_Wordle
                     setWordPickerControlsEnabledState(true);
                     feedbackLabel.Text = resultMessageDictionary[roundCount];
                     feedbackLabel.Visible = true;
+                    answerLabel.Text = $"The word was {answer}";
+                    answerLabel.Visible = true;
+                    groupRounds.Text = string.Empty;
                     roundCount = -1;
                 }
             }
@@ -418,7 +436,7 @@ namespace Moon_Asg7_Wordle
             answer = await moonApiReader.getWordForToday();
             answer = answer.ToUpper();
 
-            resetGame();
+            startNewGame();
         }
 
         private void getWordForDate_Click(object sender, EventArgs e)
@@ -436,7 +454,7 @@ namespace Moon_Asg7_Wordle
             answer = await moonApiReader.getWordForDate(dateTimePicker.Value);
             answer = answer.ToUpper();
 
-            resetGame();
+            startNewGame();
         }
 
         private void getWordForRandomDate_Click(object sender, EventArgs e)
@@ -454,7 +472,7 @@ namespace Moon_Asg7_Wordle
             answer = await moonApiReader.getWordForRandomDate();
             answer = answer.ToUpper();
 
-            resetGame();
+            startNewGame();
         }
 
         /*

@@ -106,6 +106,7 @@
             this.feedbackLabel = new System.Windows.Forms.Label();
             this.randomGameButton = new System.Windows.Forms.Button();
             this.pastGameButton = new System.Windows.Forms.Button();
+            this.answerLabel = new System.Windows.Forms.Label();
             this.groupRounds.SuspendLayout();
             this.groupRound5.SuspendLayout();
             this.groupRound4.SuspendLayout();
@@ -1099,7 +1100,7 @@
             this.feedbackLabel.Name = "feedbackLabel";
             this.feedbackLabel.Size = new System.Drawing.Size(113, 20);
             this.feedbackLabel.TabIndex = 14;
-            this.feedbackLabel.Text = "endgametext";
+            this.feedbackLabel.Text = "feedbacktext";
             this.feedbackLabel.Visible = false;
             // 
             // randomGameButton
@@ -1128,11 +1129,24 @@
             this.pastGameButton.UseVisualStyleBackColor = false;
             this.pastGameButton.Click += new System.EventHandler(this.getWordForDate_Click);
             // 
+            // answerLabel
+            // 
+            this.answerLabel.AutoSize = true;
+            this.answerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.answerLabel.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.answerLabel.Location = new System.Drawing.Point(497, 460);
+            this.answerLabel.Name = "answerLabel";
+            this.answerLabel.Size = new System.Drawing.Size(96, 20);
+            this.answerLabel.TabIndex = 17;
+            this.answerLabel.Text = "answertext";
+            this.answerLabel.Visible = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(934, 595);
+            this.Controls.Add(this.answerLabel);
             this.Controls.Add(this.pastGameButton);
             this.Controls.Add(this.randomGameButton);
             this.Controls.Add(this.feedbackLabel);
@@ -1243,6 +1257,7 @@
         private System.Windows.Forms.Label feedbackLabel;
         private System.Windows.Forms.Button randomGameButton;
         private System.Windows.Forms.Button pastGameButton;
+        private System.Windows.Forms.Label answerLabel;
     }
 }
 
